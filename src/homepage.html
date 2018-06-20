@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
-
 <head>
     <meta charset="UTF-8">
     <title>MASH</title>
@@ -22,7 +19,7 @@
             box-shadow: 0 9px #999;
             height:60px;
             width:100px;
-            margin: 150px -50px;
+            margin: 350px -50px;
             position:relative;
             top:50%;
             left:50%;
@@ -30,17 +27,34 @@
 
         .button:hover {background-color: #ff8080}
 
+
         .button:active {
             background-color: #ff8080;
             box-shadow: 0 5px #666;
             transform: translateY(4px);
+
+
+        }
+        a.button {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+
+            text-decoration: none;
+            color: initial;
         }
     </style>
+
 </head>
 <body>
 
+<h1 align="center"><font size="9">Let's Play MASH!</font></h1>
+<h2 align="center"><font size="9">Predict your future!</font></h2>
+<p align="center"><font size="6">MASH will predict different aspects of your future life such as where you will work
+    and how many kids you will have. To begin, click the Play button below.</font></p>
 
-<button class="button">Play</button>
-
+<!--<button class="button" >Play</button>-->
+<a href="gamepage.html" class="button">PLAY</a>
 </body>
 </html>
+
