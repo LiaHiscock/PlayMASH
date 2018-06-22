@@ -1,37 +1,37 @@
-body {
+body{
     font-family: Verdana, sans-serif;
     margin: 0;
 }
 
-* {
+*{
     box-sizing: border-box;
 }
 
-.row > .column {
+.row > .column{
     padding: 0 8px;
 }
 
-.row:after {
+.row:after{
     content: "";
     display: table;
     clear: both;
 }
 
-.column {
+.column{
     float: left;
     width: 25%;
 }
 
-.mySlides {
+.mySlides{
     display: none;
 }
 
-.cursor {
+.cursor{
     cursor: pointer;
 }
 
 
-.button {
+.button{
     padding: 15px 25px;
     font-size: 24px;
     text-align: center;
@@ -50,17 +50,19 @@ body {
     left:50%;
 }
 
-.button:hover {background-color: #ff8080}
+.button:hover{
+    background-color: #ff8080
+}
 
 
-.button:active {
+.button:active{
     background-color: #ff8080;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 
 
 }
-a.button {
+a.button{
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
@@ -69,33 +71,32 @@ a.button {
     color: initial;
 }
 
-/*GAMEPAGE*/
+/*GAMEPAGE STYLESHEET*/
 
-    .button {
-        font-size: 24px;
-        text-align: center;
-        cursor: pointer;
-        outline: none;
-        color: white;
-        background-color: #AD1457;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 9px #999;
-        height:60px;
-        width:100px;
-        margin: 50px -50px;
-        position:relative;
-        top:50%;
-        left:50%;
-    }
-
-.button:hover {background-color: #AD1457}
+.button {
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color: #AD1457;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    height:60px;
+    width:100px;
+    margin: 50px -50px;
+    position:relative;
+    top:50%;
+    left:50%;
+}
 
 .button:active {
     background-color: white;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+
 a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
@@ -107,14 +108,14 @@ a.button {
 h1{
     font-size: 250%;
     color: #AD1457;
-    font-family: Arial, Helvetica, SansSerif;
+    font-family: Georgia, serif;
     text-align: center;
 }
 
 h2{
     font-size: 100%;
     color: steelblue;
-    font-family: Arial, Helvetica, SansSerif;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 
@@ -126,17 +127,16 @@ p{
 
 .grid-container{
     display: grid;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 400px 400px 400px;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+
 }
 
-.flex-container > div {
-    width: 100px;
-    margin: 50px;
-    line-height: 75px;
-    font-size: 30px;
+.grid-container div{
+    border: 2px #AD1457 solid;
+    border-radius: 25px;
 }
