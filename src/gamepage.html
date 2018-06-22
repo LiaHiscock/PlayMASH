@@ -1,121 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>MASH</title>
+
+    <style>
+        .button {
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: white;
+            background-color: #AD1457;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+            height:60px;
+            width:100px;
+            margin: 50px -50px;
+            position:relative;
+            top:50%;
+            left:50%;
+        }
+
+        .button:hover {background-color: #AD1457}
+
+        .button:active {
+            background-color: white;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        a.button {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            text-decoration: none;
+            color: #AD1457;
+        }
+
+        h1{
+            font-size: 250%;
+            color: #AD1457;
+            font-family: Arial, Helvetica, SansSerif;
+            text-align: center;
+        }
+
+        h2{
+            font-size: 100%;
+            color: steelblue;
+            font-family: Arial, Helvetica, SansSerif;
+            text-align: center;
+        }
+
+        p{
+            font-size: 30px;
+            color: #666666;
+            font-family: Arial, Helvetica, SansSerif;
+        }
+
+        .grid-container{
+            display: grid;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto;
+        }
+
+        .flex-container > div {
+            width: 100px;
+            margin: 50px;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
 </head>
-<body>
-    <h1 align="center">Play MASH!</h1>
-    <h2 align="center">Predict Your Future!</h2>
+
+<body style="background-color: mintcream">
+
+    <h1>Play MASH!</h1>
+    <h2>Predict Your Future!</h2>
+
+    <div align="center" class="grid-container">
+        <div>
+            <p>College <br>
+                <input title="college" required><br>
+                <input title="college" required><br>
+                <input title="college" required><br>
+                <input title="college" required><br>
+            </p>
+        </div>
+
+        <div>
+            <p>Career <br>
+                <input title="career" required><br>
+                <input title="career" required><br>
+                <input title="career" required><br>
+                <input title="career" required><br>
+            </p>
+        </div>
+
+        <div>
+            <p>Salary <br>
+                <input title="salary" required><br>
+                <input title="salary" required><br>
+                <input title="salary" required><br>
+                <input title="salary" required><br>
+            </p>
+        </div>
+
+        <div>
+            <p>Age You'll Get Married <br>
+                <input title="age" required><br>
+                <input title="age" required><br>
+                <input title="age" required><br>
+                <input title="age" required><br>
+            </p>
+        </div>
+
+        <div>
+            <p>Spouse <br>
+                <input title="spouse" required><br>
+                <input title="spouse" required><br>
+                <input title="spouse" required><br>
+                <input title="spouse" required><br>
+            </p>
+        </div>
+
+        <div>
+            <p>Number of Kids <br>
+                <input title="kids" required><br>
+                <input title="kids" required><br>
+                <input title="kids" required><br>
+                <input title="kids" required><br>
+            </p>
+        </div>
+
+        <div>
+            <p>Car <br>
+                <input title="car" required><br>
+                <input title="car" required><br>
+                <input title="car" required><br>
+                <input title="car" required><br>
+            </p>
+        </div>
+
+        <div>
+            <p>City You'll Live In <br>
+                <input title="city" required><br>
+                <input title="city" required><br>
+                <input title="city" required><br>
+                <input title="city" required><br>
+            </p>
+        </div>
+
+        <input align="center" type="submit" value="Done">
+    </div>
 
 
-</body>
-</html>
-<html>
-<body>
-<!--Career input-->
-<form action="/action_page.php" align="center">
-    <font size="5">
-    <p>Career</p>
-    <input type="text" name="career" required><br>
-    <input type="text" name="career" required><br>
-    <input type="text" name="career"  required><br>
-    <input type="text" name="career" required><br>
-
-
-    <p>Salary</p>
-    <input type="text" name="salary" required><br>
-    <input type="text" name="salary" required><br>
-    <input type="text" name="salary"  required><br>
-    <input type="text" name="salary" required><br>
-
-
-    <p>Spouse</p>
-    <input type="text" name="spouse" required><br>
-    <input type="text" name="spouse" required><br>
-    <input type="text" name="spouse"  required><br>
-    <input type="text" name="spouse" required><br>
-
-
-    <p>Number of Kids</p>
-    <input type="text" name="kids" required><br>
-    <input type="text" name="kids" required><br>
-    <input type="text" name="kids"  required><br>
-    <input type="text" name="kids" required><br>
-
-
-    <p>Car</p>
-    <input type="text" name="car" required><br>
-    <input type="text" name="car" required><br>
-    <input type="text" name="car"  required><br>
-    <input type="text" name="car" required><br>
-
-
-    <p>City you'll live in</p>
-    <input type="text" name="city" required><br>
-    <input type="text" name="city" required><br>
-    <input type="text" name="city"  required><br>
-    <input type="text" name="city" required><br>
-
-    <p>College</p>
-    <input type="text" name="college" required><br>
-    <input type="text" name="college" required><br>
-    <input type="text" name="college"  required><br>
-    <input type="text" name="college" required><br>
-    <input type="submit" value="Done">
-    </font>
-</form>
-
-<style>
-    .button {
-        padding: 15px 25px;
-        font-size: 24px;
-        text-align: center;
-        cursor: pointer;
-        outline: none;
-        color: #fff;
-        background-color: #ff9999;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 9px #999;
-        height:60px;
-        width:100px;
-        margin: 350px -50px;
-        position:relative;
-        top:50%;
-        left:50%;
-    }
-
-    .button:hover {background-color: #ff8080}
-
-
-    .button:active {
-        background-color: #ff8080;
-        box-shadow: 0 5px #666;
-        transform: translateY(4px);
-
-
-    }
-    a.button {
-        -webkit-appearance: button;
-        -moz-appearance: button;
-        appearance: button;
-
-        text-decoration: none;
-        color: initial;
-    }
-</style>
-
-</head>
-<body>
-
-
-<!--<button class="button" >Play</button>-->
-<a href="spiralpage.html" class="button">NEXT</a>
+    <!--NEXT button-->
+    <a href="spiralpage.html"> <button class="button">NEXT</button></a>
 
 </body>
-
-</body>
-
 
 </html>
