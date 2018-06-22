@@ -8,6 +8,41 @@
 
     <style>
 
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row > .column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+
         .button {
             padding: 15px 25px;
             font-size: 24px;
@@ -56,6 +91,21 @@
 <h2 align="center"><font size="9">Predict your future!</font></h2>
 <p align="center"><font size="6">MASH will predict different aspects of your future life such as where you will work
     and how many kids you will have. To begin, click the Play button below.</font></p>
+
+<div class="row">
+    <div class="column">
+        <img src="img_nature.jpg" style="width:100%">
+    </div>
+    <div class="column">
+        <img src="img_snow.jpg" style="width:100%" >
+    </div>
+    <div class="column">
+        <img src="img_mountains.jpg" style="width:100%">
+    </div>
+    <div class="column">
+        <img src="img_lights.jpg" style="width:100%">
+    </div>
+</div>
 
 <!--<button class="button" >Play</button>-->
 <a href="gamepage.html" class="button">PLAY</a>
