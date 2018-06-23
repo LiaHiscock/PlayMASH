@@ -1,3 +1,4 @@
+/*HOMEPAGE STYLESHEET*/
 body{
     font-family: Verdana, sans-serif;
     margin: 0;
@@ -30,8 +31,7 @@ body{
     cursor: pointer;
 }
 
-
-.button{
+.button1{
     padding: 15px 25px;
     font-size: 24px;
     text-align: center;
@@ -54,26 +54,21 @@ body{
     background-color: #ff8080
 }
 
-
 .button:active{
     background-color: #ff8080;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-
-
 }
 a.button{
     -webkit-appearance: button;
     -moz-appearance: button;
-    appearance: button;
-
     text-decoration: none;
     color: initial;
 }
 
 /*GAMEPAGE STYLESHEET*/
 
-.button {
+.button2{
     font-size: 24px;
     text-align: center;
     cursor: pointer;
@@ -91,52 +86,91 @@ a.button{
     left:50%;
 }
 
-.button:active {
+.button:active{
     background-color: white;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
-a.button {
+a.button{
     -webkit-appearance: button;
     -moz-appearance: button;
-    appearance: button;
     text-decoration: none;
     color: #AD1457;
 }
 
 h1{
-    font-size: 250%;
+    font-size: 400%;
     color: #AD1457;
-    font-family: Georgia, serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    font-weight: bolder;
 }
 
 h2{
-    font-size: 100%;
-    color: steelblue;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+    color: powderblue;
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 p{
     font-size: 30px;
     color: #666666;
-    font-family: Arial, Helvetica, SansSerif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .grid-container{
     display: grid;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/    /*weirdly flattens the circle outlines*/
     grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 400px 400px 400px;
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
+    grid-template-rows: 300px 300px 300px;
+    grid-column-gap: 100px;
+    grid-row-gap: 100px;
 
 }
 
 .grid-container div{
-    border: 2px #AD1457 solid;
-    border-radius: 25px;
+    /*border: 2px #AD1457 solid;*/
+    border-radius: 150px;
+    text-align: center;
+    /*background: rgba(173, 20, 87, 1);  !*makes the circles semi-transparent*!*/
+}
+
+.pinkCircles{
+    background: rgba(173, 20, 87, 1);
+    /*border: 2px #AD1457 solid;*/
+}
+
+.mintCircles{
+    background: rgba(176,224,230, 1);
+}
+
+.header{
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    position: absolute;
+    width: 100%;
+}
+
+body{
+   background-color: white;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.backgroundImage {
+    background-image: url("Images/Discover.jpg");
+    height: 100%;      /*changes how much of image shows between header and div*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    z-index: -1;    /*scrolls the div scroll over the background image*/
 }
