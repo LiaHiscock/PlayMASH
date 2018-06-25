@@ -66,6 +66,17 @@ a.button{
     color: initial;
 }
 
+#backgroundImage1 {
+    background-image: url("Images/MASH.jpg");
+    height: 100%;      /*changes how much of the image shows between the header and div*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto;
+    position: center;
+    z-index: -1;    /*scrolls the div scroll over the background image*/
+}
+
 /*GAMEPAGE STYLESHEET*/
 .button2{
     background-color: powderblue;
@@ -158,7 +169,7 @@ body, html {
     margin: 0;
 }
 
-.backgroundImage {
+#backgroundImage2 {
     background-image: url("Images/Discover.jpg");
     height: 100%;      /*changes how much of the image shows between the header and div*/
     background-position: center;
