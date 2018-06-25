@@ -41,7 +41,7 @@ a.button{
 #backgroundImage1 {
     background-image: url("Images/MASH.jpg");
     height: 100%;      /*changes how much of the image shows between the header and div*/
-    zoom: 1;
+    zoom: .65;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -143,6 +143,9 @@ p{
 
 body{
    background-color: white;
+    /*background-image:url("Images/Discover.jpg");*/
+    /*background-repeat:no-repeat;*/
+    /*background-attachment:fixed;*/
 }
 
 body, html {
@@ -159,4 +162,5 @@ body, html {
     background-size: cover;
     position: relative;
     z-index: -1;    /*scrolls the div scroll over the background image*/
+    overflow: scroll;
 }
