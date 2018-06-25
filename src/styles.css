@@ -67,23 +67,17 @@ a.button{
 }
 
 /*GAMEPAGE STYLESHEET*/
-
 .button2{
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: white;
     background-color: powderblue;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    height:60px;
-    width:100px;
-    margin: 50px -50px;
-    position:relative;
-    top:50%;
-    left:50%;
+    color: #999999;
+    padding: 140px;
+    text-align: justify;
+    display: inline-block;
+    font-size: 50px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .button:active{
@@ -116,7 +110,7 @@ h2{
 
 p{
     font-size: 30px;
-    color: #666666;
+    /*color: white;*/   /*changes font color for all circles*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -132,19 +126,19 @@ p{
 }
 
 .grid-container div{
-    /*border: 2px #AD1457 solid;*/
-    border-radius: 150px;
+    border-radius: 50%;
     text-align: center;
     /*background: rgba(173, 20, 87, 1);  !*makes the circles semi-transparent*!*/
 }
 
 .pinkCircles{
     background: rgba(173, 20, 87, 1);
-    /*border: 2px #AD1457 solid;*/
+    color: white;
 }
 
 .mintCircles{
     background: rgba(176,224,230, 1);
+    color: #999999;
 }
 
 .header{
@@ -166,7 +160,7 @@ body, html {
 
 .backgroundImage {
     background-image: url("Images/Discover.jpg");
-    height: 100%;      /*changes how much of image shows between header and div*/
+    height: 100%;      /*changes how much of the image shows between the header and div*/
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
