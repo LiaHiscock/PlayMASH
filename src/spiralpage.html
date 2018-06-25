@@ -39,6 +39,9 @@
 </select>
 </div>
 
+<button onclick="randomNum()">Number</button>
+<p id="demo"></p>
+
 <script>
     //pen feature in order to draw spiral
     var mousePressed = false;
@@ -86,6 +89,12 @@
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     }
+
+        function randomNum() {
+            document.getElementById("demo").innerHTML = Math.floor(Math.random()*8 + 2);
+        }
+
+
 </script>
 </body>
 </html>
