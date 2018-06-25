@@ -1,9 +1,4 @@
 /*HOMEPAGE STYLESHEET*/
-body{
-    font-family: Verdana, sans-serif;
-    margin: 0;
-}
-
 .button1{
     padding: 15px 25px;
     font-size: 24px;
@@ -22,16 +17,16 @@ body{
     left:50%;
 }
 
-.button:hover{
+.button1:hover{
     background-color: #ff8080
 }
 
-.button:active{
+.button1:active{
     background-color: #ff8080;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
-a.button{
+a.button1{
     -webkit-appearance: button;
     -moz-appearance: button;
     text-decoration: none;
