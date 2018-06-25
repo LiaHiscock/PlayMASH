@@ -125,7 +125,7 @@ p{
     color: #999999;
 }
 
-#goButton{
+.goButton{
     background: powderblue;
     color: #999999;
     border-radius: 50%;
