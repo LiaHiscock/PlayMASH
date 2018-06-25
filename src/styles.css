@@ -69,6 +69,7 @@ a.button{
 #backgroundImage1 {
     background-image: url("Images/MASH.jpg");
     height: 100%;      /*changes how much of the image shows between the header and div*/
+    zoom: .7;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
