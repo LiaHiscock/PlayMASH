@@ -41,7 +41,7 @@ a.button{
 #backgroundImage1 {
     background-image: url("Images/MASH.jpg");
     height: 100%;      /*changes how much of the image shows between the header and div*/
-    zoom: .7;
+    zoom: 1;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -121,8 +121,16 @@ p{
 }
 
 .mintCircles{
-    background: rgba(176,224,230, 1);
+    background: powderblue;
     color: #999999;
+}
+
+#goButton{
+    background: powderblue;
+    color: #999999;
+    border-radius: 50%;
+    padding: 110px;
+    font-size: 50px;
 }
 
 .header{
