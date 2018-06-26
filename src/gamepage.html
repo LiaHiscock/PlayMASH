@@ -4,18 +4,9 @@
         <meta charset="UTF-8">
         <title>MASH</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="script" href="scripts.js">
         <link rel="icon" href="Images/spiral.png">
             <!--https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpYHXmoX2kMDuI1MhV9P5nvq-Hyn_OjWHyNwzN_5dNKgJ0-j1E-->
-
-        <script>
-            function randomNum() {
-                document.getElementById("generate").innerHTML = Math.floor(Math.random()*8 + 2);
-                document.getElementById("x").innerHTML = "MASH";
-
-            }
-
-
-        </script>
     </head>
 
     <body>
@@ -101,7 +92,7 @@
                 </p>
             </div>
 
-            <button id="generate"class="goButton" onclick="randomNum()">GO</button>
+            <button id="generate" class="goButton" onclick="randomNum()">GO</button>
             <h1 id="x"></h1>
 
         </div>
