@@ -10,8 +10,6 @@
 
     <body>
 
-    <script src="scripts.js"></script>
-
         <div id="backgroundImage2"></div>
 
         <div class="header">
@@ -21,83 +19,112 @@
 
         <br>
 
+        <form id="myform">
         <div align="center" class="grid-container">
             <div class="mintCircles">
                 <p>College <br><br>
-                    <input title="college" required><br>
-                    <input title="college" required><br>
-                    <input title="college" required><br>
-                    <input title="college" required><br>
+                    <input type="text" id="colleges" required><br>
+                    <input type="text" class="colleges" required><br>
+                    <input type="text" class="colleges" required><br>
+                    <input type="text" class="colleges" required><br>
                 </p>
             </div>
 
             <div class="pinkCircles">
                 <p>Career <br><br>
-                    <input title="career" required><br>
-                    <input title="career" required><br>
-                    <input title="career" required><br>
-                    <input title="career" required><br>
+                    <input type="text" title="career" required><br>
+                    <input type="text" title="career" required><br>
+                    <input type="text" title="career" required><br>
+                    <input type="text" title="career" required><br>
                 </p>
             </div>
 
             <div class="mintCircles">
                 <p>Salary <br><br>
-                    <input title="salary" required><br>
-                    <input title="salary" required><br>
-                    <input title="salary" required><br>
-                    <input title="salary" required><br>
+                    <input type="text" title="salary" required><br>
+                    <input type="text" title="salary" required><br>
+                    <input type="text" title="salary" required><br>
+                    <input type="text" title="salary" required><br>
                 </p>
             </div>
 
             <div class="pinkCircles">
                 <p>Pets<br><br>
-                    <input title="age" required><br>
-                    <input title="age" required><br>
-                    <input title="age" required><br>
-                    <input title="age" required><br>
+                    <input type="text" title="age" required><br>
+                    <input type="text" title="age" required><br>
+                    <input type="text" title="age" required><br>
+                    <input type="text" title="age" required><br>
                 </p>
             </div>
 
             <div class="mintCircles">
                 <p>Spouse <br><br>
-                    <input title="spouse" required><br>
-                    <input title="spouse" required><br>
-                    <input title="spouse" required><br>
-                    <input title="spouse" required><br>
+                    <input type="text" title="spouse" required><br>
+                    <input type="text" title="spouse" required><br>
+                    <input type="text" title="spouse" required><br>
+                    <input type="text" title="spouse" required><br>
                 </p>
             </div>
 
             <div class="pinkCircles">
                 <p># of Kids<br><br>
-                    <input title="kids" required><br>
-                    <input title="kids" required><br>
-                    <input title="kids" required><br>
-                    <input title="kids" required><br>
+                    <input type="text" title="kids" required><br>
+                    <input type="text" title="kids" required><br>
+                    <input type="text" title="kids" required><br>
+                    <input type="text" title="kids" required><br>
                 </p>
             </div>
 
             <div class="mintCircles">
                 <p>Car<br><br>
-                    <input title="car" required><br>
-                    <input title="car" required><br>
-                    <input title="car" required><br>
-                    <input title="car" required><br>
+                    <input type="text" title="car" required><br>
+                    <input type="text" title="car" required><br>
+                    <input type="text" title="car" required><br>
+                    <input type="text" title="car" required><br>
                 </p>
             </div>
 
             <div class="pinkCircles">
                 <p>City<br><br>
-                    <input title="city" required><br>
-                    <input title="city" required><br>
-                    <input title="city" required><br>
-                    <input title="city" required><br>
+                    <input type="text" title="city" required><br>
+                    <input type="text" title="city" required><br>
+                    <input type="text" title="city" required><br>
+                    <input type="text"title="city" required><br>
                 </p>
             </div>
 
-            <button id="generate" class="goButton" onclick="randomNum()">GO</button>
-            <h1 id="popupText"></h1>
+            <button id="generate" class="goButton" onclick=goButton()>GO</button>
+            <h1 id="popupHeader"></h1>
+            <!--<h2 id="popupText"></h2>-->
+
+            <h3 id="popupCat1"></h3>
+            <h3 id="popupCat2"></h3>
+            <h3 id="popupCat3"></h3>
+            <h3 id="popupCat4"></h3>
+            <h3 id="popupCat5"></h3>
+            <h3 id="popupCat6"></h3>
+            <h3 id="popupCat7"></h3>
+            <h3 id="popupCat8"></h3>
 
         </div>
+
+        </form>
+
         <br>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous">
+        </script>
+
+
+        <script>
+            $(document).ready(function(){
+                console.log(" my document loaded");
+            });
+        </script>
+
+        <script src="scripts.js"></script>
+
     </body>
 </html>
