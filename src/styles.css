@@ -97,10 +97,10 @@ p{
     display: grid;
     justify-content: center;
     /*align-items: center;*/    /*weirdly flattens the circle outlines*/
-    grid-template-columns: 300px 300px 300px;
+    grid-template-columns: repeat(auto-fit, 300px);
     grid-template-rows: 300px 300px 300px;
-    grid-column-gap: 100px;
     grid-row-gap: 100px;
+    grid-column-gap: 100px;
 
 }
 
