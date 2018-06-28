@@ -34,6 +34,7 @@ function goButton()
 
     document.getElementById("generate").disabled = true;        //disables button after first click
 
+    countDown(magicNumber);
 }
 
 function formatOneCategory(oneCategoryArray, catName)
@@ -53,6 +54,11 @@ function sliceArray(allInput, start, end)
     return allInput.slice(start, end);
 }
 
+function countDown(magicNumber)
+{
+    //insert code here that crosses out elements of the array
+
+}
 // function formatAllInput(allInputArray)
 // {
 //     let myString = "";
