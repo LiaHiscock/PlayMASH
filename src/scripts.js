@@ -1,7 +1,6 @@
 function goButton()
 {
-
-    var allInput = [];
+    let allInput = [];
 
     inputs = $('#myform :input');
 
@@ -12,26 +11,29 @@ function goButton()
     console.log(allInput);
 
     //generates and displays the magic number
-    var magicNumber = Math.floor(Math.random()*8 + 2).toString();
-    document.getElementById("generate").innerHTML =  magicNumber;
+    let magicNumber = Math.floor(Math.random()*8 + 2).toString();
+    $('#generate').html(magicNumber);
 
     //prints MASH header
     document.getElementById("popupHeader").innerHTML = "M.A.S.H";
 
-    // document.getElementById("popupText").innerHTML = formatAllInput(allInput);     //prints ALL categories
+    //document.getElementById("popupText").innerHTML = formatAllInput(allInput);     //prints ALL categories
 
-    //prints each category as individual element in 2nd grid-container
-    document.getElementById("popupCat1").innerHTML = formatOneCategory(sliceArray(allInput, 0, 4), "COLLEGES");
-    document.getElementById("popupCat2").innerHTML = formatOneCategory(sliceArray(allInput, 4, 8), "CAREERS");
-    document.getElementById("popupCat3").innerHTML = formatOneCategory(sliceArray(allInput, 8, 12), "SALARIES");
-    document.getElementById("popupCat4").innerHTML = formatOneCategory(sliceArray(allInput, 12, 16), "PETS");
-    document.getElementById("popupCat5").innerHTML = formatOneCategory(sliceArray(allInput, 16, 20), "SPOUSES");
-    document.getElementById("popupCat6").innerHTML = formatOneCategory(sliceArray(allInput, 20, 24), "NUMBER OF KIDS");
-    document.getElementById("popupCat7").innerHTML = formatOneCategory(sliceArray(allInput, 24, 28), "CARS");
-    document.getElementById("popupCat8").innerHTML = formatOneCategory(sliceArray(allInput, 28, 32), "CITIES");
+    //prints each category list as individual element in 2nd grid-container
+    $('#popupCat1').html(formatOneCategory(sliceArray(allInput, 0, 4), "COLLEGES"));
+    $('#popupCat2').html(formatOneCategory(sliceArray(allInput, 4, 8), "CAREERS"));
+    $('#popupCat3').html(formatOneCategory(sliceArray(allInput, 8, 12), "SALARIES"));
+    $('#popupCat4').html(formatOneCategory(sliceArray(allInput, 12, 16), "PETS"));
+    $('#popupCat5').html(formatOneCategory(sliceArray(allInput, 16, 20), "SPOUSES"));
+    $('#popupCat6').html(formatOneCategory(sliceArray(allInput, 20, 24), "NUMBER OF KIDS"));
+    $('#popupCat7').html(formatOneCategory(sliceArray(allInput, 24, 28), "CARS"));
+    $('#popupCat8').html(formatOneCategory(sliceArray(allInput, 28, 32), "CITIES"));
 
+    //makes answers visible
+    //$('.answers').css("visibility: visible");
 
     document.getElementById("generate").disabled = true;        //disables button after first click
+
 }
 
 function formatOneCategory(oneCategoryArray, catName)
@@ -49,10 +51,6 @@ function formatOneCategory(oneCategoryArray, catName)
 function sliceArray(allInput, start, end)
 {
     return allInput.slice(start, end);
-}
-
-function countDown(magicNumber){sc
-
 }
 
 // function formatAllInput(allInputArray)
