@@ -51,6 +51,10 @@ function sliceArray(allInput, start, end)
     return allInput.slice(start, end);
 }
 
+function countDown(magicNumber){sc
+
+}
+
 // function formatAllInput(allInputArray)
 // {
 //     let myString = "";
