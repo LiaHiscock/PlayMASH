@@ -15,11 +15,12 @@ function goButton()
     var magicNumber = Math.floor(Math.random()*8 + 2).toString();
     document.getElementById("generate").innerHTML =  magicNumber;
 
-    //prints all categories/items in a list
+    //prints MASH header
     document.getElementById("popupHeader").innerHTML = "M.A.S.H";
-    // document.getElementById("popupText").innerHTML = formatAllInput(allInput);     //pops up the array of the user input below circles
 
-    //prints each category individually
+    // document.getElementById("popupText").innerHTML = formatAllInput(allInput);     //prints ALL categories
+
+    //prints each category as individual element in 2nd grid-container
     document.getElementById("popupCat1").innerHTML = formatOneCategory(sliceArray(allInput, 0, 4), "COLLEGES");
     document.getElementById("popupCat2").innerHTML = formatOneCategory(sliceArray(allInput, 4, 8), "CAREERS");
     document.getElementById("popupCat3").innerHTML = formatOneCategory(sliceArray(allInput, 8, 12), "SALARIES");
@@ -31,101 +32,7 @@ function goButton()
 
 
     document.getElementById("generate").disabled = true;        //disables button after first click
-
-    // loadArrays();
 }
-
-function formatAllInput(allInputArray)
-{
-    let myString = "";
-
-    for(i = 0; i < allInputArray.length; i++)
-    {
-        if(i < 4)
-        {
-            if(i == 0)
-            {
-                myString += "COLLEGES";
-                myString += "<br>";
-            }
-
-            myString += (i + 1) + ". " + allInputArray[i] + "<br>";
-        }
-
-        if(i >= 4 && i < 8)
-        {
-            if(i == 4)
-            {
-                myString += "CAREERS" + "<br>";
-            }
-
-            myString += (i + 1) + ". " + allInputArray[i] + "<br>";
-        }
-
-        if(i >= 8 && i < 12)
-        {
-            if(i == 8)
-            {
-                myString += "SALARIES" + "<br>";
-            }
-
-            myString += (i + 1) + ". " + allInputArray[i] + "<br>";
-        }
-
-        if(i >= 12 && i < 16)
-        {
-            if(i == 12)
-            {
-                myString += "PETS <br>";
-            }
-
-            myString += (i + 1) + ". " + allInputArray[i] + "<br>";
-        }
-
-        if(i >= 16 && i < 20)
-        {
-            if(i == 16)
-            {
-                myString += "SPOUSES <br>";
-            }
-
-            myString += i + 1 + ". " + allInputArray[i] + "<br>";
-        }
-
-        if(i >= 20 && i < 24)
-        {
-            if(i == 20)
-            {
-                myString += "NUMBER OF KIDS <br>";
-            }
-
-            myString += i + 1 + ". " + allInputArray[i] + "<br>";
-        }
-
-        if(i >= 24 && i < 28)
-        {
-            if(i == 24)
-            {
-                myString += "CARS <br>";
-            }
-
-            myString += i + 1 + ". " + allInputArray[i] + "<br>";
-        }
-
-        if(i >= 28 && i < 32)
-        {
-            if(i == 28)
-            {
-                myString += "CITIES <br>";
-            }
-
-            myString += i + 1 + ". " + allInputArray[i] + "<br>";
-        }
-    }
-
-    return myString;
-}
-
 
 function formatOneCategory(oneCategoryArray, catName)
 {
@@ -144,10 +51,96 @@ function sliceArray(allInput, start, end)
     return allInput.slice(start, end);
 }
 
-// var colleges = [];
+// function formatAllInput(allInputArray)
+// {
+//     let myString = "";
 //
-// function loadArrays(){
-//     colleges[0] = document.getElementById("colleges").value;
-//     console.log("colleges at 0 is " + colleges[0]);
+//     for(i = 0; i < allInputArray.length; i++)
+//     {
+//         if(i < 4)
+//         {
+//             if(i == 0)
+//             {
+//                 myString += "COLLEGES";
+//                 myString += "<br>";
+//             }
+//
+//             myString += (i + 1) + ". " + allInputArray[i] + "<br>";
+//         }
+//
+//         if(i >= 4 && i < 8)
+//         {
+//             if(i == 4)
+//             {
+//                 myString += "CAREERS" + "<br>";
+//             }
+//
+//             myString += (i + 1) + ". " + allInputArray[i] + "<br>";
+//         }
+//
+//         if(i >= 8 && i < 12)
+//         {
+//             if(i == 8)
+//             {
+//                 myString += "SALARIES" + "<br>";
+//             }
+//
+//             myString += (i + 1) + ". " + allInputArray[i] + "<br>";
+//         }
+//
+//         if(i >= 12 && i < 16)
+//         {
+//             if(i == 12)
+//             {
+//                 myString += "PETS <br>";
+//             }
+//
+//             myString += (i + 1) + ". " + allInputArray[i] + "<br>";
+//         }
+//
+//         if(i >= 16 && i < 20)
+//         {
+//             if(i == 16)
+//             {
+//                 myString += "SPOUSES <br>";
+//             }
+//
+//             myString += i + 1 + ". " + allInputArray[i] + "<br>";
+//         }
+//
+//         if(i >= 20 && i < 24)
+//         {
+//             if(i == 20)
+//             {
+//                 myString += "NUMBER OF KIDS <br>";
+//             }
+//
+//             myString += i + 1 + ". " + allInputArray[i] + "<br>";
+//         }
+//
+//         if(i >= 24 && i < 28)
+//         {
+//             if(i == 24)
+//             {
+//                 myString += "CARS <br>";
+//             }
+//
+//             myString += i + 1 + ". " + allInputArray[i] + "<br>";
+//         }
+//
+//         if(i >= 28 && i < 32)
+//         {
+//             if(i == 28)
+//             {
+//                 myString += "CITIES <br>";
+//             }
+//
+//             myString += i + 1 + ". " + allInputArray[i] + "<br>";
+//         }
+//     }
+//
+//     return myString;
 // }
+
+
 

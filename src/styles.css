@@ -164,6 +164,6 @@ body, html {
     background-attachment: fixed;
     background-size: cover;
     position: relative;
-    z-index: -1;    /*scrolls the div scroll over the background image*/
+    z-index: -1;    /*makes the background image underneath the other page content*/
     overflow: scroll;
 }
