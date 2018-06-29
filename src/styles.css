@@ -87,13 +87,6 @@ h2{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h3{
-    font-size: 175%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: powderblue;
-    text-align: left;
-}
-
 p{
     font-size: 30px;
     /*color: white;*/   /*changes font color for all circles*/
@@ -180,4 +173,11 @@ body, html {
 .nthElement{
     color: red;
     text-decoration: line-through;
+}
+
+li{
+    font-size: 175%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: powderblue;
+    text-align: left;
 }

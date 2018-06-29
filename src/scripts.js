@@ -8,33 +8,33 @@ function goButton()
         allInput.push($(this).val());
     });
 
-    console.log(allInput);
-
     //generates and displays the magic number
     let magicNumber = Math.floor(Math.random()*8 + 2).toString();
     $('#generate').html(magicNumber);
 
     //prints MASH header
-    document.getElementById("popupHeader").innerHTML = "M.A.S.H";
+    document.getElementById("mashHeader").innerHTML = "M.A.S.H";
 
     //document.getElementById("popupText").innerHTML = formatAllInput(allInput);     //prints ALL categories
 
-    //prints each category list as individual element in 2nd grid-container
-    $('#popupCat1').html(formatOneCategory(sliceArray(allInput, 0, 4), "COLLEGES"));
-    $('#popupCat2').html(formatOneCategory(sliceArray(allInput, 4, 8), "CAREERS"));
-    $('#popupCat3').html(formatOneCategory(sliceArray(allInput, 8, 12), "SALARIES"));
-    $('#popupCat4').html(formatOneCategory(sliceArray(allInput, 12, 16), "PETS"));
-    $('#popupCat5').html(formatOneCategory(sliceArray(allInput, 16, 20), "SPOUSES"));
-    $('#popupCat6').html(formatOneCategory(sliceArray(allInput, 20, 24), "NUMBER OF KIDS"));
-    $('#popupCat7').html(formatOneCategory(sliceArray(allInput, 24, 28), "CARS"));
-    $('#popupCat8').html(formatOneCategory(sliceArray(allInput, 28, 32), "CITIES"));
+    //prints each category list to an OL in a 2nd grid-container
+    $('#outputCat1').html(formatOneCategory(sliceArray(allInput, 0, 4), "COLLEGES"));
+    $('#outputCat2').html(formatOneCategory(sliceArray(allInput, 4, 8), "CAREERS"));
+    $('#outputCat3').html(formatOneCategory(sliceArray(allInput, 8, 12), "SALARIES"));
+    $('#outputCat4').html(formatOneCategory(sliceArray(allInput, 12, 16), "PETS"));
+    $('#outputCat5').html(formatOneCategory(sliceArray(allInput, 16, 20), "SPOUSES"));
+    $('#outputCat6').html(formatOneCategory(sliceArray(allInput, 20, 24), "NUMBER OF KIDS"));
+    $('#outputCat7').html(formatOneCategory(sliceArray(allInput, 24, 28), "CARS"));
+    $('#outputCat8').html(formatOneCategory(sliceArray(allInput, 28, 32), "CITIES"));
 
-    //makes answers visible
-    //$('.answers').css("visibility: visible");
+    //disables button after first click
+    document.getElementById("generate").disabled = true;
 
-    document.getElementById("generate").disabled = true;        //disables button after first click
 
-    countDown(magicNumber);
+    //uses magic number to iterate through <li>'s and eliminate them
+    $("li").each(function(magicNumber){
+        alert(this.text());
+    });
 }
 
 function formatOneCategory(oneCategoryArray, catName)
@@ -54,11 +54,6 @@ function sliceArray(allInput, start, end)
     return allInput.slice(start, end);
 }
 
-function countDown(magicNumber)
-{
-    //insert code here that crosses out elements of the array
-
-}
 // function formatAllInput(allInputArray)
 // {
 //     let myString = "";
