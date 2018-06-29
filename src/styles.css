@@ -171,3 +171,13 @@ body, html {
     z-index: -1;    /*makes the background image underneath the other page content*/
     overflow: scroll;
 }
+
+.current {
+    color:gray;
+    text-size: 8pt;
+}
+
+.nthElement{
+    color: red;
+    text-decoration: line-through;
+}
