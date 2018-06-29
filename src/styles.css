@@ -141,6 +141,16 @@ p{
     width: 100%;
 }
 
+.randomButton{
+    background-color: white;
+    border: none;
+    color: dimgray;
+    text-align: center;
+    font-size: 10px;
+    margin: 3px 2px;
+    cursor: pointer;
+}
+
 body{
    background-color: white;
     /*background-image:url("Images/Discover.jpg");*/

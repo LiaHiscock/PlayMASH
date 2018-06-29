@@ -54,6 +54,31 @@ function sliceArray(allInput, start, end)
     return allInput.slice(start, end);
 }
 
+var dict = {
+    Colleges: ["University of Washington", "Washington State University", "Cal Poly SLO", "Chapman", "Harvard University", "University of Georgia", "Stanford University", "Gonzaga University", "Johns Hopkins University", "New York University", "Boston University", "Seattle Central Community College"],
+    Career: ["Software Developer", "Nurse", "Janitor", "Unemployed", "Kindergarten Teacher", "McDonald's Manager", "Lawyer", "Architect", "CEO", "Bartender", "Zookeeper", "Pro Athlete"],
+    Salary: ["10K", "500K", "1M", "50K", "30K", "75K", "200K", "100K", "0", "90K", "12K", "60K"],
+    Pets: ["Bunny", "Cat", "Dog", "Hamster", "Turtle", "Mouse", "Guinea Pig", "Snake", "Lizard", "Fish", "Parrot", "Ferret"],
+    Spouse: ["Beyoncé", "Zac Efron", "Madonna", "Bill Nye The Science Guy", "Prince Harry", "Lizzy", "Bill", "Barbara", "Jacob", "Bella", "Edward", "Amy"],
+    NumKids: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+    Car: ["No car", "Ford", "Vespa Scooter", "Ferrari", "Honda", "Bentley", "Mercedes", "Golf Cart", "Metro Bus","BMW" ,"Limebike" ,"Uber"],
+    City: ["New York", "Seattle", "Portland", "San Diego", "New Orleans", "Boise", "Salt Lake City", "Los Angeles", "Houston", "Spokane" ,"Honolulu" ,"Minneapolis"],
+
+};
+function fillRandom(key){
+    var index1, index2, index3, index4;
+    index1 = Math.floor(Math.random()* 13);
+    index2 = Math.floor(Math.random()* 13);
+    index3 = Math.floor(Math.random()* 13);
+    index4 = Math.floor(Math.random()* 13);
+
+}
+
+
+
+
+
+
 // function formatAllInput(allInputArray)
 // {
 //     let myString = "";
