@@ -12,9 +12,6 @@ function goButton()
     let magicNumber = Math.floor(Math.random()*8 + 2).toString();
     $('#generate').html(magicNumber);
 
-    //prints MASH header
-    document.getElementById("mashHeader").innerHTML = "M.A.S.H";
-
     //document.getElementById("popupText").innerHTML = formatAllInput(allInput);     //prints ALL categories
 
     //prints each category list to an OL in a 2nd grid-container
@@ -32,9 +29,9 @@ function goButton()
 
 
     //uses magic number to iterate through <li>'s and eliminate them
-    $("li").each(function(magicNumber){
-        alert(this.text());
-    });
+    // $("li").each(function(magicNumber){
+    //     alert(this.text());
+    // });
 }
 
 function formatOneCategory(oneCategoryArray, catName)

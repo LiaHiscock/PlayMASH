@@ -101,13 +101,21 @@ p{
     grid-template-rows: 300px 300px 300px;
     grid-row-gap: 100px;
     grid-column-gap: 100px;
-
 }
 
 .grid-container div{
     border-radius: 50%;
     text-align: center;
     /*background: rgba(173, 20, 87, 1);  !*makes the circles semi-transparent*!*/
+}
+
+.grid-container2{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-rows: 300px 300px 300px;
+    grid-column-gap: 70px;
 }
 
 .answers{
@@ -185,9 +193,11 @@ body, html {
     text-decoration: line-through;
 }
 
-li{
+ol{
     font-size: 175%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: powderblue;
     text-align: left;
+    font-weight: bold;
+    margin: 10px 0;
 }
