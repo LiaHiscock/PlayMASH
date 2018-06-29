@@ -62,17 +62,21 @@ var dict = {
     City: ["New York", "Seattle", "Portland", "San Diego", "New Orleans", "Boise", "Salt Lake City", "Los Angeles", "Houston", "Spokane" ,"Honolulu" ,"Minneapolis"],
 
 };
-function fillRandom(key){
-    var index1, index2, index3, index4;
-    index1 = Math.floor(Math.random()* 13);
-    index2 = Math.floor(Math.random()* 13);
-    index3 = Math.floor(Math.random()* 13);
-    index4 = Math.floor(Math.random()* 13);
 
+function fillRandom(key){
+    let [index1, index2, index3, index4] = getIndicies(4);
 }
 
+function getIndicies(count) {
+    let indices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    let selected = [];
 
+    for (count; count > 0; count--) {
+        selected.push(indices[Math.floor(Math.random() * indices.length)])
+    }
 
+    return selected;
+}
 
 
 
