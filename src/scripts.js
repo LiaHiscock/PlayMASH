@@ -8,6 +8,8 @@ function goButton()
         allInput.push($(this).val());
     });
 
+    window.alert("the length of allinputs is " + allInput.length);
+
     //generates and displays the magic number
     let magicNumber = Math.floor(Math.random()*8 + 2).toString();
     $('#generate').html(magicNumber);
@@ -15,7 +17,9 @@ function goButton()
     //document.getElementById("popupText").innerHTML = formatAllInput(allInput);     //prints ALL categories
 
     //prints each category list to an OL in a 2nd grid-container
-    $('#outputCat1').html(formatOneCategory(sliceArray(allInput, 0, 4), "COLLEGES"));
+    $('#header1').html("COLLEGES");
+    $('#outputCat1').html(formatOneCategory(sliceArray(allInput, 0, 4)));
+
     $('#outputCat2').html(formatOneCategory(sliceArray(allInput, 4, 8), "CAREERS"));
     $('#outputCat3').html(formatOneCategory(sliceArray(allInput, 8, 12), "SALARIES"));
     $('#outputCat4').html(formatOneCategory(sliceArray(allInput, 12, 16), "PETS"));
@@ -34,9 +38,11 @@ function goButton()
     // });
 }
 
-function formatOneCategory(oneCategoryArray, catName)
+function formatOneCategory(oneCategoryArray)
 {
-    var myString = catName + "<br>";
+    //var myString = catName + "<br>";
+
+    var myString = "";
 
     for(i = 0; i < oneCategoryArray.length; i++)
     {
@@ -56,18 +62,18 @@ var dict = {
         "Harvard University", "University of Georgia", "Stanford University", "Gonzaga University",
         "Johns Hopkins University", "New York University", "Boston University", "University of Arizona",
         "Brown University"],
-    career: ["Software Developer", "Nurse", "Janitor", "Unemployed", "Kindergarten Teacher",
+    careers: ["Software Developer", "Nurse", "Janitor", "Unemployed", "Kindergarten Teacher",
         "McDonald's Manager", "Lawyer", "Architect", "CEO", "Bartender", "Zookeeper",
         "Pro Athlete", "Yoga Instructor"],
-    salary: ["10K", "500K", "1M", "50K", "30K", "75K", "200K", "100K", "0", "90K", "12K", "60K", "120K"],
+    salaries: ["10K", "500K", "1M", "50K", "30K", "75K", "200K", "100K", "0", "90K", "12K", "60K", "120K"],
     pets: ["Bunny", "Cat", "Dog", "Hamster", "Turtle", "Mouse", "Guinea Pig", "Snake", "Lizard",
         "Fish", "Parrot", "Ferret", "Ladybug"],
-    spouse: ["Beyoncé", "Zac Efron", "Madonna", "Bill Nye The Science Guy", "Prince Harry",
+    spouses: ["Beyoncé", "Zac Efron", "Madonna", "Bill Nye The Science Guy", "Prince Harry",
         "Lizzy", "Bill", "Barbara", "Jacob", "Bella", "Edward", "Amy", "Matt"],
     kids: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
-    car: ["No car", "Ford", "Vespa Scooter", "Ferrari", "Honda", "Bentley", "Mercedes",
+    cars: ["No car", "Ford", "Vespa Scooter", "Ferrari", "Honda", "Bentley", "Mercedes",
         "Golf Cart", "Metro Bus", "BMW", "Limebike", "Uber", "Skateboard"],
-    city: ["New York", "Seattle", "Portland", "San Diego", "New Orleans", "Boise", "Salt Lake City",
+    cities: ["New York", "Seattle", "Portland", "San Diego", "New Orleans", "Boise", "Salt Lake City",
         "Los Angeles", "Houston", "Spokane", "Honolulu", "Minneapolis", "Chicago"],
 };
 
@@ -77,22 +83,27 @@ function fillRandomColleges(key){
     document.getElementsByClassName(key)[1].setAttribute("value",dict.colleges[index2]);
     document.getElementsByClassName(key)[2].setAttribute("value",dict.colleges[index3]);
     document.getElementsByClassName(key)[3].setAttribute("value",dict.colleges[index4]);
+
+//     $('input.key')[0].setAttribute("value",dict.colleges[index1]);
+//     $('.key')[1].setAttribute("value",dict.colleges[index2]);
+//     $('.key')[2].setAttribute("value",dict.colleges[index3]);
+//     $('.key')[3].setAttribute("value",dict.colleges[index4]);
 }
 
 function fillRandomCareer(key){
     let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.career[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.career[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.career[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.career[index4]);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.careers[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.careers[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.careers[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.careers[index4]);
 }
 
 function fillRandomSalary(key){
     let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.salary[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.salary[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.salary[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.salary[index4]);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.salaries[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.salaries[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.salaries[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.salaries[index4]);
 }
 
 function fillRandomPet(key){
@@ -105,10 +116,10 @@ function fillRandomPet(key){
 
 function fillRandomSpouse(key){
     let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.spouse[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.spouse[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.spouse[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.spouse[index4]);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.spouses[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.spouses[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.spouses[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.spouses[index4]);
 }
 
 function fillRandomNumKids(key){
@@ -121,18 +132,18 @@ function fillRandomNumKids(key){
 
 function fillRandomCar(key){
     let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.car[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.car[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.car[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.car[index4]);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.cars[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.cars[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.cars[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.cars[index4]);
 }
 
 function fillRandomCity(key){
     let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.city[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.city[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.city[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.city[index4]);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.cities[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.cities[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.cities[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.cities[index4]);
 }
 
 function getIndices(count) {
