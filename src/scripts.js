@@ -59,7 +59,7 @@ var dict = {
     career: ["Software Developer", "Nurse", "Janitor", "Unemployed", "Kindergarten Teacher",
         "McDonald's Manager", "Lawyer", "Architect", "CEO", "Bartender", "Zookeeper",
         "Pro Athlete", "Yoga Instructor"],
-    salary: ["10K", "500K", "1M", "50K", "30K", "75K", "200K", "100K", "0", "90K", "12K", "60K"],
+    salary: ["10K", "500K", "1M", "50K", "30K", "75K", "200K", "100K", "0", "90K", "12K", "60K", "120K"],
     pets: ["Bunny", "Cat", "Dog", "Hamster", "Turtle", "Mouse", "Guinea Pig", "Snake", "Lizard",
         "Fish", "Parrot", "Ferret", "Ladybug"],
     spouse: ["Beyoncé", "Zac Efron", "Madonna", "Bill Nye The Science Guy", "Prince Harry",
