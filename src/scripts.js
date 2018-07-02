@@ -71,16 +71,68 @@ var dict = {
         "Los Angeles", "Houston", "Spokane", "Honolulu", "Minneapolis", "Chicago"],
 };
 
-function fillRandom(key){
+function fillRandomColleges(key){
     let [index1, index2, index3, index4] = getIndices(4);
-    console.log(index1);
-    console.log(index2);
-    console.log(index3);
-    console.log(index4);
     document.getElementsByClassName(key)[0].setAttribute("value",dict.colleges[index1]);
     document.getElementsByClassName(key)[1].setAttribute("value",dict.colleges[index2]);
     document.getElementsByClassName(key)[2].setAttribute("value",dict.colleges[index3]);
     document.getElementsByClassName(key)[3].setAttribute("value",dict.colleges[index4]);
+}
+
+function fillRandomCareer(key){
+    let [index1, index2, index3, index4] = getIndices(4);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.career[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.career[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.career[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.career[index4]);
+}
+
+function fillRandomSalary(key){
+    let [index1, index2, index3, index4] = getIndices(4);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.salary[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.salary[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.salary[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.salary[index4]);
+}
+
+function fillRandomPet(key){
+    let [index1, index2, index3, index4] = getIndices(4);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.pets[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.pets[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.pets[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.pets[index4]);
+}
+
+function fillRandomSpouse(key){
+    let [index1, index2, index3, index4] = getIndices(4);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.spouse[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.spouse[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.spouse[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.spouse[index4]);
+}
+
+function fillRandomNumKids(key){
+    let [index1, index2, index3, index4] = getIndices(4);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.kids[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.kids[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.kids[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.kids[index4]);
+}
+
+function fillRandomCar(key){
+    let [index1, index2, index3, index4] = getIndices(4);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.car[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.car[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.car[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.car[index4]);
+}
+
+function fillRandomCity(key){
+    let [index1, index2, index3, index4] = getIndices(4);
+    document.getElementsByClassName(key)[0].setAttribute("value",dict.city[index1]);
+    document.getElementsByClassName(key)[1].setAttribute("value",dict.city[index2]);
+    document.getElementsByClassName(key)[2].setAttribute("value",dict.city[index3]);
+    document.getElementsByClassName(key)[3].setAttribute("value",dict.city[index4]);
 }
 
 function getIndices(count) {
@@ -90,12 +142,15 @@ function getIndices(count) {
     for (count; count > 0; count--) {
         let randomNum = Math.floor(Math.random() * indices.length);
 
+        /*
         if(indices[randomNum] === "used"){
             randomNum = Math.floor(Math.random() * indices.length);
         }
+        */
 
         selected.push(indices[randomNum]);
-        indices[randomNum] = "used";
+        indices.splice(randomNum, 1);
+        //indices[randomNum] = "used";
     }
 
     return selected;
