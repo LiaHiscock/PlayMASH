@@ -20,13 +20,26 @@ function goButton()
     $('#header1').html("COLLEGES");
     $('#outputCat1').html(formatOneCategory(sliceArray(allInput, 0, 4)));
 
-    $('#outputCat2').html(formatOneCategory(sliceArray(allInput, 4, 8), "CAREERS"));
-    $('#outputCat3').html(formatOneCategory(sliceArray(allInput, 8, 12), "SALARIES"));
-    $('#outputCat4').html(formatOneCategory(sliceArray(allInput, 12, 16), "PETS"));
-    $('#outputCat5').html(formatOneCategory(sliceArray(allInput, 16, 20), "SPOUSES"));
-    $('#outputCat6').html(formatOneCategory(sliceArray(allInput, 20, 24), "NUMBER OF KIDS"));
-    $('#outputCat7').html(formatOneCategory(sliceArray(allInput, 24, 28), "CARS"));
-    $('#outputCat8').html(formatOneCategory(sliceArray(allInput, 28, 32), "CITIES"));
+    $('#header2').html("CAREERS");
+    $('#outputCat2').html(formatOneCategory(sliceArray(allInput, 4, 8)));
+
+    $('#header3').html("SALARIES");
+    $('#outputCat3').html(formatOneCategory(sliceArray(allInput, 8, 12)));
+
+    $('#header4').html("PETS");
+    $('#outputCat4').html(formatOneCategory(sliceArray(allInput, 12, 16)));
+
+    $('#header5').html("SPOUSES");
+    $('#outputCat5').html(formatOneCategory(sliceArray(allInput, 16, 20)));
+
+    $('#header6').html("NUMBER OF KIDS");
+    $('#outputCat6').html(formatOneCategory(sliceArray(allInput, 20, 24)));
+
+    $('#header7').html("CARS");
+    $('#outputCat7').html(formatOneCategory(sliceArray(allInput, 24, 28)));
+
+    $('#header8').html("CITIES");
+    $('#outputCat8').html(formatOneCategory(sliceArray(allInput, 28, 32)));
 
     //disables button after first click
     document.getElementById("generate").disabled = true;
