@@ -150,13 +150,16 @@ p{
 }
 
 .randomButton{
+    padding: 8px 11px;
+    display: inline-block;
     background-color: white;
-    border: none;
     color: dimgray;
     text-align: center;
-    font-size: 10px;
+    font-size: 13px;
     margin: 3px 2px;
     cursor: pointer;
+    border-radius: 0;
+
 }
 
 body{
