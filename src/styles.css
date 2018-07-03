@@ -112,11 +112,12 @@ p{
 
 .grid-container2{
     display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(auto-fit, 300px);
+    align-self: center;
+    justify-self: center;
+    grid-template-columns: repeat(auto-fit, 350px);
     grid-template-rows: 300px 300px 300px;
     grid-column-gap: 70px;
+    grid-row-gap: 75px;
 }
 
 .answers{
@@ -194,7 +195,7 @@ body, html {
 }
 
 .nthElement{
-    color: red;
+    text-emphasis-color: red;
     text-decoration: line-through;
 }
 
@@ -205,6 +206,7 @@ ol{
     text-align: left;
     font-weight: bold;
     margin: 10px 0;
+    list-style-type:none
 }
 
 input{

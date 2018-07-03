@@ -14,7 +14,14 @@ function goButton()
 
     //document.getElementById("popupText").innerHTML = formatAllInput(allInput);     //prints ALL categories
 
+    //scrolls to the printed results
+    $('html,body').animate( {scrollTop: $(".scrollHere").offset().top} , 'slow');
+
+
     //prints each category list to an OL in a 2nd grid-container
+    $('#header0').html("HOME");
+    $('#cat0').html("MANSION <br> APARTMENT <br> SHACK <br> HOUSE <br>");
+
     $('#header1').html("COLLEGES");
     $('#outputCat1').html(formatOneCategory(sliceArray(allInput, 0, 4)));
 
@@ -44,9 +51,9 @@ function goButton()
 
 
     //uses magic number to iterate through <li>'s and eliminate them
-    // $("li").each(function(magicNumber){
-    //     alert(this.text());
-    // });
+    $("li").each(function(magicNumber){
+        this.addClass("nthElement");
+    });
 }
 
 function formatOneCategory(oneCategoryArray)
@@ -57,7 +64,7 @@ function formatOneCategory(oneCategoryArray)
 
     for(i = 0; i < oneCategoryArray.length; i++)
     {
-        myString += i + 1 + ". " + oneCategoryArray[i] + "<br>";
+        myString += oneCategoryArray[i] + "<br>";
     }
 
     return myString;
