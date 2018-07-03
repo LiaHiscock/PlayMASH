@@ -91,6 +91,7 @@ p{
     font-size: 30px;
     /*color: white;*/   /*changes font color for all circles*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
 }
 
 .grid-container{
@@ -150,7 +151,7 @@ p{
 }
 
 .randomButton{
-    padding: 8px 11px;
+    padding: 5px 10px;
     display: inline-block;
     background-color: white;
     color: dimgray;
@@ -159,6 +160,7 @@ p{
     margin: 3px 2px;
     cursor: pointer;
     border-radius: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
@@ -203,4 +205,8 @@ ol{
     text-align: left;
     font-weight: bold;
     margin: 10px 0;
+}
+
+input{
+    margin: 10px;
 }

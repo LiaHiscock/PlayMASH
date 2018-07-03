@@ -8,8 +8,6 @@ function goButton()
         allInput.push($(this).val());
     });
 
-    window.alert("the length of allinputs is " + allInput.length);
-
     //generates and displays the magic number
     let magicNumber = Math.floor(Math.random()*8 + 2).toString();
     $('#generate').html(magicNumber);
