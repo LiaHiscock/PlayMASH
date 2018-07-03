@@ -124,7 +124,7 @@ p{
     /*background: rgba(173, 20, 87, 1);  !*makes the circles semi-transparent*!*/
 }
 
-.grid-container2{
+.grid-container2 {
     display: grid;
     align-self: center;
     justify-self: center;

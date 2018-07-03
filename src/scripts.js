@@ -9,7 +9,7 @@ function goButton()
     });
 
     //generates and displays the magic number
-    let magicNumber = Math.floor(Math.random()*8 + 2).toString();
+    let magicNumber = Math.floor(Math.random()* 8 + 2).toString();
     $('#generate').html(magicNumber);
 
     //document.getElementById("popupText").innerHTML = formatAllInput(allInput);     //prints ALL categories
@@ -54,6 +54,7 @@ function goButton()
     $("li").each(function(magicNumber){
         this.addClass("nthElement");
     });
+
 }
 
 function formatOneCategory(oneCategoryArray)
@@ -185,6 +186,19 @@ function getIndices(count) {
 
     return selected;
 }
+
+
+
+function displayPlayerName(){
+    var playerName = document.getElementById("pName").value;
+    window.alert(displayPlayerName);
+    /*playerName = $('#playerName :input');
+    "storypage.html?name=" + playerName;*/
+}
+
+
+
+document.getElementById("displayName").innerHTML = playerName;
 
 var myCollege, myCareer, mySalary, myPet, mySpouse, myKids, myCar, myCity;
 
