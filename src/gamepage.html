@@ -9,210 +9,212 @@
     </head>
 
     <body>
-        <div id="backgroundImage2"></div>
 
-        <div class="header">
-            <h1>Play MASH!</h1>
-            <h2>Complete each blank, then click go</h2>
+    <div id="backgroundImage2"></div>
+
+    <div class="header">
+        <h1>Play MASH!</h1>
+        <h2>Complete each blank, then click go</h2>
+    </div>
+
+    <br>
+
+    <form id="myform">
+        <div align="center" class="grid-container">
+            <div class="mintCircles">
+                <p>College</p>
+                <div style="border-radius: 10%" class="randomButton" onclick="fillRandomColleges('colleges')">Random</div>
+                <br>
+                <input type="text" class="colleges" title="college" required><br>
+                <input type="text" class="colleges" title="college" required><br>
+                <input type="text" class="colleges" title="college" required><br>
+                <input type="text" class="colleges" title="college" required><br>
+            </div>
+
+            <div class="pinkCircles">
+                <p>Career</p>
+                <div style="border-radius: 10%" class="randomButton" onclick="fillRandomCareer('careers')">Random</div>
+                <br>
+                <input type="text" class="careers" title="career" required><br>
+                <input type="text" class="careers" title="career" required><br>
+                <input type="text" class="careers" title="career" required><br>
+                <input type="text" class="careers" title="career" required><br>
+                <!--</p>-->
+            </div>
+
+            <div class="mintCircles">
+                <p>Salary</p>
+                <div style="border-radius: 10%" class="randomButton" onclick="fillRandomSalary('salaries')">Random</div>
+                <br>
+                <input type="text" class="salaries" title="salary" required><br>
+                <input type="text" class="salaries" title="salary" required><br>
+                <input type="text" class="salaries" title="salary" required><br>
+                <input type="text" class="salaries" title="salary" required><br>
+            </div>
+
+            <div class="pinkCircles">
+                <p>Pets</p>
+                <div style="border-radius: 10%" class="randomButton" onclick="fillRandomPet('pets')">Random</div>
+                <br>
+                <input type="text" class="pets" title="pet" required><br>
+                <input type="text" class="pets" title="pet" required><br>
+                <input type="text" class="pets" title="pet" required><br>
+                <input type="text" class="pets" title="pet" required><br>
+            </div>
+
+            <div class="mintCircles">
+                <p>Spouse</p>
+                <div style="border-radius: 10%" class="randomButton" onclick="fillRandomSpouse('spouses')">Random</div>
+                <br>
+                <input type="text" class="spouses" title="spouse" required><br>
+                <input type="text" class="spouses" title="spouse" required><br>
+                <input type="text" class="spouses" title="spouse" required><br>
+                <input type="text" class="spouses" title="spouse" required><br>
+            </div>
+
+            <div class="pinkCircles">
+                <p># of Kids</p>
+                <div style="border-radius: 10%" class="randomButton" onclick="fillRandomNumKids('kids')">Random</div>
+                <br>
+                <input type="text" class="kids" title="numKids" required><br>
+                <input type="text" class="kids" title="numKids" required><br>
+                <input type="text" class="kids" title="numKids" required><br>
+                <input type="text" class="kids" title="numKids" required><br>
+            </div>
+
+            <div class="mintCircles">
+                <p>Car</p>
+                <div style="border-radius: 10%" class="randomButton" onclick="fillRandomCar('cars')">Random</div>
+                <br>
+                <input type="text" class="cars" title="car" required><br>
+                <input type="text" class="cars" title="car" required><br>
+                <input type="text" class="cars" title="car" required><br>
+                <input type="text" class="cars" title="car" required><br>
+            </div>
+
+            <div class="pinkCircles">
+                <p>City</p>
+                <div style="border-radius: 10%" class="randomButton" onclick="fillRandomCity('cities')">Random</div>
+                <br>
+                <input type="text" class="cities" title="city" required><br>
+                <input type="text" class="cities" title="city" required><br>
+                <input type="text" class="cities" title="city" required><br>
+                <input type="text" class="cities" title="city" required><br>
+            </div>
+
+            <button id="generate" class="goButton" onclick=goButton()>GO</button>
+        </div>
+    </form>
+
+    <br><br><br>
+
+    <div align="center" class="grid-container2">
+        <div>
+            <ol>
+                <li>Mansion</li>
+                <li>Apartment</li>
+                <li>Shack</li>
+                <li>House</li>
+            </ol>
         </div>
 
-        <br>
-
-        <form id="myform">
-            <div align="center" class="grid-container">
-                <div class="mintCircles">
-                    <p>College</p>
-                    <div style="border-radius: 10%" class="randomButton" onclick="fillRandomColleges('colleges')">Random</div>
-                    <br>
-                    <input type="text" class="colleges" title="college" required><br>
-                    <input type="text" class="colleges" title="college" required><br>
-                    <input type="text" class="colleges" title="college" required><br>
-                    <input type="text" class="colleges" title="college" required><br>
-                </div>
-
-                <div class="pinkCircles">
-                    <p>Career</p>
-                    <div style="border-radius: 10%" class="randomButton" onclick="fillRandomCareer('careers')">Random</div>
-                    <br>
-                    <input type="text" class="careers" title="career" required><br>
-                    <input type="text" class="careers" title="career" required><br>
-                    <input type="text" class="careers" title="career" required><br>
-                    <input type="text" class="careers" title="career" required><br>
-                    <!--</p>-->
-                </div>
-
-                <div class="mintCircles">
-                    <p>Salary</p>
-                    <div style="border-radius: 10%" class="randomButton" onclick="fillRandomSalary('salaries')">Random</div>
-                    <br>
-                    <input type="text" class="salaries" title="salary" required><br>
-                    <input type="text" class="salaries" title="salary" required><br>
-                    <input type="text" class="salaries" title="salary" required><br>
-                    <input type="text" class="salaries" title="salary" required><br>
-                </div>
-
-                <div class="pinkCircles">
-                    <p>Pets</p>
-                    <div style="border-radius: 10%" class="randomButton" onclick="fillRandomPet('pets')">Random</div>
-                    <br>
-                    <input type="text" class="pets" title="pet" required><br>
-                    <input type="text" class="pets" title="pet" required><br>
-                    <input type="text" class="pets" title="pet" required><br>
-                    <input type="text" class="pets" title="pet" required><br>
-                </div>
-
-                <div class="mintCircles">
-                    <p>Spouse</p>
-                    <div style="border-radius: 10%" class="randomButton" onclick="fillRandomSpouse('spouses')">Random</div>
-                    <br>
-                    <input type="text" class="spouses" title="spouse" required><br>
-                    <input type="text" class="spouses" title="spouse" required><br>
-                    <input type="text" class="spouses" title="spouse" required><br>
-                    <input type="text" class="spouses" title="spouse" required><br>
-                </div>
-
-                <div class="pinkCircles">
-                    <p># of Kids</p>
-                    <div style="border-radius: 10%" class="randomButton" onclick="fillRandomNumKids('kids')">Random</div>
-                    <br>
-                    <input type="text" class="kids" title="numKids" required><br>
-                    <input type="text" class="kids" title="numKids" required><br>
-                    <input type="text" class="kids" title="numKids" required><br>
-                    <input type="text" class="kids" title="numKids" required><br>
-                </div>
-
-                <div class="mintCircles">
-                    <p>Car</p>
-                    <div style="border-radius: 10%" class="randomButton" onclick="fillRandomCar('cars')">Random</div>
-                    <br>
-                    <input type="text" class="cars" title="car" required><br>
-                    <input type="text" class="cars" title="car" required><br>
-                    <input type="text" class="cars" title="car" required><br>
-                    <input type="text" class="cars" title="car" required><br>
-                </div>
-
-                <div class="pinkCircles">
-                    <p>City</p>
-                    <div style="border-radius: 10%" class="randomButton" onclick="fillRandomCity('cities')">Random</div>
-                    <br>
-                    <input type="text" class="cities" title="city" required><br>
-                    <input type="text" class="cities" title="city" required><br>
-                    <input type="text" class="cities" title="city" required><br>
-                    <input type="text" class="cities" title="city" required><br>
-                </div>
-
-                <button id="generate" class="goButton" onclick=goButton()>GO</button>
-            </div>
-        </form>
-
-        <br><br><br>
-
-        <div align="center" class="grid-container2 scrollHere">
-            <div>
-                <h1 id="header0"></h1>
-                <ol id="cat0">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
-
-            <div>
-                <h1 id="header1"></h1>
-                <ol id="outputCat1">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
-
-            <div>
-                <h1 id="header2"></h1>
-                <ol id="outputCat2">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
-
-            <div>
-                <h1 id="header3"></h1>
-                <ol id="outputCat3">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
-
-            <div>
-                <h1 id="header4"></h1>
-                <ol id="outputCat4">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
-
-            <div>
-                <h1 id="header5"></h1>
-                <ol id="outputCat5">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
-
-            <div>
-                <h1 id="header6"></h1>
-                <ol id="outputCat6">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
-
-            <div>
-                <h1 id="header7"></h1>
-                <ol id="outputCat7">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
-
-            <div>
-                <h1 id="header8"></h1>
-                <ol id="outputCat8">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </div>
-
-            <!--<h2 id="popupText"></h2>    h2 for ALL categories at once function-->
+        <div>
+            <h1 id="header1"></h1>
+            <ol id="outputCat1">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-                crossorigin="anonymous">
-        </script>
+        <div>
+            <h1 id="header2"></h1>
+            <ol id="outputCat2">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+        <div>
+            <h1 id="header3"></h1>
+            <ol id="outputCat3">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+        <div>
+            <h1 id="header4"></h1>
+            <ol id="outputCat4">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+        <div>
+            <h1 id="header5"></h1>
+            <ol id="outputCat5">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+        <div>
+            <h1 id="header6"></h1>
+            <ol id="outputCat6">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+        <div>
+            <h1 id="header7"></h1>
+            <ol id="outputCat7">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+        <div>
+            <h1 id="header8"></h1>
+            <ol id="outputCat8">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+        <!--<h2 id="popupText"></h2>    h2 for ALL categories at once function-->
+    </div>
 
 
-        <script>
-            $(document).ready(function(){
-                console.log("my document loaded");
-            });
-        </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
 
-        <script src="scripts.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            console.log("my document loaded");
+        });
+    </script>
+
+    <script src="scripts.js"></script>
+
     </body>
 </html>
