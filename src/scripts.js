@@ -186,6 +186,8 @@ function getIndices(count) {
     return selected;
 }
 
+var myCollege, myCareer, mySalary, myPet, mySpouse, myKids, myCar, myCity;
+
 
 
 // function formatAllInput(allInputArray)

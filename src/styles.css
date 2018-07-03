@@ -1,6 +1,6 @@
 /*HOMEPAGE STYLESHEET*/
 .button1{
-    padding: 15px 25px;
+    padding: 10px 25px;
     font-size: 24px;
     text-align: center;
     cursor: pointer;
@@ -11,7 +11,7 @@
     box-shadow: 0 9px #999;
     height:60px;
     width:100px;
-    margin: 350px -50px;
+    margin: 20px -74px;
     position:relative;
     top:50%;
     left:50%;
@@ -92,6 +92,20 @@ p{
     /*color: white;*/   /*changes font color for all circles*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 10px;
+}
+
+.playAgainButton{
+    background-color: powderblue;
+    color: #999999;
+    padding: 140px;
+    text-align: center;
+    display: inline-block;
+    font-size: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
 }
 
 .grid-container{
