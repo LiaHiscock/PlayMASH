@@ -20,7 +20,10 @@ function goButton()
 
     //prints each category list to an OL in a 2nd grid-container
     $('#header0').html("HOME");
-    $('#cat0').html("MANSION <br> APARTMENT <br> SHACK <br> HOUSE <br>");
+    $('#cat0').html("<li class='active'>MANSION</li>" +
+        "<li class='active'>APARTMENT</li> " +
+        "<li class='active'>SHACK</li>" +
+        "<li class='active'>HOUSE</li>");
 
     $('#header1').html("COLLEGES");
     $('#outputCat1').html(formatOneCategory(sliceArray(allInput, 0, 4)));
@@ -49,12 +52,7 @@ function goButton()
     //disables button after first click
     document.getElementById("generate").disabled = true;
 
-
-    //uses magic number to iterate through <li>'s and eliminate them
-    $("li").each(function(magicNumber){
-        this.addClass("nthElement");
-    });
-
+    eliminateAllButOnePerCat(magicNumber);
 }
 
 function formatOneCategory(oneCategoryArray)
@@ -65,7 +63,7 @@ function formatOneCategory(oneCategoryArray)
 
     for(i = 0; i < oneCategoryArray.length; i++)
     {
-        myString += oneCategoryArray[i] + "<br>";
+        myString += `<li class="active">${oneCategoryArray[i]}</li>`;
     }
 
     return myString;
@@ -103,11 +101,6 @@ function fillRandomColleges(key){
     document.getElementsByClassName(key)[1].setAttribute("value",dict.colleges[index2]);
     document.getElementsByClassName(key)[2].setAttribute("value",dict.colleges[index3]);
     document.getElementsByClassName(key)[3].setAttribute("value",dict.colleges[index4]);
-
-//     $('input.key')[0].setAttribute("value",dict.colleges[index1]);
-//     $('.key')[1].setAttribute("value",dict.colleges[index2]);
-//     $('.key')[2].setAttribute("value",dict.colleges[index3]);
-//     $('.key')[3].setAttribute("value",dict.colleges[index4]);
 }
 
 function fillRandomCareer(key){
@@ -198,11 +191,76 @@ function displayPlayerName(){
 
 
 
-document.getElementById("displayName").innerHTML = playerName;
+//document.getElementById("displayName").innerHTML = playerName;
 
 var myCollege, myCareer, mySalary, myPet, mySpouse, myKids, myCar, myCity;
 
+function eliminateAllButOnePerCat(magicNumber)
+{
+    var categoryGroups = [];
+    var optionsLeft = true;
 
+    $("ol").each(function (index, element)
+    {
+        categoryGroups.push(element);
+    });
+
+    while( optionsLeft )
+    {
+        var activeNumber = 1;
+
+        $.each(categoryGroups, function (index, element){
+            var activeElements = element.getElementsByClassName("active");
+
+            if( activeElements.length > 1 ){
+
+                $.each(activeElements, function(listItem){
+                    if(activeNumber % magicNumber === 0){
+                        listItem.classList = "nthElement";
+                        activeNumber = 1;
+                    } else {
+                        activeNumber++;
+                    }
+
+                });
+
+
+
+                // if( activeElements.length >= activeNumber){
+                //     // activeElements[magicNumber - 1].removeClass("active");
+                //     // activeElements[magicNumber - 1].addClass("nthElement");
+                //
+                // }
+                //
+                // else{
+                //     activeNumber -= activeElements.length;
+                // }
+            }
+        });
+
+        optionsLeft = checkIfOptionsLeft(categoryGroups);
+    }
+}
+
+function checkIfOptionsLeft(categoryGroups){
+    var optionsLeft = false;
+
+    $.each(categoryGroups, function (index, element){
+        var activeEl = element.getElementsByClassName("active");
+
+        if(activeEl.length > 1){
+            optionsLeft = true;
+        }
+    });
+
+    return optionsLeft;
+}
+// function finalOptionChosen(index){
+//   if (index >= && index <= 3)
+//     {
+
+//     }
+// }
 
 // function formatAllInput(allInputArray)
 // {
@@ -294,6 +352,3 @@ var myCollege, myCareer, mySalary, myPet, mySpouse, myKids, myCar, myCity;
 //
 //     return myString;
 // }
-
-
-

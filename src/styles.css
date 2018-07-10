@@ -209,7 +209,7 @@ body, html {
 }
 
 .nthElement{
-    text-emphasis-color: red;
+    color: red;
     text-decoration: line-through;
 }
 
