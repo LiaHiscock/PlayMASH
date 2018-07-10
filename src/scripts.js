@@ -214,11 +214,13 @@ function eliminateAllButOnePerCat(magicNumber)
 
             if( activeElements.length > 1 ){
 
-                $.each(activeElements, function(listItem){
-                    if(activeNumber % magicNumber === 0){
+                $.each(activeElements, function(index, listItem){
+                    if(magicNumber % activeNumber === 0 && listItem){
                         listItem.classList = "nthElement";
+
                         activeNumber = 1;
-                    } else {
+                    }
+                    else {
                         activeNumber++;
                     }
 
