@@ -82,7 +82,7 @@ var dict = {
         "Fish", "Parrot", "Ferret", "Ladybug"],
     spouses: ["Beyoncé", "Zac Efron", "Madonna", "Bill Nye The Science Guy", "Prince Harry",
         "Young Leonardo DiCaprio", "Ellen DeGeneres", "Dumbledore", "Jacob Black", "Bella Swan", "Edward Cullen", "Drake", "Oprah"],
-    kids: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
+    kids: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
     cars: ["No car", "Ford", "Vespa Scooter", "Ferrari", "Honda", "Bentley", "Mercedes",
         "Golf Cart", "Metro Bus", "BMW", "Limebike", "Uber", "Skateboard"],
     cities: ["New York", "Seattle", "Portland", "San Diego", "New Orleans", "Boise", "Salt Lake City",
@@ -154,9 +154,11 @@ function eliminateAllButOnePerCat(magicNumber)
 
                 $.each(activeElements, function(index, listItem){
                     if (listItem){
+                        function x(item) {
                         setTimeout(function(){
-                            listItem.classList.remove("current");
+                            item.classList.remove("current");
                         }, 500);
+                        }(listItem)
                     }
 
                     if(magicNumber % activeNumber === 0 && listItem){
@@ -206,100 +208,7 @@ function currentElement(listItem){
     listItem.classList = "current";
     setTimeout()
 }
-// function finalOptionChosen(index){
-//   if (index >= && index <= 3)
-//     {
 
-//     }
-// }
 
-// function formatAllInput(allInputArray)
-// {
-//     let myString = "";
-//
-//     for(i = 0; i < allInputArray.length; i++)
-//     {
-//         if(i < 4)
-//         {
-//             if(i == 0)
-//             {
-//                 myString += "COLLEGES";
-//                 myString += "<br>";
-//             }
-//
-//             myString += (i + 1) + ". " + allInputArray[i] + "<br>";
-//         }
-//
-//         if(i >= 4 && i < 8)
-//         {
-//             if(i == 4)
-//             {
-//                 myString += "CAREERS" + "<br>";
-//             }
-//
-//             myString += (i + 1) + ". " + allInputArray[i] + "<br>";
-//         }
-//
-//         if(i >= 8 && i < 12)
-//         {
-//             if(i == 8)
-//             {
-//                 myString += "SALARIES" + "<br>";
-//             }
-//
-//             myString += (i + 1) + ". " + allInputArray[i] + "<br>";
-//         }
-//
-//         if(i >= 12 && i < 16)
-//         {
-//             if(i == 12)
-//             {
-//                 myString += "PETS <br>";
-//             }
-//
-//             myString += (i + 1) + ". " + allInputArray[i] + "<br>";
-//         }
-//
-//         if(i >= 16 && i < 20)
-//         {
-//             if(i == 16)
-//             {
-//                 myString += "SPOUSES <br>";
-//             }
-//
-//             myString += i + 1 + ". " + allInputArray[i] + "<br>";
-//         }
-//
-//         if(i >= 20 && i < 24)
-//         {
-//             if(i == 20)
-//             {
-//                 myString += "NUMBER OF KIDS <br>";
-//             }
-//
-//             myString += i + 1 + ". " + allInputArray[i] + "<br>";
-//         }
-//
-//         if(i >= 24 && i < 28)
-//         {
-//             if(i == 24)
-//             {
-//                 myString += "CARS <br>";
-//             }
-//
-//             myString += i + 1 + ". " + allInputArray[i] + "<br>";
-//         }
-//
-//         if(i >= 28 && i < 32)
-//         {
-//             if(i == 28)
-//             {
-//                 myString += "CITIES <br>";
-//             }
-//
-//             myString += i + 1 + ". " + allInputArray[i] + "<br>";
-//         }
-//     }
-//
-//     return myString;
-// }
+
+
