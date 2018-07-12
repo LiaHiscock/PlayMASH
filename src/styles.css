@@ -176,7 +176,18 @@ p{
     cursor: pointer;
     border-radius: 0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+}
+.randomButton:hover{
+    padding: 5px 10px;
+    display: inline-block;
+    background-color: lightgrey;
+    color: dimgray;
+    text-align: center;
+    font-size: 13px;
+    margin: 3px 2px;
+    cursor: pointer;
+    border-radius: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
