@@ -215,6 +215,12 @@ function eliminateAllButOnePerCat(magicNumber)
             if( activeElements.length > 1 ){
 
                 $.each(activeElements, function(index, listItem){
+                    if (listItem){
+                        setTimeout(function(){
+                            listItem.classList.remove("current");
+                        }, 500);
+                    }
+
                     if(magicNumber % activeNumber === 0 && listItem){
                         listItem.classList = "nthElement";
 
@@ -256,6 +262,11 @@ function checkIfOptionsLeft(categoryGroups){
     });
 
     return optionsLeft;
+}
+
+function currentElement(listItem){
+    listItem.classList = "current";
+    setTimeout()
 }
 // function finalOptionChosen(index){
 //   if (index >= && index <= 3)
