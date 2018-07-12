@@ -101,7 +101,9 @@
             <input type="text" class="cities" title="city" required><br>
         </div>
 
-        <button id="generate" class="goButton" onclick=goButton()>GO</button>
+        <button class="goButton" onclick="return randomizeAll()">randomize all</button>
+
+        <button id="generate" class="goButton" onclick="return goButton()">GO</button>
     </div>
 </form>
 
@@ -213,6 +215,7 @@
     $(document).ready(function(){
         console.log("my document loaded");
     });
+
 </script>
 
 <script src="scripts.js"></script>
