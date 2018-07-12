@@ -48,6 +48,8 @@ function goButton() {
     document.getElementById("generate").disabled = true;
 
     eliminateAllButOnePerCat(magicNumber);
+
+    return false;
 }
 
 function formatOneCategory(oneCategoryArray) {
@@ -91,6 +93,19 @@ function fillFieldsRandomly(key) {
     for (i = 0; i < 4; i++) {
         $('.' + key)[i].setAttribute("value", dict[key][randomNumsArray[i]]);
     }
+}
+
+function randomizeAll() {
+    console.log(arguments);
+    fillFieldsRandomly("colleges");
+    fillFieldsRandomly("careers");
+    fillFieldsRandomly("salaries");
+    fillFieldsRandomly("pets");
+    fillFieldsRandomly("spouses");
+    fillFieldsRandomly("kids");
+    fillFieldsRandomly("cars");
+    fillFieldsRandomly("cities");
+    return false;
 }
 
 function getIndices(count) {
