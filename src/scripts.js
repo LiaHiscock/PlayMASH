@@ -1,26 +1,25 @@
-function goButton()
-{
+function goButton() {
     let allInput = [];
     let goButtonElement = $('#generate');
 
     inputs = $('#myform :input');
 
-    inputs.each(function() {
+    inputs.each(function () {
         allInput.push($(this).val());
     });
 
-    let magicNumber = Math.floor(Math.random()* 8 + 2).toString();
-    goButtonElement.html(magicNumber);
+    let magicNumber = Math.floor(Math.random() * 8 + 2).toString();
+    document.getElementById("generate").innerHTML = magicNumber;
 
     //scrolls to the printed results
-    $('html,body').animate( {scrollTop: $(".scrollHere").offset().top} , 'slow');
+    $('html,body').animate({scrollTop: $(".scrollHere").offset().top}, 'slow');
 
     //prints each category list to an OL in a 2nd grid-container
     $('#header0').html("HOME");
     $('#cat0').html("<li class='active'>MANSION</li>" +
-                    "<li class='active'>APARTMENT</li> " +
-                    "<li class='active'>SHACK</li>" +
-                    "<li class='active'>HOUSE</li>");
+        "<li class='active'>APARTMENT</li> " +
+        "<li class='active'>SHACK</li>" +
+        "<li class='active'>HOUSE</li>");
 
     $('#header1').html("COLLEGES");
     $('#outputCat1').html(formatOneCategory(sliceArray(allInput, 0, 4)));
@@ -46,25 +45,22 @@ function goButton()
     $('#header8').html("CITIES");
     $('#outputCat8').html(formatOneCategory(sliceArray(allInput, 28, 32)));
 
-    goButtonElement.disabled = true;
+    document.getElementById("generate").disabled = true;
 
     eliminateAllButOnePerCat(magicNumber);
 }
 
-function formatOneCategory(oneCategoryArray)
-{
+function formatOneCategory(oneCategoryArray) {
     var myString = "";
 
-    for(i = 0; i < oneCategoryArray.length; i++)
-    {
+    for (i = 0; i < oneCategoryArray.length; i++) {
         myString += `<li class="active">${oneCategoryArray[i]}</li>`;
     }
 
     return myString;
 }
 
-function sliceArray(allInput, start, end)
-{
+function sliceArray(allInput, start, end) {
     return allInput.slice(start, end);
 }
 
@@ -77,7 +73,7 @@ var dict = {
         "McDonald's Manager", "Lawyer", "Architect", "CEO", "Bartender", "Zookeeper",
         "Pro Athlete", "Yoga Instructor"],
     salaries: ["10K", "500K", "1M", "50K", "30K", "75K", "200K", "100K", "0", "90K", "12K", "60K", "120K"],
-    salary: ["$10K", "$500K", "$1M", "$50K", "$30K", "$75K", "$200K", "$100K", "$0", "$90K", "$12K", "$60K", "$120K"],
+    // salary: ["$10K", "$500K", "$1M", "$50K", "$30K", "$75K", "$200K", "$100K", "$0", "$90K", "$12K", "$60K", "$120K"],
     pets: ["Bunny", "Cat", "Dog", "Hamster", "Turtle", "Mouse", "Guinea Pig", "Snake", "Lizard",
         "Fish", "Parrot", "Ferret", "Ladybug"],
     spouses: ["Beyoncé", "Zac Efron", "Madonna", "Bill Nye The Science Guy", "Prince Harry",
@@ -89,11 +85,11 @@ var dict = {
         "Los Angeles", "Houston", "Spokane", "Honolulu", "Minneapolis", "Chicago"],
 };
 
-function fillFieldsRandomly(key){
+function fillFieldsRandomly(key) {
     let randomNumsArray = getIndices(4);
 
-    for(i = 0; i < 4; i++){
-        document.getElementsByClassName(key)[i].setAttribute("value", dict[key][randomNumsArray[i]]);
+    for (i = 0; i < 4; i++) {
+        $('.' + key)[i].setAttribute("value", dict[key][randomNumsArray[i]]);
     }
 }
 
@@ -119,8 +115,7 @@ function getIndices(count) {
 }
 
 
-
-function displayPlayerName(){
+function displayPlayerName() {
     var playerName = document.getElementById("pName").value;
     window.alert(displayPlayerName);
     /*playerName = $('#playerName :input');
@@ -128,50 +123,50 @@ function displayPlayerName(){
 }
 
 
-
 //document.getElementById("displayName").innerHTML = playerName;
 
 var myCollege, myCareer, mySalary, myPet, mySpouse, myKids, myCar, myCity;
 
-function eliminateAllButOnePerCat(magicNumber)
-{
+function eliminateAllButOnePerCat(magicNumber) {
     var categoryGroups = [];
     var optionsLeft = true;
+    var activeNumber = 1;
 
-    $("ol").each(function (index, element)
-    {
+    $("ol").each(function (index, element) {
         categoryGroups.push(element);
     });
 
-    while( optionsLeft )
-    {
-        var activeNumber = 1;
-
-        $.each(categoryGroups, function (index, element){
+    while (optionsLeft) {
+        $.each(categoryGroups, function (index, element) {
             var activeElements = element.getElementsByClassName("active");
 
-            if( activeElements.length > 1 ){
+            if (activeElements.length > 1) {
 
-                $.each(activeElements, function(index, listItem){
-                    if (listItem){
+                $.each(activeElements, function (index, listItem) {
+                    if (listItem) {
+
                         function x(item) {
-                        setTimeout(function(){
-                            item.classList.remove("current");
-                        }, 500);
-                        }(listItem)
+                            setTimeout(function () {
+                                item.classList.add("current");
+                            }, 2000);
+                        }
+
+                        (listItem)
                     }
 
-                    if(magicNumber % activeNumber === 0 && listItem){
+                    if (activeNumber % magicNumber === 0 && listItem) {
+                        console.log(activeNumber);
+                        console.log(magicNumber);
+                        console.log(listItem.innerHTML);
                         listItem.classList = "nthElement";
 
-                        activeNumber = 1;
+                        // activeNumber = 1;
                     }
-                    else {
-                        activeNumber++;
-                    }
+
+                    activeNumber++;
+
 
                 });
-
 
 
                 // if( activeElements.length >= activeNumber){
@@ -190,13 +185,13 @@ function eliminateAllButOnePerCat(magicNumber)
     }
 }
 
-function checkIfOptionsLeft(categoryGroups){
+function checkIfOptionsLeft(categoryGroups) {
     var optionsLeft = false;
 
-    $.each(categoryGroups, function (index, element){
+    $.each(categoryGroups, function (index, element) {
         var activeEl = element.getElementsByClassName("active");
 
-        if(activeEl.length > 1){
+        if (activeEl.length > 1) {
             optionsLeft = true;
         }
     });
@@ -204,7 +199,7 @@ function checkIfOptionsLeft(categoryGroups){
     return optionsLeft;
 }
 
-function currentElement(listItem){
+function currentElement(listItem) {
     listItem.classList = "current";
     setTimeout()
 }

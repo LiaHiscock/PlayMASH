@@ -174,7 +174,7 @@ p{
     font-size: 13px;
     margin: 3px 2px;
     cursor: pointer;
-    border-radius: 0;
+    border-radius: 10%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .randomButton:hover{
@@ -186,7 +186,7 @@ p{
     font-size: 13px;
     margin: 3px 2px;
     cursor: pointer;
-    border-radius: 0;
+    border-radius: 10%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -215,11 +215,11 @@ body, html{
 }
 
 .current{
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(1.5);
+    /*-ms-transform: scale(1.5); !* IE 9 *!*/
+    /*-webkit-transform: scale(1.5); !* Safari 3-8 *!*/
+    /*transform: scale(1.5);*/
     color:gray;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .nthElement{
