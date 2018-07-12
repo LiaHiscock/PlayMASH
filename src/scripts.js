@@ -1,6 +1,7 @@
 function goButton()
 {
     let allInput = [];
+    let goButtonElement = $('#generate');
 
     inputs = $('#myform :input');
 
@@ -8,15 +9,11 @@ function goButton()
         allInput.push($(this).val());
     });
 
-    //generates and displays the magic number
     let magicNumber = Math.floor(Math.random()* 8 + 2).toString();
-    $('#generate').html(magicNumber);
-
-    //document.getElementById("popupText").innerHTML = formatAllInput(allInput);     //prints ALL categories
+    goButtonElement.html(magicNumber);
 
     //scrolls to the printed results
     $('html,body').animate( {scrollTop: $(".scrollHere").offset().top} , 'slow');
-
 
     //prints each category list to an OL in a 2nd grid-container
     $('#header0').html("HOME");
@@ -49,8 +46,7 @@ function goButton()
     $('#header8').html("CITIES");
     $('#outputCat8').html(formatOneCategory(sliceArray(allInput, 28, 32)));
 
-    //disables button after first click
-    document.getElementById("generate").disabled = true;
+    goButtonElement.disabled = true;
 
     eliminateAllButOnePerCat(magicNumber);
 }
