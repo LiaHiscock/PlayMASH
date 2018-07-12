@@ -240,3 +240,11 @@ ol{
 input{
     margin: 10px;
 }
+
+.mintCircles div{
+    border-radius: 10%;
+}
+
+.pinkCircles div{
+    border-radius: 10%;
+}
