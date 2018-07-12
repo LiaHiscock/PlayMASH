@@ -21,9 +21,9 @@ function goButton()
     //prints each category list to an OL in a 2nd grid-container
     $('#header0').html("HOME");
     $('#cat0').html("<li class='active'>MANSION</li>" +
-        "<li class='active'>APARTMENT</li> " +
-        "<li class='active'>SHACK</li>" +
-        "<li class='active'>HOUSE</li>");
+                    "<li class='active'>APARTMENT</li> " +
+                    "<li class='active'>SHACK</li>" +
+                    "<li class='active'>HOUSE</li>");
 
     $('#header1').html("COLLEGES");
     $('#outputCat1').html(formatOneCategory(sliceArray(allInput, 0, 4)));
@@ -57,8 +57,6 @@ function goButton()
 
 function formatOneCategory(oneCategoryArray)
 {
-    //var myString = catName + "<br>";
-
     var myString = "";
 
     for(i = 0; i < oneCategoryArray.length; i++)
@@ -95,68 +93,12 @@ var dict = {
         "Los Angeles", "Houston", "Spokane", "Honolulu", "Minneapolis", "Chicago"],
 };
 
-function fillRandomColleges(key){
-    let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.colleges[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.colleges[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.colleges[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.colleges[index4]);
-}
+function fillFieldsRandomly(key){
+    let randomNumsArray = getIndices(4);
 
-function fillRandomCareer(key){
-    let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.careers[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.careers[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.careers[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.careers[index4]);
-}
-
-function fillRandomSalary(key){
-    let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.salaries[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.salaries[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.salaries[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.salaries[index4]);
-}
-
-function fillRandomPet(key){
-    let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.pets[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.pets[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.pets[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.pets[index4]);
-}
-
-function fillRandomSpouse(key){
-    let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.spouses[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.spouses[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.spouses[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.spouses[index4]);
-}
-
-function fillRandomNumKids(key){
-    let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.kids[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.kids[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.kids[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.kids[index4]);
-}
-
-function fillRandomCar(key){
-    let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.cars[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.cars[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.cars[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.cars[index4]);
-}
-
-function fillRandomCity(key){
-    let [index1, index2, index3, index4] = getIndices(4);
-    document.getElementsByClassName(key)[0].setAttribute("value",dict.cities[index1]);
-    document.getElementsByClassName(key)[1].setAttribute("value",dict.cities[index2]);
-    document.getElementsByClassName(key)[2].setAttribute("value",dict.cities[index3]);
-    document.getElementsByClassName(key)[3].setAttribute("value",dict.cities[index4]);
+    for(i = 0; i < 4; i++){
+        document.getElementsByClassName(key)[i].setAttribute("value", dict[key][randomNumsArray[i]]);
+    }
 }
 
 function getIndices(count) {

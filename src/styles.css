@@ -33,7 +33,7 @@ a.button1{
     color: initial;
 }
 
-#backgroundImage1 {
+#backgroundImage1{
     background-image: url("Images/MASH.jpg");
     height: 100%;      /*changes how much of the image shows between the header and div*/
     zoom: .65;
@@ -121,10 +121,10 @@ p{
 .grid-container div{
     border-radius: 50%;
     text-align: center;
-    /*background: rgba(173, 20, 87, 1);  !*makes the circles semi-transparent*!*/
+    /*background: rgba(173, 20, 87, 1);  makes the circles semi-transparent*/
 }
 
-.grid-container2 {
+.grid-container2{
     display: grid;
     align-self: center;
     justify-self: center;
@@ -197,12 +197,12 @@ body{
     /*background-attachment:fixed;*/
 }
 
-body, html {
+body, html{
     height: 100%;
     margin: 0;
 }
 
-#backgroundImage2 {
+#backgroundImage2{
     background-image: url("Images/Discover.jpg");
     height: 100%;      /*changes how much of the image shows between the header and div*/
     background-position: center;
@@ -214,7 +214,7 @@ body, html {
     overflow: scroll;
 }
 
-.current {
+.current{
     -ms-transform: scale(1.5); /* IE 9 */
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.5);
