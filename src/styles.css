@@ -1,38 +1,4 @@
 /*HOMEPAGE STYLESHEET*/
-.button1{
-    padding: 10px 25px;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    color: #fff;
-    background-color: powderblue;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    height:60px;
-    width:100px;
-    margin: 20px -74px;
-    position:relative;
-    top:50%;
-    left:50%;
-}
-
-.button1:hover{
-    background-color: #ff8080
-}
-
-.button1:active{
-    background-color: #ff8080;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
-a.button1{
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    text-decoration: none;
-    color: initial;
-}
-
 #backgroundImage1{
     background-image: url("Images/MASH.jpg");
     height: 100%;      /*changes how much of the image shows between the header and div*/
@@ -46,32 +12,6 @@ a.button1{
 }
 
 /*GAMEPAGE STYLESHEET*/
-.button2{
-    background-color: powderblue;
-    color: #999999;
-    padding: 140px;
-    text-align: justify;
-    display: inline-block;
-    font-size: 50px;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.button:active{
-    background-color: white;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
-
-a.button{
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    text-decoration: none;
-    color: #AD1457;
-}
-
 h1{
     font-size: 400%;
     color: #AD1457;
@@ -92,20 +32,6 @@ p{
     /*color: white;*/   /*changes font color for all circles*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 10px;
-}
-
-.playAgainButton{
-    background-color: powderblue;
-    color: #999999;
-    padding: 140px;
-    text-align: center;
-
-    font-size: 50px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
 }
 
 .grid-container{
@@ -170,9 +96,9 @@ p{
     transform: scale(1.15);
 }
 
-.goButton{
-    background: powderblue;
-    color: #999999;
+.circleButton{
+    background: #999999;
+    color: white;
     border-radius: 50%;
     padding: 110px;
     font-size: 50px;
