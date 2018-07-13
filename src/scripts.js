@@ -125,19 +125,15 @@ function getIndices(count) {
         indices.splice(randomNum, 1);
         //indices[randomNum] = "used";
     }
-
     return selected;
 }
 
-
-function displayPlayerName() {
-    var playerName = document.getElementById("pName").value;
-    window.alert(displayPlayerName);
-    /*playerName = $('#playerName :input');
-    "storypage.html?name=" + playerName;*/
-}
-
-
+// function displayPlayerName() {
+//     var playerName = document.getElementById("pName").value;
+//     window.alert(displayPlayerName);
+//     /*playerName = $('#playerName :input');
+//     "storypage.html?name=" + playerName;*/
+// }
 //document.getElementById("displayName").innerHTML = playerName;
 
 var myCollege, myCareer, mySalary, myPet, mySpouse, myKids, myCar, myCity;
@@ -170,12 +166,7 @@ function eliminateAllButOnePerCat(magicNumber) {
                     }
 
                     if (activeNumber % magicNumber === 0 && listItem) {
-                        console.log(activeNumber);
-                        console.log(magicNumber);
-                        console.log(listItem.innerHTML);
                         listItem.classList = "nthElement";
-
-                        // activeNumber = 1;
                     }
 
                     activeNumber++;
