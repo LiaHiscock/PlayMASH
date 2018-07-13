@@ -74,7 +74,6 @@ var dict = {
         "McDonald's Manager", "Lawyer", "Architect", "CEO", "Bartender", "Zookeeper",
         "Pro Athlete", "Yoga Instructor"],
     salaries: ["10K", "500K", "1M", "50K", "30K", "75K", "200K", "100K", "0", "90K", "12K", "60K", "120K"],
-    // salary: ["$10K", "$500K", "$1M", "$50K", "$30K", "$75K", "$200K", "$100K", "$0", "$90K", "$12K", "$60K", "$120K"],
     pets: ["Bunny", "Cat", "Dog", "Hamster", "Turtle", "Mouse", "Guinea Pig", "Snake", "Lizard",
         "Fish", "Parrot", "Ferret", "Ladybug"],
     spouses: ["Beyoncé", "Zac Efron", "Madonna", "Bill Nye The Science Guy", "Prince Harry",
@@ -136,7 +135,7 @@ function displayPlayerName() {
 }
 //document.getElementById("displayName").innerHTML = playerName;
 
-let myCollege, myCareer, mySalary, myPet, mySpouse, myKids, myCar, myCity;
+let myHouse, myCollege, myCareer, mySalary, myPet, mySpouse, myKids, myCar, myCity;
 
 function eliminateAllButOnePerCat(magicNumber){
     let categoryGroups = [];

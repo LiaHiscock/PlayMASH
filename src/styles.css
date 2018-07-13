@@ -150,9 +150,9 @@ p{
 .pinkCircles:hover{
     background: rgba(173, 20, 87, 1);
     color: white;
-    -ms-transform: scale(1.15);
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
+    -ms-transform: scale(1.18);
+    -webkit-transform: scale(1.18);
+    transform: scale(1.18);
 }
 
 .mintCircles{
@@ -165,9 +165,9 @@ p{
     border-radius: 50%;
 }
 .mintCircles:hover{
-    -ms-transform: scale(1.15);
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
+    -ms-transform: scale(1.18);
+    -webkit-transform: scale(1.18);
+    transform: scale(1.18);
 }
 
 .goButton{
