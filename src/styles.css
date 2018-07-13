@@ -99,7 +99,6 @@ p{
     color: #999999;
     padding: 140px;
     text-align: center;
-
     font-size: 50px;
     height: 50px;
     width: 50px;
@@ -271,3 +270,106 @@ input{
 .pinkCircles div{
     border-radius: 10%;
 }
+
+.bubbles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transform: translateZ(0);
+}
+
+.bubbles li {
+    position: absolute;
+    list-style:none;
+    display: block;
+    background-color: powderblue;
+    bottom: -100px;
+    animation: square 20s infinite;
+    transition-timing-function: linear;
+}
+
+.bubbles li:nth-child(1){
+    width:40px;
+    height: 40px;
+    left: 20%;
+}
+
+.bubbles li:nth-child(2){
+      width:60px;
+      height: 60px;
+      left: 60%;
+      animation-delay: 2s;
+      animation-duration: 17s;
+  }
+
+.bubbles li:nth-child(3){
+    width:30px;
+    height: 30px;
+    left: 45%;
+    animation-delay: 4s;
+    animation-duration: 13s;
+}
+
+.bubbles li:nth-child(4){
+    width:80px;
+    height: 80px;
+    left: 80%;
+    animation-delay: 1s;
+    animation-duration: 22s;
+}
+
+.bubbles li:nth-child(5){
+    width:50px;
+    height: 50px;
+    left: 50%;
+    animation-delay: 7s;
+    animation-duration: 12s;
+}
+
+.bubbles li:nth-child(6){
+    width:100px;
+    height: 100px;
+    left: 100%;
+    animation-delay: 6s;
+    animation-duration: 6s;
+}
+
+.bubbles li:nth-child(7){
+    width:70px;
+    height: 70px;
+    left: 70%;
+    animation-delay: 1s;
+    animation-duration: 13s;
+}
+
+.bubbles li:nth-child(8){
+    width:120px;
+    height: 120px;
+    left: 10%;
+    animation-delay: 8s;
+    animation-duration: 7s;
+}
+
+.bubbles li:nth-child(9){
+    width:50px;
+    height: 50px;
+    left: 30%;
+    animation-delay: 8s;
+    animation-duration: 5s;
+}
+
+@keyframes square {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-1080px)rotate(630deg);
+        transform: translateY(-1080px)rotate(630deg);
+    }
+}
+
+body {
+    background-color:white; z-index:1;}
