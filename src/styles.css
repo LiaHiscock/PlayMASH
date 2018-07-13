@@ -141,11 +141,33 @@ p{
 .pinkCircles{
     background: rgba(173, 20, 87, 1);
     color: white;
+    transition: transform .5s;
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+.pinkCircles:hover{
+    background: rgba(173, 20, 87, 1);
+    color: white;
+    -ms-transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
 }
 
 .mintCircles{
     background: powderblue;
     color: #999999;
+    transition: transform .5s;
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+.mintCircles:hover{
+    -ms-transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
 }
 
 .goButton{

@@ -78,7 +78,7 @@ var dict = {
     pets: ["Bunny", "Cat", "Dog", "Hamster", "Turtle", "Mouse", "Guinea Pig", "Snake", "Lizard",
         "Fish", "Parrot", "Ferret", "Ladybug"],
     spouses: ["Beyoncé", "Zac Efron", "Madonna", "Bill Nye The Science Guy", "Prince Harry",
-        "Young Leonardo DiCaprio", "Ellen DeGeneres", "Dumbledore", "Jacob Black", "Bella Swan", "Edward Cullen", "Drake", "Oprah"],
+        "Young Leonardo DiCaprio", "Ellen DeGeneres", "Dumbledore", "Jacob Black", "Bella Swan", "Edward Cullen", "Drake", "Single"],
     kids: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
     cars: ["No car", "Ford", "Vespa Scooter", "Ferrari", "Honda", "Bentley", "Mercedes",
         "Golf Cart", "Metro Bus", "BMW", "Limebike", "Uber", "Skateboard"],
