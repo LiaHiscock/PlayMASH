@@ -1,6 +1,5 @@
 function goButton() {
     let allInput = [];
-    let goButtonElement = $('#generate');
 
     inputs = $('#myform :input');
 
@@ -95,8 +94,7 @@ function fillFieldsRandomly(key) {
     }
 }
 
-function randomizeAll() {
-    console.log(arguments);
+function randomizeAll(){
     fillFieldsRandomly("colleges");
     fillFieldsRandomly("careers");
     fillFieldsRandomly("salaries");
@@ -157,10 +155,29 @@ function eliminateAllButOnePerCat(magicNumber){
 
                 $.each(activeElements, function (index, listItem){
                     if(listItem){
+
+                        //doesn't show class applications
+                        // $(this).queue(function(next) {
+                        //     $(this).addClass("current").delay(200);
+                        //     $(this).removeClass("current").delay(200);
+                        //     next();
+                        // });
+
+                        //applies class to all active elements, then removes it from all (doesn't go one by one)
                         $(this).addClass("current").delay(500).queue(function (next){
                             $(this).removeClass("current");
                             next();
                         });
+
+                        //applies classes but never removes them
+                        // $(this).addClass("current");
+                        // setTimeout(function () {
+                        //     $(this).removeClass('current');
+                        // }, 500);
+
+                        //doesn't show class applications
+                        // $(this).addClass("current").delay(500);
+                        // $(this).removeClass("current").delay(500);
 
                         if(activeNumber % magicNumber === 0){
                             listItem.classList = "nthElement";
