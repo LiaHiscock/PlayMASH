@@ -16,10 +16,10 @@ function goButton() {
 
     //prints each category list to an OL in a 2nd grid-container
     $('#header0').html("HOME");
-    $('#cat0').html("<li class='active'>MANSION</li>" +
-        "<li class='active'>APARTMENT</li> " +
-        "<li class='active'>SHACK</li>" +
-        "<li class='active'>HOUSE</li>");
+    $('#cat0').html("<li class='active'>Mansion</li>" +
+        "<li class='active'>Apartment</li> " +
+        "<li class='active'>Shack</li>" +
+        "<li class='active'>House</li>");
 
     $('#header1').html("COLLEGES");
     $('#outputCat1').html(formatOneCategory(sliceArray(allInput, 0, 4)));
@@ -125,91 +125,73 @@ function getIndices(count) {
         indices.splice(randomNum, 1);
         //indices[randomNum] = "used";
     }
+
     return selected;
 }
 
-// function displayPlayerName() {
-//     var playerName = document.getElementById("pName").value;
-//     window.alert(displayPlayerName);
-//     /*playerName = $('#playerName :input');
-//     "storypage.html?name=" + playerName;*/
-// }
+
+function displayPlayerName() {
+    let playerName = document.getElementById("pName").value;
+    window.alert(displayPlayerName);
+    /*playerName = $('#playerName :input');
+    "storypage.html?name=" + playerName;*/
+}
 //document.getElementById("displayName").innerHTML = playerName;
 
-var myCollege, myCareer, mySalary, myPet, mySpouse, myKids, myCar, myCity;
+let myCollege, myCareer, mySalary, myPet, mySpouse, myKids, myCar, myCity;
 
-function eliminateAllButOnePerCat(magicNumber) {
-    var categoryGroups = [];
-    var optionsLeft = true;
-    var activeNumber = 1;
+function eliminateAllButOnePerCat(magicNumber){
+    let categoryGroups = [];
+    let optionsLeft = true;
+    let activeNumber = 1;
 
-    $("ol").each(function (index, element) {
+    $("ol").each(function (index, element){
         categoryGroups.push(element);
     });
 
-    while (optionsLeft) {
-        $.each(categoryGroups, function (index, element) {
-            var activeElements = element.getElementsByClassName("active");
+    let interval = setInterval(function(){
+        $.each(categoryGroups, function (index, element){
+            let activeElements = element.getElementsByClassName("active");
 
-            if (activeElements.length > 1) {
+            if(activeElements.length > 1){
 
-                $.each(activeElements, function (index, listItem) {
-                    if (listItem) {
+                $.each(activeElements, function (index, listItem){
+                    if(listItem){
+                        $(this).addClass("current").delay(500).queue(function (next){
+                            $(this).removeClass("current");
+                            next();
+                        });
 
-                        function x(item) {
-                            setTimeout(function () {
-                                item.classList.add("current");
-                            }, 2000);
+                        if(activeNumber % magicNumber === 0){
+                            listItem.classList = "nthElement";
+                            // activeNumber = 1;
                         }
-
-                        (listItem)
-                    }
-
-                    if (activeNumber % magicNumber === 0 && listItem) {
-                        listItem.classList = "nthElement";
                     }
 
                     activeNumber++;
-
-
                 });
-
-
-                // if( activeElements.length >= activeNumber){
-                //     // activeElements[magicNumber - 1].removeClass("active");
-                //     // activeElements[magicNumber - 1].addClass("nthElement");
-                //
-                // }
-                //
-                // else{
-                //     activeNumber -= activeElements.length;
-                // }
             }
         });
-
+        console.log("done");
         optionsLeft = checkIfOptionsLeft(categoryGroups);
-    }
+
+        if(!optionsLeft){
+            clearInterval(interval);
+            //call any later functions here!!
+        }
+    }, 1000);
 }
 
-function checkIfOptionsLeft(categoryGroups) {
+function checkIfOptionsLeft(categoryGroups){
     var optionsLeft = false;
 
-    $.each(categoryGroups, function (index, element) {
+    $.each(categoryGroups, function (index, element){
         var activeEl = element.getElementsByClassName("active");
 
-        if (activeEl.length > 1) {
+        if (activeEl.length > 1){
             optionsLeft = true;
         }
     });
 
     return optionsLeft;
 }
-
-function currentElement(listItem) {
-    listItem.classList = "current";
-    setTimeout()
-}
-
-
-
-
