@@ -47,7 +47,7 @@ function goButton() {
     document.getElementById("generate").disabled = true;
 
     eliminateAllButOnePerCat(magicNumber);
-
+    
     return false;
 }
 
@@ -136,8 +136,6 @@ function displayPlayerName() {
 }
 //document.getElementById("displayName").innerHTML = playerName;
 
-let myCollege, myCareer, mySalary, myPet, mySpouse, myKids, myCar, myCity;
-
 function eliminateAllButOnePerCat(magicNumber){
     let categoryGroups = [];
     let optionsLeft = true;
@@ -195,6 +193,11 @@ function eliminateAllButOnePerCat(magicNumber){
         if(!optionsLeft){
             clearInterval(interval);
             //call any later functions here!!
+            getResults();
+
+            setTimeout(function () {
+                window.location = "storypage.html";
+            }, 4000);
         }
     }, 1000);
 }
@@ -211,4 +214,9 @@ function checkIfOptionsLeft(categoryGroups){
     });
 
     return optionsLeft;
+}
+
+function getResults(){
+    let resultsArr = $('.active');
+    console.log(resultsArr[0]);
 }
