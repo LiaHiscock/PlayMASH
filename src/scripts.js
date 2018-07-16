@@ -47,7 +47,7 @@ function goButton() {
     document.getElementById("generate").disabled = true;
 
     eliminateAllButOnePerCat(magicNumber);
-    
+
     return false;
 }
 
@@ -197,7 +197,7 @@ function eliminateAllButOnePerCat(magicNumber){
 
             setTimeout(function () {
                 window.location = "storypage.html";
-            }, 4000);
+            }, 2000);
         }
     }, 1000);
 }
