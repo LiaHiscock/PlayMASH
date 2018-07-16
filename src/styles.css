@@ -389,6 +389,22 @@ input{
     background-color: transparent;
 }
 
+.bubbles li:nth-child(11){
+    left: 10%;
+    animation-delay: 3s;
+    animation-duration: 8s;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.bubbles li:nth-child(12){
+    left: -10%;
+    animation-delay: 1s;
+    animation-duration: 12s;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
 ul img{
     height: 30%;
     width: 30%;
