@@ -60,10 +60,6 @@ p{
     grid-row-gap: 75px;
 }
 
-.answers{
-    visibility: hidden;
-}
-
 .pinkCircles{
     background: rgba(173, 20, 87, 1);
     color: white;
