@@ -382,11 +382,16 @@ input{
 }
 
 .bubbles li:nth-child(10){
-    width:90px;
-    height: 90px;
     left: 60%;
     animation-delay: 2s;
     animation-duration: 17s;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+ul img{
+    height: 30%;
+    width: 30%;
     border-radius: 50%;
 }
 
