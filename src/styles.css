@@ -166,8 +166,8 @@ p{
     transform: scale(1.15);
 }
 
-.goButton{
-    background: powderblue;
+.circleButton{
+    background: lightgrey;
     color: #999999;
     border-radius: 50%;
     padding: 110px;
