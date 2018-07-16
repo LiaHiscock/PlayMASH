@@ -218,5 +218,5 @@ function checkIfOptionsLeft(categoryGroups){
 
 function getResults(){
     let resultsArr = $('.active');
-    console.log(resultsArr[0]);
+    console.log(resultsArr);
 }

@@ -146,9 +146,9 @@ p{
 .pinkCircles:hover{
     background: rgba(173, 20, 87, 1);
     color: white;
-    -ms-transform: scale(1.15);
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
+    -ms-transform: scale(1.19);
+    -webkit-transform: scale(1.19);
+    transform: scale(1.19);
 }
 
 .mintCircles{
@@ -161,9 +161,9 @@ p{
     border-radius: 50%;
 }
 .mintCircles:hover{
-    -ms-transform: scale(1.15);
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
+    -ms-transform: scale(1.19);
+    -webkit-transform: scale(1.19);
+    transform: scale(1.19);
 }
 
 .circleButton{
@@ -173,6 +173,8 @@ p{
     padding: 110px;
     font-size: 50px;
     cursor: pointer;
+    /*height: 300px;*/
+    /*width: 300px;*/
 }
 
 .storyButton.circleButton{
