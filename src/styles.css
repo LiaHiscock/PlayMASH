@@ -1,38 +1,14 @@
+@font-face {
+    font-family: CustomFontHeroLight;
+    src: url('fonts/Hero Light.otf');
+}
+
+@font-face {
+    font-family: CustomFontHero;
+    src: url('fonts/Hero.otf');
+}
+
 /*HOMEPAGE STYLESHEET*/
-.button1{
-    padding: 10px 25px;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    color: #fff;
-    background-color: powderblue;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    height:60px;
-    width:100px;
-    margin: 20px -74px;
-    position:relative;
-    top:50%;
-    left:50%;
-}
-
-.button1:hover{
-    background-color: #ff8080
-}
-
-.button1:active{
-    background-color: #ff8080;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
-a.button1{
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    text-decoration: none;
-    color: initial;
-}
-
 #backgroundImage1{
     background-image: url("Images/MASH.jpg");
     height: 100%;      /*changes how much of the image shows between the header and div*/
@@ -45,46 +21,38 @@ a.button1{
     z-index: -1;    /*scrolls the div scroll over the background image*/
 }
 
+#userName{
+    height: 30px;
+    width: 200px;
+    font-size: 14px;
+}
 /*GAMEPAGE STYLESHEET*/
-.button2{
-    background-color: powderblue;
-    color: #999999;
-    padding: 140px;
-    text-align: justify;
-    display: inline-block;
-    font-size: 50px;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    cursor: pointer;
+.circleHeaderText{
+    font-family: CustomFontHeroLight, sans-serif;
 }
 
-.button:active{
-    background-color: white;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
-
-a.button{
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    text-decoration: none;
-    color: #AD1457;
+.header{
+    background: rgba(255, 255, 255, 0.5);
+    top: 0;
+    width: 100%;
 }
 
 h1{
-    font-size: 400%;
+    font-size: 600%;
+    letter-spacing: 10px;
     color: #AD1457;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: CustomFontHero, sans-serif;
     text-align: center;
-    font-weight: bolder;
+    margin-bottom: 20px;
+    padding-top: 25px;
 }
 
 h2{
-    font-size: 250%;
-    color: powderblue;
+    font-size: 200%;
+    color: slategray;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 25px;
 }
 
 p{
@@ -173,8 +141,7 @@ p{
     padding: 110px;
     font-size: 50px;
     cursor: pointer;
-    /*height: 300px;*/
-    /*width: 300px;*/
+    font-family: CustomFontHeroLight, sans-serif;
 }
 
 .storyButton.circleButton{
@@ -187,25 +154,17 @@ p{
     padding: 0;
 }
 
-.header{
-    padding: 10px 16px;
-    background: rgba(0, 0, 0, 0.5);
-    top: 0;
-    position: absolute;
-    width: 100%;
-}
-
 .randomButton{
     padding: 5px 10px;
     display: inline-block;
-    background-color: white;
-    color: dimgray;
+    background: none;
+    border: 1px solid white;
     text-align: center;
     font-size: 13px;
     margin: 3px 2px;
     cursor: pointer;
     border-radius: 10%;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: CustomFontHeroLight, sans-serif;
 }
 .randomButton:hover{
     padding: 5px 10px;
@@ -217,14 +176,13 @@ p{
     margin: 3px 2px;
     cursor: pointer;
     border-radius: 10%;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
-   background-color: white;
-    /*background-image:url("Images/Discover.jpg");*/
-    /*background-repeat:no-repeat;*/
-    /*background-attachment:fixed;*/
+body {
+    background-image: url("Images/Discover.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 body, html{
@@ -411,6 +369,14 @@ input{
 
 .bubbles li:nth-child(12){
     left: -10%;
+    animation-delay: 1s;
+    animation-duration: 12s;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.bubbles li:nth-child(13){
+    left: 45%;
     animation-delay: 1s;
     animation-duration: 12s;
     border-radius: 50%;

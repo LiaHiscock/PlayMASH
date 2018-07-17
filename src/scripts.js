@@ -136,6 +136,12 @@ function displayPlayerName() {
 }
 //document.getElementById("displayName").innerHTML = playerName;
 
+function playButton() {
+    userName = document.getElementById('userName').value;
+    location.href='gamepage.html';
+    return userName;
+}
+
 function eliminateAllButOnePerCat(magicNumber){
     let categoryGroups = [];
     let optionsLeft = true;
