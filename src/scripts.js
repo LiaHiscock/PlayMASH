@@ -45,6 +45,7 @@ function goButton() {
     $('#outputCat8').html(formatOneCategory(sliceArray(allInput, 28, 32)));
 
     document.getElementById("generate").disabled = true;
+    document.getElementsByClassName("randomAllButton")[0].disabled = true;
 
     eliminateAllButOnePerCat(magicNumber);
 
@@ -202,7 +203,7 @@ function eliminateAllButOnePerCat(magicNumber){
             getResults();
 
             setTimeout(function () {
-                window.location = "storypage.html";
+                //window.location = "storypage.html";
             }, 2000);
         }
     }, 1000);
