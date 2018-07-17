@@ -47,6 +47,10 @@ function goButton() {
     document.getElementById("generate").disabled = true;
     document.getElementsByClassName("randomAllButton")[0].disabled = true;
 
+    $('.randomButton').each(function () {
+        $(this).prop("onclick", null);
+    });
+
     eliminateAllButOnePerCat(magicNumber);
 
     return false;
