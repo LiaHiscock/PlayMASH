@@ -125,21 +125,12 @@ function getIndices(count) {
     return selected;
 }
 
-
-let userName = "TESTNAME";
-
 function playButton() {
-    userName = $('#userName :input');
     location.href='gamepage.html';
-    return userName;
 }
 
 function displayPlayerName() {
-    // let playerName = document.getElementById("userName").value;
-    // window.alert(displayPlayerName);
-    /*playerName = $('#playerName :input');
-    "storypage.html?name=" + playerName;*/
-    document.getElementById('putUserNameHere').innerHTML = userName;
+    document.getElementById('putUserNameHere').innerHTML = document.cookie;
 }
 //document.getElementById("displayName").innerHTML = playerName;
 

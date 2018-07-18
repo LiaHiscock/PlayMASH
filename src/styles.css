@@ -10,9 +10,11 @@
 
 /*HOMEPAGE STYLESHEET*/
 #homepageBackgroundImage{
-    background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4GTMiRxFeijvy2o2m/dandelion-blowing-animation-slow-motion-with-alpha_evfydhc2x__F0002.png");
+    background-image: url("http://www.vickievansart.com/wp-content/uploads/2016/04/IMG_6716.jpg");
     /*https://thumbs.dreamstime.com/b/blow-dandelion-vector-26409736.jpg*/
     /*https://static4.depositphotos.com/1020422/369/i/950/depositphotos_3697979-stock-photo-photo-of-spiral-pattern-in.jpg*/
+    /*http://www.vickievansart.com/wp-content/uploads/2016/04/IMG_6716.jpg*/
+    /*https://s-media-cache-ak0.pinimg.com/originals/48/16/89/481689a0a3565905c1d77d4d93220cbf.jpg*/
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -251,6 +253,9 @@ input{
     border-radius: 10%;
 }
 
+#nameBubble{
+    font-family: CustomFontHeroLight, sans-serif;
+}
 .bubbles{
     position: absolute;
     top: 0;
