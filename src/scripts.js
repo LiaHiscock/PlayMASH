@@ -216,5 +216,10 @@ function checkIfOptionsLeft(categoryGroups){
 
 function getResults(){
     let resultsArr = $('.active');
-    console.log(resultsArr);
+    console.log(resultsArr[0]);
+    console.log(resultsArr[1]);
+    document.getElementById('displayResults').innerHTML= "In the future, you will attend " + resultsArr[1] + " and later spend your days as a " + resultsArr[2] + " with a yearly salary of "  + resultsArr[3] + ". You will marry " + resultsArr[4] + " and have " + resultsArr[5] + " kid(s).\n" +
+        "You and " + resultsArr[4] + " will move to " + resultsArr[6] + " where you will live in a beautiful " + resultsArr[0] + " and have a pet " + resultsArr[7] + ". You will cruise around town in an awesome " + resultsArr[8] + " and live happily ever after!";
 }
+
+
