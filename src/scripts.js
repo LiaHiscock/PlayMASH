@@ -118,34 +118,30 @@ function getIndices(count) {
     for (count; count > 0; count--) {
         let randomNum = Math.floor(Math.random() * indices.length);
 
-        /*
-        if(indices[randomNum] === "used"){
-            randomNum = Math.floor(Math.random() * indices.length);
-        }
-        */
-
         selected.push(indices[randomNum]);
         indices.splice(randomNum, 1);
-        //indices[randomNum] = "used";
     }
 
     return selected;
 }
 
 
-function displayPlayerName() {
-    let playerName = document.getElementById("pName").value;
-    window.alert(displayPlayerName);
-    /*playerName = $('#playerName :input');
-    "storypage.html?name=" + playerName;*/
-}
-//document.getElementById("displayName").innerHTML = playerName;
+let userName = "TESTNAME";
 
 function playButton() {
-    userName = document.getElementById('userName').value;
+    userName = $('#userName :input');
     location.href='gamepage.html';
     return userName;
 }
+
+function displayPlayerName() {
+    // let playerName = document.getElementById("userName").value;
+    // window.alert(displayPlayerName);
+    /*playerName = $('#playerName :input');
+    "storypage.html?name=" + playerName;*/
+    document.getElementById('putUserNameHere').innerHTML = userName;
+}
+//document.getElementById("displayName").innerHTML = playerName;
 
 function eliminateAllButOnePerCat(magicNumber){
     let categoryGroups = [];
@@ -207,7 +203,7 @@ function eliminateAllButOnePerCat(magicNumber){
             getResults();
 
             setTimeout(function () {
-                //window.location = "storypage.html";
+                window.location = "storypage.html";
             }, 2000);
         }
     }, 1000);
