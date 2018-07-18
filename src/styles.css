@@ -116,6 +116,8 @@ h1.smallH1{
     grid-column-gap: 70px;
     grid-row-gap: 40px;
     justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .pinkCircles{

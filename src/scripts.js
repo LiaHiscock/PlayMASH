@@ -52,7 +52,9 @@ function goButton() {
         $(this).prop("onclick", null);
     });
 
-    eliminateAllButOnePerCat(magicNumber);
+    //eliminateAllButOnePerCat(magicNumber);
+
+    executeAnimationArray(buildAnimationArray(magicNumber));
 
     return false;
 }
@@ -196,6 +198,82 @@ function eliminateAllButOnePerCat(magicNumber){
         }
     }, 1000);
 }
+
+function buildAnimationArray(magicNumber) {
+    let optionsLeft = true;
+    let activeNumber = 1;
+    let tasks = [];
+    let categoryGroups = [];
+
+    $("ol").each(function (index, element) {
+        categoryGroups.push(element);
+    });
+
+    while (optionsLeft) {
+        $.each(categoryGroups, function (index, element) {
+            let activeElements = element.getElementsByClassName("active");
+
+            if (activeElements.length > 1) {
+
+                $.each(activeElements, function (index, listItem) {
+                    if (listItem) {
+                        tasks.push({
+                            el: $(this),
+                            action: "addCurrentClass"
+                        });
+
+                        tasks.push({
+                            el: $(this),
+                            action: "removeCurrentClass"
+                        });
+                    }
+
+                    if (activeNumber % magicNumber === 0) {
+                        tasks.push({
+                            el: $(this),
+                            action: "addnthElementClass"
+                        });
+                        $(this).removeClass("active");
+
+                        // activeNumber = 1;
+                    }
+
+                    activeNumber++;
+                });
+            }
+        });
+        optionsLeft = checkIfOptionsLeft(categoryGroups);
+    }
+
+    return tasks;
+}
+
+const speed = 100;
+
+function executeAnimationArray(taskArray) {
+    setTimeout(function next() {
+        let current = taskArray.shift();
+        element = current.el;
+        action = current.action;
+
+        if(action === "addCurrentClass"){
+            element.addClass("current");
+        }
+
+        if(action === "removeCurrentClass"){
+            element.removeClass("current");
+        }
+
+        if(action === "addnthElementClass"){
+            element.addClass("nthElement");
+        }
+
+        if (taskArray.length > 0){
+            setTimeout(next, speed);
+        }
+    }, speed);
+}
+
 
 function checkIfOptionsLeft(categoryGroups){
     var optionsLeft = false;
