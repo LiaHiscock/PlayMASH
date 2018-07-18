@@ -3,6 +3,7 @@ function goButton() {
 
     inputs = $('#myform :input');
 
+
     inputs.each(function () {
         allInput.push($(this).val());
     });
@@ -83,10 +84,10 @@ var dict = {
     pets: ["Bunny", "Cat", "Dog", "Hamster", "Turtle", "Mouse", "Guinea Pig", "Snake", "Lizard",
         "Fish", "Parrot", "Ferret", "Ladybug"],
     spouses: ["Beyoncé", "Zac Efron", "Madonna", "Bill Nye The Science Guy", "Prince Harry",
-        "Young Leonardo DiCaprio", "Ellen DeGeneres", "Dumbledore", "Jacob Black", "Bella Swan", "Edward Cullen", "Drake", "Single"],
+        "Young Leonardo DiCaprio", "Ellen DeGeneres", "Dumbledore", "Jacob Black", "Bella Swan", "Edward Cullen", "Drake", "Chris Hemsworth"],
     kids: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
-    cars: ["No car", "Ford", "Vespa Scooter", "Ferrari", "Honda", "Bentley", "Mercedes",
-        "Golf Cart", "Metro Bus", "BMW", "Limebike", "Uber", "Skateboard"],
+    cars: ["Tesla", "Ford", "Vespa Scooter", "Ferrari", "Honda", "Bentley", "Mercedes",
+        "Golf Cart", "Metro Bus", "BMW", "Limebike", "Uber", "Toyota"],
     cities: ["New York", "Seattle", "Portland", "San Diego", "New Orleans", "Boise", "Salt Lake City",
         "Los Angeles", "Houston", "Spokane", "Honolulu", "Minneapolis", "Chicago"],
 };
@@ -211,11 +212,15 @@ function checkIfOptionsLeft(categoryGroups){
 }
 
 function getResults(){
+    playerName = $('#myform :input');
     let resultsArr = $('.active');
     console.log(resultsArr[0]);
     console.log(resultsArr[1]);
-    document.getElementById('displayResults').innerHTML= "In the future, you will attend " + resultsArr[1] + " and later spend your days as a " + resultsArr[2] + " with a yearly salary of "  + resultsArr[3] + ". You will marry " + resultsArr[4] + " and have " + resultsArr[5] + " kid(s).\n" +
-        "You and " + resultsArr[4] + " will move to " + resultsArr[6] + " where you will live in a beautiful " + resultsArr[0] + " and have a pet " + resultsArr[7] + ". You will cruise around town in an awesome " + resultsArr[8] + " and live happily ever after!";
+    $('html,body').animate({scrollTop: $(".scrollHere2").offset().top}, 'slow');
+    document.getElementById('displayPlayerName').innerHTML= playerName[32].value + "'s Future";
+    document.getElementById('displayResults').innerHTML= "In the future, you will attend " + resultsArr[1].innerHTML + " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $"  + resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " + resultsArr[6].innerHTML + " kid(s).\n" +
+        "You and " + resultsArr[5].innerHTML + " will move to " + resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML + " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around town in an awesome " + resultsArr[7].innerHTML + " and live happily ever after!";
+    document.getElementById("playAgainButtonPopUp").innerHTML;
 }
 
 
