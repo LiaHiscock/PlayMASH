@@ -192,10 +192,6 @@ function eliminateAllButOnePerCat(magicNumber){
             clearInterval(interval);
             //call any later functions here!!
             getResults();
-
-            setTimeout(function () {
-                window.location = "storypage.html";
-            }, 2000);
         }
     }, 1000);
 }
