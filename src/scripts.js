@@ -11,6 +11,8 @@ function goButton() {
     let magicNumber = Math.floor(Math.random() * 8 + 2).toString();
     document.getElementById("generate").innerHTML = magicNumber;
 
+    makeResultsVisible();
+
     //scrolls to the printed results
     $('html,body').animate({scrollTop: $(".scrollHere").offset().top}, 'slow');
 
@@ -56,6 +58,7 @@ function goButton() {
 
     executeAnimationArray(buildAnimationArray(magicNumber));
 
+
     return false;
 }
 
@@ -73,6 +76,14 @@ function sliceArray(allInput, start, end) {
     return allInput.slice(start, end);
 }
 
+function makeResultsVisible(){
+    let overlays = document.getElementsByClassName('bodyOverlay');
+
+    for(i = 0; i < overlays.length; i++){
+        overlays[i].style.display = "grid";
+    }
+}
+
 var dict = {
     colleges: ["University of Washington", "Washington State University", "Cal Poly SLO", "Chapman",
         "Harvard University", "University of Georgia", "Stanford University", "Gonzaga University",
@@ -85,8 +96,8 @@ var dict = {
     // salary: ["$10K", "$500K", "$1M", "$50K", "$30K", "$75K", "$200K", "$100K", "$0", "$90K", "$12K", "$60K", "$120K"],
     pets: ["Bunny", "Cat", "Dog", "Hamster", "Turtle", "Mouse", "Guinea Pig", "Snake", "Lizard",
         "Fish", "Parrot", "Ferret", "Ladybug"],
-    spouses: ["Beyoncé", "Zac Efron", "Madonna", "Bill Nye The Science Guy", "Prince Harry",
-        "Young Leonardo DiCaprio", "Ellen DeGeneres", "Dumbledore", "Jacob Black", "Bella Swan", "Edward Cullen", "Drake", "Chris Hemsworth"],
+    spouses: ["Beyoncé", "Ellen DeGeneres", "Lindsay Lohan", "Queen Elizabeth II", "Rob Kardashian", "Bill Nye The Science Guy",
+        "Young Leonardo DiCaprio", "Dumbledore", "Zac Efron", "Donald Trump", "Edward Cullen", "Drake", "Chris Hemsworth"],
     kids: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
     cars: ["Tesla", "Ford", "Vespa Scooter", "Ferrari", "Honda", "Bentley", "Mercedes",
         "Golf Cart", "Metro Bus", "BMW", "Limebike", "Uber", "Toyota"],
@@ -248,7 +259,7 @@ function buildAnimationArray(magicNumber) {
     return tasks;
 }
 
-const speed = 100;
+const speed = 50;
 
 function executeAnimationArray(taskArray) {
     setTimeout(function next() {
@@ -271,6 +282,10 @@ function executeAnimationArray(taskArray) {
         if (taskArray.length > 0){
             setTimeout(next, speed);
         }
+
+        if(taskArray.length === 0){
+            getResults();
+        }
     }, speed);
 }
 
@@ -290,11 +305,11 @@ function checkIfOptionsLeft(categoryGroups){
 }
 
 function getResults(){
+    $('html,body').animate({scrollTop: $(".scrollHere2").offset().top}, 'slow');
+
     playerName = $('#myform :input');
     let resultsArr = $('.active');
-    console.log(resultsArr[0]);
-    console.log(resultsArr[1]);
-    $('html,body').animate({scrollTop: $(".scrollHere2").offset().top}, 'slow');
+
     document.getElementById('displayPlayerName').innerHTML= playerName[32].value + "'s Future";
     document.getElementById('displayResults').innerHTML= "In the future, you will attend " + resultsArr[1].innerHTML + " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $"  + resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " + resultsArr[6].innerHTML + " kid(s).\n" +
         "You and " + resultsArr[5].innerHTML + " will move to " + resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML + " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around town in an awesome " + resultsArr[7].innerHTML + " and live happily ever after!";

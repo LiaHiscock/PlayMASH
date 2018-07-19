@@ -10,7 +10,7 @@
 
 /*HOMEPAGE STYLESHEET*/
 #homepageBackgroundImage{
-    background-image: url("http://www.vickievansart.com/wp-content/uploads/2016/04/IMG_6716.jpg");
+    background-image: url("https://static1.squarespace.com/static/58cf223c6a49634f9171029e/t/58d80420c534a536b89a7712/1490551842653/white-marble-wallpaper-19.jpg?format=2500w");
     /*https://thumbs.dreamstime.com/b/blow-dandelion-vector-26409736.jpg*/
     /*https://static4.depositphotos.com/1020422/369/i/950/depositphotos_3697979-stock-photo-photo-of-spiral-pattern-in.jpg*/
     /*http://www.vickievansart.com/wp-content/uploads/2016/04/IMG_6716.jpg*/
@@ -40,10 +40,10 @@
 }
 
 .bodyOverlay{
-    background: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, .9);
     border-radius: 10%;
     position: relative;
-    top: 50%;
+    top: 15%;
 }
 h1{
     font-size: 600%;
@@ -57,9 +57,9 @@ h1{
 
 h2{
     font-size: 200%;
-    color: slategray;
+    color: gray;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lato', sans-serif;
     padding-bottom: 25px;
 }
 
@@ -108,7 +108,7 @@ h1.smallH1{
 }
 
 .grid-container2{
-    display: grid;
+    display: none;
     align-self: center;
     justify-self: center;
     grid-template-columns: repeat(auto-fit, 350px);
@@ -116,7 +116,7 @@ h1.smallH1{
     grid-column-gap: 70px;
     grid-row-gap: 40px;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 5%;
     padding-bottom: 20px;
 }
 
@@ -235,14 +235,18 @@ body, html{
 
 ol{
     font-size: 175%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Leto', sans-serif;
     color: powderblue;
     text-align: left;
-    font-weight: bold;
     margin: 10px 0;
     list-style-type:none
 }
 
+#displayResults{
+    font-weight: 100;
+    padding-left: 10%;
+    padding-right: 10%;
+}
 input{
     margin: 10px;
 }
