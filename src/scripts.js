@@ -1,22 +1,36 @@
 function goButton() {
-    let allInput = [];
+    let allInputValues = [];
 
-    inputs = $('#myform :input');
-
+    let inputs = $('#myform :input');
 
     inputs.each(function () {
-        allInput.push($(this).val());
+        allInputValues.push($(this).val());
     });
 
-    let magicNumber = Math.floor(Math.random() * 8 + 2).toString();
-    document.getElementById("generate").innerHTML = magicNumber;
+    let magicNumber = generateAndDisplayMagicNum();
 
-    makeResultsVisible();
+    makeOverlaysVisible();
 
-    //scrolls to the printed results
     $('html,body').animate({scrollTop: $(".scrollHere").offset().top}, 'slow');
 
-    //prints each category list to an OL in a 2nd grid-container
+    listAllCategoryOptions(allInputValues);
+
+    disableButtons();
+
+    executeAnimationArray(buildAnimationArray(magicNumber));
+
+    getResultsPictures($('.active'));
+
+    return false;
+}
+
+function generateAndDisplayMagicNum(){
+    let magicNumber = Math.floor(Math.random() * 8 + 2).toString();
+    document.getElementById("generate").innerHTML = magicNumber;
+    return magicNumber;
+}
+
+function listAllCategoryOptions(allInput){
     $('#header0').html("HOME");
     $('#cat0').html("<li class='active'>Mansion</li>" +
         "<li class='active'>Apartment</li> " +
@@ -46,20 +60,15 @@ function goButton() {
 
     $('#header8').html("CITIES");
     $('#outputCat8').html(formatOneCategory(sliceArray(allInput, 28, 32)));
+}
 
+function disableButtons() {
     document.getElementById("generate").disabled = true;
     document.getElementsByClassName("randomAllButton")[0].disabled = true;
-
     $('.randomButton').each(function () {
         $(this).prop("onclick", null);
     });
 
-    //eliminateAllButOnePerCat(magicNumber);
-
-    executeAnimationArray(buildAnimationArray(magicNumber));
-
-
-    return false;
 }
 
 function formatOneCategory(oneCategoryArray) {
@@ -76,7 +85,7 @@ function sliceArray(allInput, start, end) {
     return allInput.slice(start, end);
 }
 
-function makeResultsVisible(){
+function makeOverlaysVisible(){
     let overlays = document.getElementsByClassName('bodyOverlay');
 
     for(i = 0; i < overlays.length; i++){
@@ -93,16 +102,39 @@ var dict = {
         "McDonald's Manager", "Lawyer", "Architect", "CEO", "Bartender", "Zookeeper",
         "Pro Athlete", "Yoga Instructor"],
     salaries: ["10K", "500K", "1M", "50K", "30K", "75K", "200K", "100K", "0", "90K", "12K", "60K", "120K"],
-    // salary: ["$10K", "$500K", "$1M", "$50K", "$30K", "$75K", "$200K", "$100K", "$0", "$90K", "$12K", "$60K", "$120K"],
     pets: ["Bunny", "Cat", "Dog", "Hamster", "Turtle", "Mouse", "Guinea Pig", "Snake", "Lizard",
-        "Fish", "Parrot", "Ferret", "Ladybug"],
+        "Fish", "Parrot", "Horse", "Ladybug"],
     spouses: ["Beyoncé", "Ellen DeGeneres", "Lindsay Lohan", "Queen Elizabeth II", "Rob Kardashian", "Bill Nye The Science Guy",
         "Young Leonardo DiCaprio", "Dumbledore", "Zac Efron", "Donald Trump", "Edward Cullen", "Drake", "Chris Hemsworth"],
     kids: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
     cars: ["Tesla", "Ford", "Vespa Scooter", "Ferrari", "Honda", "Bentley", "Mercedes",
-        "Golf Cart", "Metro Bus", "BMW", "Limebike", "Uber", "Toyota"],
+        "Golf Cart", "Metro Bus", "BMW", "Limebike", "Uber", "Hearse"],
     cities: ["New York", "Seattle", "Portland", "San Diego", "New Orleans", "Boise", "Salt Lake City",
         "Los Angeles", "Houston", "Spokane", "Honolulu", "Minneapolis", "Chicago"],
+};
+
+var imageSrcArr = {
+    colleges: ["Images/COLLEGES/University of Washington.svg", "Images/COLLEGES/Washington State University.png",
+        "Images/COLLEGES/Cal Poly SLO.png", "Images/COLLEGES/Chapman.jpeg", "Images/COLLEGES/Harvard University.svg",
+        "Images/COLLEGES/University of Georgia", "Images/COLLEGES/Stanford University",
+        "Images/COLLEGES/Gonzaga University.png", "Images/COLLEGES/Johns Hopkins University.png",
+        "Images/COLLEGES/New York University.jpg", "Images/COLLEGES/Boston University.png", "Images/COLLEGES/University of Arizona.png",
+        "Images/COLLEGES/Brown University.jpg"],
+
+    pets: ["Images/PETS/Bunny.jpg", "Images/PETS/Cat.jpg", "Images/PETS/Dog.jpg", "Images/PETS/Hamster.jpg",
+        "Images/PETS/Turtle.jpeg", "Images/PETS/Mouse.jpg", "Images/PETS/Guinea Pig.jpg", "Images/PETS/Snake.jpg",
+        "Images/PETS/Lizard.jpg", "Images/PETS/Fish.jpeg", "Images/PETS/Parrot.jpeg", "Images/PETS/Horse.png",
+        "Images/PETS/Ladybug.jpg"],
+
+    spouses: ["Images/SPOUSES/Beyoncé.jpg", "Images/SPOUSES/Ellen DeGeneres.jpg", "Images/SPOUSES/Lindsay Lohan.jpg",
+        "Images/SPOUSES/Queen Elizabeth II.jpg", "Images/SPOUSES/Rob Kardashian.jpg", "Images/SPOUSES/Bill Nye The Science Guy.jpeg",
+        "Images/SPOUSES/Young Leonardo DiCaprio", "Images/SPOUSES/Dumbledore", "Images/SPOUSES/Zac Efron",
+        "Images/SPOUSES/Donald Trump.jpg", "Images/SPOUSES/Edward Cullen.jpg", "Images/SPOUSES/Drake.jpeg",
+        "Images/SPOUSES/Chris Hemsworth.jpg"],
+
+    cars: ["Images/CARS/Tesla.jpg", "Images/CARS/Ford.jpeg", "Images/CARS/Vespa Scooter.jpeg", "Images/CARS/Ferrari.jpg",
+        "Images/CARS/Honda.jpg", "Images/CARS/Bentley.jpg", "Images/CARS/Mercedes.jpeg", "Images/CARS/Golf Cart.jpeg",
+        "Images/CARS/Metro Bus.jpg", "Images/CARS/BMW.png", "Images/CARS/Limebike.jpg", "Images/CARS/Uber.jpg", "Images/CARS/Hearse.jpg"],
 };
 
 function fillFieldsRandomly(key) {
@@ -139,14 +171,9 @@ function getIndices(count) {
     return selected;
 }
 
-function playButton() {
-    location.href='gamepage.html';
-}
-
 function displayPlayerName() {
     document.getElementById('putUserNameHere').innerHTML = document.cookie;
 }
-//document.getElementById("displayName").innerHTML = playerName;
 
 function eliminateAllButOnePerCat(magicNumber){
     let categoryGroups = [];
@@ -168,26 +195,26 @@ function eliminateAllButOnePerCat(magicNumber){
 
                         //doesn't show class applications
                         // $(this).queue(function(next) {
-                        //     $(this).addClass("current").delay(200);
-                        //     $(this).removeClass("current").delay(200);
+                        //     $(this).addClass("currentElement").delay(200);
+                        //     $(this).removeClass("currentElement").delay(200);
                         //     next();
                         // });
 
                         //applies class to all active elements, then removes it from all (doesn't go one by one)
-                        $(this).addClass("current").delay(500).queue(function (next){
-                            $(this).removeClass("current");
+                        $(this).addClass("currentElement").delay(500).queue(function (next){
+                            $(this).removeClass("currentElement");
                             next();
                         });
 
                         //applies classes but never removes them
-                        // $(this).addClass("current");
+                        // $(this).addClass("currentElement");
                         // setTimeout(function () {
-                        //     $(this).removeClass('current');
+                        //     $(this).removeClass('currentElement');
                         // }, 500);
 
                         //doesn't show class applications
-                        // $(this).addClass("current").delay(500);
-                        // $(this).removeClass("current").delay(500);
+                        // $(this).addClass("currentElement").delay(500);
+                        // $(this).removeClass("currentElement").delay(500);
 
                         if(activeNumber % magicNumber === 0){
                             listItem.classList = "nthElement";
@@ -268,11 +295,11 @@ function executeAnimationArray(taskArray) {
         action = current.action;
 
         if(action === "addCurrentClass"){
-            element.addClass("current");
+            element.addClass("currentElement");
         }
 
         if(action === "removeCurrentClass"){
-            element.removeClass("current");
+            element.removeClass("currentElement");
         }
 
         if(action === "addnthElementClass"){
@@ -288,7 +315,6 @@ function executeAnimationArray(taskArray) {
         }
     }, speed);
 }
-
 
 function checkIfOptionsLeft(categoryGroups){
     var optionsLeft = false;
@@ -316,4 +342,27 @@ function getResults(){
     document.getElementById("playAgainButtonPopUp").innerHTML;
 }
 
+function getResultsPictures(activeElArr) {
+    let homePic = new Image();
+        homePic.src = "Images/Mansion.jpg";
+    let collegePic = new Image();
+        collegePic.src = "Images/COLLEGES/Stanford University.png";
+    let petPic = new Image();
+        petPic.src = "Images/PETS/Bunny.jpg";
+    let spousePic = new Image();
+        spousePic.src = "Images/SPOUSES/Young Leonardo DiCaprio.jpg";
+    let carPic = new Image();
+        carPic.src = "Images/CARS/BMW.png";
 
+
+    document.getElementById('resultsPicsHere').appendChild(homePic);
+    document.getElementById('resultsPicsHere').appendChild(collegePic);
+    document.getElementById('resultsPicsHere').appendChild(petPic);
+    document.getElementById('resultsPicsHere').appendChild(spousePic);
+    document.getElementById('resultsPicsHere').appendChild(carPic);
+}
+
+//HOMEPAGE FUNCTIONS
+function playButton() {
+    location.href='gamepage.html';
+}

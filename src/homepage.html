@@ -3,14 +3,19 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>MASH</title>
+        <title>MASH | Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="Images/spiral.png">
     </head>
 
-    <body id="homepageBackgroundImage">
+    <div class="headerOverlay">
+        <h1 style="margin-bottom: 0">MASH</h1><br>
+        <h2>Predict your Future!</h2>
+    </div>
+
+    <body class="backgroundGradient">
         <ul class="bubbles">
             <li>MASH</li>
             <li>Colleges</li>
@@ -23,39 +28,34 @@
             <li>City</li>
             <li><img src="Images/Shack.jpg"></li>
             <li><img src="Images/House.jpg"></li>
-            <li><img src="Images/Mansion%20.jpg"></li>
+            <li><img src="Images/Mansion.jpg"></li>
             <li><img src="Images/Apartment2.jpg"></li>
         </ul>
-        <!--<div id="backgroundImage1"></div>-->
 
-        <div class="header">
-            <h1>MASH</h1><br>
-            <h2>Predict your Future!</h2>
-        </div>
+        <p align="center" style="padding: 30px;">
+            A modern take on the classic pen-and-paper game, <br>
+            MASH lets you predict different aspects of your future life such as where you will work
+            and how many kids you will have. <br>
+            <em>To make the game more interesting, try entering futures that you'd like and ones you wouldn't! </em><br>
+            To begin, click the Play button below.
 
-        <h2>Enter Your Name:</h2>
+        </p>
 
-        <div align="center">
-            <input type="text" placeholder=" Name" id="userName" required>
-        </div>
 
-        <br><br>
-
-        <h2 align="center">MASH will predict different aspects of your future life such as where you will work
-            and how many kids you will have. To begin, click the Play button below.</h2><br><br><br>
+        <br><br><br>
 
         <div align="center">
             <button onclick= "playButton()" class="circleButton">PLAY</button>
-        </div>s
+        </div>
 
     </body>
+
     <script src="scripts.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous">
     </script>
-
 
 </html>
 

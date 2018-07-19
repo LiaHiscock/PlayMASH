@@ -8,425 +8,421 @@
     src: url('fonts/Hero.otf');
 }
 
-/*HOMEPAGE STYLESHEET*/
-#homepageBackgroundImage{
-    background-image: url("https://static1.squarespace.com/static/58cf223c6a49634f9171029e/t/58d80420c534a536b89a7712/1490551842653/white-marble-wallpaper-19.jpg?format=2500w");
-    /*https://thumbs.dreamstime.com/b/blow-dandelion-vector-26409736.jpg*/
-    /*https://static4.depositphotos.com/1020422/369/i/950/depositphotos_3697979-stock-photo-photo-of-spiral-pattern-in.jpg*/
-    /*http://www.vickievansart.com/wp-content/uploads/2016/04/IMG_6716.jpg*/
-    /*https://s-media-cache-ak0.pinimg.com/originals/48/16/89/481689a0a3565905c1d77d4d93220cbf.jpg*/
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    position: center;
-    z-index: -1;    /*scrolls the div scroll over the background image*/
-}
-
-#userName{
-    height: 30px;
-    width: 200px;
-    font-size: 14px;
-}
-/*GAMEPAGE STYLESHEET*/
-.circleHeaderText{
-    font-family: CustomFontHeroLight, sans-serif;
-}
-
-.header{
-    background: rgba(255, 255, 255, 0.5);
-    width: 100%;
-}
-
-.bodyOverlay{
-    background: rgba(255, 255, 255, .9);
-    border-radius: 10%;
-    position: relative;
-    top: 15%;
-}
-h1{
-    font-size: 600%;
-    letter-spacing: 10px;
-    color: #AD1457;
-    font-family: CustomFontHero, sans-serif;
-    text-align: center;
-    margin-bottom: 20px;
-    padding-top: 25px;
-}
-
-h2{
-    font-size: 200%;
-    color: gray;
-    text-align: center;
-    font-family: 'Lato', sans-serif;
-    padding-bottom: 25px;
-}
-
-p{
-    font-size: 30px;
-    /*color: white;*/   /*changes font color for all circles*/
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 10px;
-}
-
-h1.smallH1{
-    letter-spacing: normal;
-    font-size: 70px;
-    padding-top: 0;
-    margin-top: 6%;
-}
-
-.playAgainButton{
-    background-color: powderblue;
-    color: #999999;
-    padding: 140px;
-    text-align: center;
-
-    font-size: 50px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-}
-
-.grid-container{
-    display: grid;
-    justify-content: center;
-    /*align-items: center;*/    /*weirdly flattens the circle outlines*/
-    grid-template-columns: repeat(auto-fit, 300px);
-    grid-template-rows: 300px 300px 300px;
-    grid-row-gap: 100px;
-    grid-column-gap: 100px;
-}
-
-.grid-container div{
-    border-radius: 50%;
-    text-align: center;
-    /*background: rgba(173, 20, 87, 1);  makes the circles semi-transparent*/
-}
-
-.grid-container2{
-    display: none;
-    align-self: center;
-    justify-self: center;
-    grid-template-columns: repeat(auto-fit, 350px);
-    grid-template-rows: 300px 300px 300px;
-    grid-column-gap: 70px;
-    grid-row-gap: 40px;
-    justify-content: center;
-    padding-top: 5%;
-    padding-bottom: 20px;
-}
-
-.pinkCircles{
-    background: rgba(173, 20, 87, 1);
-    color: white;
-    transition: transform .5s;
-    margin: 0 auto;
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-}
-.pinkCircles:hover{
-    background: rgba(173, 20, 87, 1);
-    color: white;
-    -ms-transform: scale(1.19);
-    -webkit-transform: scale(1.19);
-    transform: scale(1.19);
-}
-
-.mintCircles{
-    background: powderblue;
-    color: #999999;
-    transition: transform .5s;
-    margin: 0 auto;
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-}
-.mintCircles:hover{
-    -ms-transform: scale(1.19);
-    -webkit-transform: scale(1.19);
-    transform: scale(1.19);
-}
-
-.circleButton{
-    background: lightgrey;
-    color: white;
-    border-radius: 50%;
-    padding: 110px;
-    font-size: 50px;
-    cursor: pointer;
-    font-family: CustomFontHeroLight, sans-serif;
-}
-
-.storyButton.circleButton{
-    padding: 0;
-    width:300px;
-    height:300px;
-}
-
-.randomAllButton.circleButton{
-    padding: 0;
-}
-
-.randomButton{
-    padding: 5px 10px;
-    display: inline-block;
-    background: none;
-    border: 1px solid white;
-    text-align: center;
-    font-size: 13px;
-    margin: 3px 2px;
-    cursor: pointer;
-    border-radius: 10%;
-    font-family: CustomFontHeroLight, sans-serif;
-}
-.randomButton:hover{
-    padding: 5px 10px;
-    display: inline-block;
-    background-color: lightgrey;
-    color: dimgray;
-    text-align: center;
-    font-size: 13px;
-    margin: 3px 2px;
-    cursor: pointer;
-    border-radius: 10%;
-}
-
-body {
-    background-image: url("Images/Discover.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-body, html{
-    height: 100%;
-    margin: 0;
-}
-
-#backgroundImage2{
-    background-image: url("Images/Discover.jpg");
-    height: 100%;      /*changes how much of the image shows between the header and div*/
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    position: relative;
-    z-index: -1;
-    overflow: scroll;
-}
-
-.current{
-    -ms-transform: scale(1); /* IE 9 */
-    -webkit-transform: scale(1); /* Safari 3-8 */
-    transform: scale(1);
-    color:gray;
-    font-size: 30px;
-}
-
-.nthElement{
-    text-decoration: line-through;
-    text-decoration-color: darkgray;
-    color: lightgray;
-}
-
-ol{
-    font-size: 175%;
-    font-family: 'Leto', sans-serif;
-    color: powderblue;
-    text-align: left;
-    margin: 10px 0;
-    list-style-type:none
-}
-
-#displayResults{
-    font-weight: 100;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-input{
-    margin: 10px;
-}
-
-.mintCircles div{
-    border-radius: 10%;
-}
-
-.pinkCircles div{
-    border-radius: 10%;
-}
-
-#nameBubble{
-    font-family: CustomFontHeroLight, sans-serif;
-}
-.bubbles{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    transform: translateZ(0);
-    color: white;
-    font-size: 30px;
-    text-align: center;
-    margin: auto;
-    font-weight: bold;
-}
-
-.bubbles li {
-    position: absolute;
-    list-style:none;
-    display: block;
-    background-color: rgba(173, 20, 87, 1);
-    bottom: -100px;
-    animation: square 20s infinite;
-    transition-timing-function: linear;
-}
-
-.bubbles li:nth-child(1){   /*MASH*/
-    width:80px;
-    height: 80px;
-    left: 20%;
-    border-radius: 50%;
-    line-height: 75px;
-}
-
-.bubbles li:nth-child(2){   /*COLLEGES*/
-    width:90px;
-    height: 90px;
-    left: 60%;
-    animation-delay: 2s;
-    animation-duration: 17s;
-    border-radius: 50%;
-    line-height: 80px;
-    font-size: smaller;
-}
-
-.bubbles li:nth-child(3){   /*CAREERS*/
-    width: 130px;
-    height: 130px;
-    left: 45%;
-    animation-delay: 4s;
-    animation-duration: 13s;
-    border-radius: 50%;
-    line-height: 125px;
-}
-
-.bubbles li:nth-child(4){   /*SALARY*/
-    width:90px;
-    height: 90px;
-    left: 80%;
-    animation-delay: 1s;
-    animation-duration: 22s;
-    border-radius: 50%;
-    line-height: 85px;
-}
-
-.bubbles li:nth-child(5){   /*PETS*/
-    width:60px;
-    height: 60px;
-    left: 50%;
-    animation-delay: 7s;
-    animation-duration: 12s;
-    border-radius: 50%;
-    line-height: 60px;
-}
-
-.bubbles li:nth-child(6){   /*SPOUSE*/
-    width:100px;
-    height: 100px;
-    left: 90%;
-    animation-delay: 6s;
-    animation-duration: 6s;
-    border-radius: 50%;
-    line-height: 95px;
-}
-
-.bubbles li:nth-child(7){   /*KIDS*/
-    width:80px;
-    height: 80px;
-    left: 70%;
-    animation-delay: 1s;
-    animation-duration: 13s;
-    border-radius: 50%;
-    line-height: 75px;
-}
-
-.bubbles li:nth-child(8){   /*CARS*/
-    width:120px;
-    height: 120px;
-    left: 10%;
-    animation-delay: 8s;
-    animation-duration: 7s;
-    border-radius: 50%;
-    line-height: 115px;
-    font-size: xx-large;
-}
-
-.bubbles li:nth-child(9){   /*CITY*/
-    width:60px;
-    height: 60px;
-    left: 30%;
-    animation-delay: 8s;
-    animation-duration: 5s;
-    border-radius: 50%;
-    line-height: 55px;
-    font-size: smaller;
-}
-
-.bubbles li:nth-child(10){
-    left: 65%;
-    animation-delay: 3s;
-    animation-duration: 15s;
-    border-radius: 50%;
-    background-color: transparent;
-}
-
-.bubbles li:nth-child(11){
-    left: 10%;
-    animation-delay: 3s;
-    animation-duration: 8s;
-    border-radius: 50%;
-    background-color: transparent;
-}
-
-.bubbles li:nth-child(12){
-    left: -10%;
-    animation-delay: 1s;
-    animation-duration: 12s;
-    border-radius: 50%;
-    background-color: transparent;
-}
-
-.bubbles li:nth-child(13){
-    left: 45%;
-    animation-delay: 1s;
-    animation-duration: 12s;
-    border-radius: 50%;
-    background-color: transparent;
-}
-
-ul img{
-    height: 30%;
-    width: 30%;
-    border-radius: 50%;
-}
-
-@keyframes square {
-    0% {
-        transform: translateY(0);
+/*TEXT*/
+    h1{
+        font-size: 600%;
+        letter-spacing: 10px;
+        color: #AD1457;
+        font-family: CustomFontHero, sans-serif;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: auto;
+        padding-top: 25px;
     }
-    100% {
-        -webkit-transform: translateY(-1080px)rotate(630deg);
-        transform: translateY(-1080px)rotate(630deg);
-    }
-}
 
-body {
-    background-color:white;
-    z-index:1;
-}
+    h2{
+        font-size: 200%;
+        color: white;
+        text-align: center;
+        font-family: 'Lato', sans-serif;
+        padding-bottom: 25px;
+    }
+
+    p{
+        font-size: 30px;
+        /*color: white;*/   /*changes font color for all circles*/
+        font-family: 'Lato', sans-serif;
+        margin-bottom: 10px;
+    }
+
+    ol{
+        font-size: 175%;
+        font-family: 'Leto', sans-serif;
+        color: powderblue;
+        text-align: left;
+        margin: 10px 0;
+        list-style-type:none
+    }
+
+    h1.smallH1{
+        letter-spacing: normal;
+        font-size: 70px;
+        padding-top: 0;
+        margin-top: 6%;
+    }
+
+    .circleHeaderText{
+        font-family: CustomFontHeroLight, sans-serif;
+    }
+
+    #nameBubble{
+        font-family: CustomFontHeroLight, sans-serif;
+    }
+
+/*BUTTONS & CIRCLES*/
+    .playAgainButton{
+        background-color: powderblue;
+        color: #999999;
+        padding: 140px;
+        text-align: center;
+
+        font-size: 50px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .pinkCircles{
+        background: rgba(173, 20, 87, 1);
+        color: white;
+        transition: transform .5s;
+        margin: 0 auto;
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+    }
+
+    .pinkCircles:hover{
+        background: rgba(173, 20, 87, 1);
+        color: white;
+        -ms-transform: scale(1.19);
+        -webkit-transform: scale(1.19);
+        transform: scale(1.19);
+    }
+
+    .pinkCircles div{
+        border-radius: 10%;
+    }
+
+    .mintCircles{
+        background: powderblue;
+        color: #999999;
+        transition: transform .5s;
+        margin: 0 auto;
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+    }
+
+    .mintCircles:hover{
+        -ms-transform: scale(1.19);
+        -webkit-transform: scale(1.19);
+        transform: scale(1.19);
+    }
+
+    .mintCircles div{
+        border-radius: 10%;
+    }
+
+    .circleButton{
+        background: lightgrey;
+        color: white;
+        border-radius: 50%;
+        padding: 110px;
+        font-size: 50px;
+        cursor: pointer;
+        font-family: CustomFontHeroLight, sans-serif;
+    }
+
+    .circleButton:hover{
+        opacity: .7;
+    }
+
+    .storyButton.circleButton{
+        padding: 0;
+        width:300px;
+        height:300px;
+    }
+
+    .randomAllButton.circleButton{
+        padding: 0;
+    }
+
+    .randomButton{
+        padding: 5px 10px;
+        display: inline-block;
+        background: none;
+        border: 1px solid white;
+        text-align: center;
+        font-size: 13px;
+        margin: 3px 2px;
+        cursor: pointer;
+        border-radius: 10%;
+        font-family: CustomFontHeroLight, sans-serif;
+    }
+
+    .randomButton:hover {
+        padding: 5px 10px;
+        display: inline-block;
+        background-color: lightgrey;
+        color: dimgray;
+        text-align: center;
+        font-size: 13px;
+        margin: 3px 2px;
+        cursor: pointer;
+        border-radius: 10%;
+    }
+
+/*LAYOUT*/
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .headerOverlay{
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    .bodyOverlay{
+        background: rgba(255, 255, 255, .5);
+        border-radius: 10%;
+        position: relative;
+        top: 15%;
+    }
+
+    .grid-container{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, 300px);
+        grid-template-rows: 300px 300px 300px;
+        grid-row-gap: 100px;
+        grid-column-gap: 100px;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .grid-container2{
+        display: none;
+        align-self: center;
+        justify-self: center;
+        grid-template-columns: repeat(auto-fit, 350px);
+        grid-template-rows: 300px 300px 300px;
+        grid-column-gap: 70px;
+        grid-row-gap: 40px;
+        justify-content: center;
+        padding-top: 5%;
+        padding-bottom: 20px;
+    }
+
+    input{
+        margin: 10px;
+    }
+
+    #displayResults{
+        font-weight: 100;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+/*IMAGES*/
+    #gamepageBackgroundImage{
+        background-image: url("Images/Discover.jpg");
+        height: 100%;      /*changes how much of the image shows between the header and div*/
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        position: relative;
+        z-index: -1;
+        overflow: scroll;
+    }
+
+    .backgroundGradient {
+        background: #aa4b6b; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #3b8d99, #6b6b83, #aa4b6b); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        position: center;
+        z-index: -1;
+    }
+
+    .resultsImages{
+        height: 50px;
+        width: 50px;
+    }
+
+/*GAME ANIMATIONS*/
+    .currentElement{
+        -ms-transform: scale(1); /* IE 9 */
+        -webkit-transform: scale(1); /* Safari 3-8 */
+        transform: scale(1);
+        color:gray;
+        font-size: 30px;
+    }
+
+    .nthElement{
+        text-decoration: line-through;
+        text-decoration-color: darkgray;
+        color: lightgray;
+    }
+
+/*BUBBLE EFFECT*/
+    .bubbles{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform: translateZ(0);
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        margin: auto;
+        font-weight: bold;
+    }
+
+    .bubbles li {
+        position: absolute;
+        list-style:none;
+        display: block;
+        background-color: rgba(173, 20, 87, 1);
+        bottom: -10%;
+        animation: square 20s infinite;
+        transition-timing-function: linear;
+    }
+
+    .bubbles li:nth-child(1){   /*MASH*/
+        width:80px;
+        height: 80px;
+        left: 20%;
+        border-radius: 50%;
+        line-height: 75px;
+    }
+
+    .bubbles li:nth-child(2){   /*COLLEGES*/
+        width:90px;
+        height: 90px;
+        left: 60%;
+        animation-delay: 2s;
+        animation-duration: 17s;
+        border-radius: 50%;
+        line-height: 80px;
+        font-size: smaller;
+    }
+
+    .bubbles li:nth-child(3){   /*CAREERS*/
+        width: 130px;
+        height: 130px;
+        left: 45%;
+        animation-delay: 4s;
+        animation-duration: 13s;
+        border-radius: 50%;
+        line-height: 125px;
+    }
+
+    .bubbles li:nth-child(4){   /*SALARY*/
+        width:90px;
+        height: 90px;
+        left: 80%;
+        animation-delay: 1s;
+        animation-duration: 22s;
+        border-radius: 50%;
+        line-height: 85px;
+    }
+
+    .bubbles li:nth-child(5){   /*PETS*/
+        width:60px;
+        height: 60px;
+        left: 50%;
+        animation-delay: 7s;
+        animation-duration: 12s;
+        border-radius: 50%;
+        line-height: 60px;
+    }
+
+    .bubbles li:nth-child(6){   /*SPOUSE*/
+        width:100px;
+        height: 100px;
+        left: 90%;
+        animation-delay: 6s;
+        animation-duration: 6s;
+        border-radius: 50%;
+        line-height: 95px;
+    }
+
+    .bubbles li:nth-child(7){   /*KIDS*/
+        width:80px;
+        height: 80px;
+        left: 70%;
+        animation-delay: 1s;
+        animation-duration: 13s;
+        border-radius: 50%;
+        line-height: 75px;
+    }
+
+    .bubbles li:nth-child(8){   /*CARS*/
+        width:120px;
+        height: 120px;
+        left: 10%;
+        animation-delay: 8s;
+        animation-duration: 7s;
+        border-radius: 50%;
+        line-height: 115px;
+        font-size: xx-large;
+    }
+
+    .bubbles li:nth-child(9){   /*CITY*/
+        width:60px;
+        height: 60px;
+        left: 30%;
+        animation-delay: 8s;
+        animation-duration: 5s;
+        border-radius: 50%;
+        line-height: 55px;
+        font-size: smaller;
+    }
+
+    .bubbles li:nth-child(10){
+        left: 65%;
+        animation-delay: 3s;
+        animation-duration: 15s;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+
+    .bubbles li:nth-child(11){
+        left: 10%;
+        animation-delay: 3s;
+        animation-duration: 8s;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+
+    .bubbles li:nth-child(12){
+        left: -10%;
+        animation-delay: 1s;
+        animation-duration: 12s;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+
+    .bubbles li:nth-child(13){
+        left: 45%;
+        animation-delay: 1s;
+        animation-duration: 12s;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+
+    ul img{     /*picture bubbles */
+        height: 30%;
+        width: 30%;
+        border-radius: 50%;
+    }
+
+    @keyframes square {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            -webkit-transform: translateY(-1080px)rotate(630deg);
+            transform: translateY(-1080px)rotate(630deg);
+        }
+    }
