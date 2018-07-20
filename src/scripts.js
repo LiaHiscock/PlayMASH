@@ -344,13 +344,13 @@ function getResults(){
 
 function getResultsPictures(activeElArr) {
     let homePic = new Image();
-        homePic.src = "Images/Mansion.jpg";
+        homePic.src = "Images/Mansion.png";
     let collegePic = new Image();
         collegePic.src = "Images/COLLEGES/Stanford University.png";
     let petPic = new Image();
-        petPic.src = "Images/PETS/Bunny.jpg";
+        petPic.src = "Images/PETS/Bunny.png";
     let spousePic = new Image();
-        spousePic.src = "Images/SPOUSES/Young Leonardo DiCaprio.jpg";
+        spousePic.src = "Images/SPOUSES/Young Leonardo DiCaprio.png";
     let carPic = new Image();
         carPic.src = "Images/CARS/BMW.png";
 
@@ -360,8 +360,18 @@ function getResultsPictures(activeElArr) {
     document.getElementById('resultsPicsHere').appendChild(petPic);
     document.getElementById('resultsPicsHere').appendChild(spousePic);
     document.getElementById('resultsPicsHere').appendChild(carPic);
+
+    googleSearchAPI();
 }
 
+function googleSearchAPI(){
+
+    // GET
+    // https://www.googleapis.com/customsearch/v1?
+    // key=AIzaSyCjowdYN1heoHK_LHNdbD2YyKex3xMHdcU
+    // cx=[customsearchengineid]
+    // q=[whatToSearchFor];
+}
 //HOMEPAGE FUNCTIONS
 function playButton() {
     location.href='gamepage.html';
