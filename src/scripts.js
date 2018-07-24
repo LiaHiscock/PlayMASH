@@ -287,7 +287,7 @@ function buildAnimationArray(magicNumber) {
     return tasks;
 }
 
-const speed = 50;
+const speed = 20;
 
 function executeAnimationArray(taskArray) {
     setTimeout(function next() {
@@ -342,7 +342,10 @@ function getResults() {
         "You and " + resultsArr[5].innerHTML + " will move to " + resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML + " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around town in an awesome " + resultsArr[7].innerHTML + " and live happily ever after!";
     document.getElementById("playAgainButtonPopUp").innerHTML;
 
-    getResultsPictures($('.active'));
+    // if( $('.randomAllButton').disabled )
+        //getResultsPictures(results);
+
+    getImageFromGoogle(resultsArr);
 }
 
 function getResultsPictures(activeElArr) {
@@ -365,19 +368,21 @@ function getResultsPictures(activeElArr) {
     document.getElementById('resultsPicsHere').appendChild(petPic);
     document.getElementById('resultsPicsHere').appendChild(spousePic);
     document.getElementById('resultsPicsHere').appendChild(carPic);
-
-    // googleSearchAPI();
 }
 
-function googleSearchAPI() {
+function getImageFromGoogle(activeElArr) {
+    let collegePic = new Image();
 
-    // GET
-    // https://www.googleapis.com/customsearch/v1?
-    // key=AIzaSyCjowdYN1heoHK_LHNdbD2YyKex3xMHdcU
-    // cx=[customsearchengineid]
-    // q=[whatToSearchFor];
+    fetch(googleSearchAPI(activeElArr[1].innerHTML))
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            collegePic.src = myJson.items[0].link;
+        });
+
+    document.getElementById('resultsPicsHere').appendChild(collegePic);
 }
-
 //HOMEPAGE FUNCTIONS
 function playButton() {
     location.href = 'gamepage.html';
