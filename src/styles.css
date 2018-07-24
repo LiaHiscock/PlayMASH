@@ -242,9 +242,9 @@
         z-index: -1;
     }
 
-    .resultsImages{
-        height: 50px;
-        width: 50px;
+    #resultsPicsHere img{
+        height: 25%;
+        width: 25%;
     }
 
 /*GAME ANIMATIONS*/

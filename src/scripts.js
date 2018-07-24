@@ -19,8 +19,6 @@ function goButton() {
 
     executeAnimationArray(buildAnimationArray(magicNumber));
 
-    getResultsPictures($('.active'));
-
     return false;
 }
 
@@ -340,19 +338,21 @@ function getResults(){
     document.getElementById('displayResults').innerHTML= "In the future, you will attend " + resultsArr[1].innerHTML + " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $"  + resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " + resultsArr[6].innerHTML + " kid(s).\n" +
         "You and " + resultsArr[5].innerHTML + " will move to " + resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML + " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around town in an awesome " + resultsArr[7].innerHTML + " and live happily ever after!";
     document.getElementById("playAgainButtonPopUp").innerHTML;
+
+    getResultsPictures($('.active'));
 }
 
 function getResultsPictures(activeElArr) {
     let homePic = new Image();
-        homePic.src = "Images/Mansion.png";
+        homePic.src = "Images/" + activeElArr[0].innerHTML + ".png";
     let collegePic = new Image();
-        collegePic.src = "Images/COLLEGES/Stanford University.png";
+        collegePic.src = "Images/COLLEGES/" + activeElArr[1].innerHTML + ".png";
     let petPic = new Image();
-        petPic.src = "Images/PETS/Bunny.png";
+        petPic.src = "Images/PETS/" + activeElArr[4].innerHTML + ".png";
     let spousePic = new Image();
-        spousePic.src = "Images/SPOUSES/Young Leonardo DiCaprio.png";
+        spousePic.src = "Images/SPOUSES/" + activeElArr[5].innerHTML + ".png";
     let carPic = new Image();
-        carPic.src = "Images/CARS/BMW.png";
+        carPic.src = "Images/CARS/" + activeElArr[7].innerHTML + ".png";
 
 
     document.getElementById('resultsPicsHere').appendChild(homePic);
@@ -361,7 +361,7 @@ function getResultsPictures(activeElArr) {
     document.getElementById('resultsPicsHere').appendChild(spousePic);
     document.getElementById('resultsPicsHere').appendChild(carPic);
 
-    googleSearchAPI();
+    // googleSearchAPI();
 }
 
 function googleSearchAPI(){
