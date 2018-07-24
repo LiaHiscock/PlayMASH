@@ -99,7 +99,7 @@ var dict = {
         "Harvard University", "University of Georgia", "Stanford University", "Gonzaga University",
         "Johns Hopkins University", "New York University", "Boston University", "University of Arizona",
         "Brown University"],
-    careers: ["Software Developer", "Nurse", "Janitor", "Unemployed", "Kindergarten Teacher",
+    careers: ["Software Developer", "Nurse", "Janitor", "Construction Worker", "Kindergarten Teacher",
         "McDonald's Manager", "Lawyer", "Architect", "CEO", "Bartender", "Zookeeper",
         "Pro Athlete", "Yoga Instructor"],
     salaries: ["10K", "500K", "1M", "50K", "30K", "75K", "200K", "100K", "0", "90K", "12K", "60K", "120K"],
