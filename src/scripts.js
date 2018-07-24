@@ -59,8 +59,8 @@ function listAllCategoryOptions(allInput, magicNumber){
     $('#header8').html("CITIES");
     $('#outputCat8').html(formatOneCategory(sliceArray(allInput, 28, 32)));
 
-    $('#header9').html("YOUR NUMBER");
-    $('#displayMagicNum').html(magicNumber);
+    $('#headerMagicNum').html(magicNumber.toString());
+
 }
 
 function disableButtons() {
