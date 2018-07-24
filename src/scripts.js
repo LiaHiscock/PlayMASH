@@ -13,7 +13,7 @@ function goButton() {
 
     $('html,body').animate({scrollTop: $(".scrollHere").offset().top}, 'slow');
 
-    listAllCategoryOptions(allInputValues);
+    listAllCategoryOptions(allInputValues, magicNumber);
 
     disableButtons();
 
@@ -28,7 +28,7 @@ function generateAndDisplayMagicNum(){
     return magicNumber;
 }
 
-function listAllCategoryOptions(allInput){
+function listAllCategoryOptions(allInput, magicNumber){
     $('#header0').html("HOME");
     $('#cat0').html("<li class='active'>Mansion</li>" +
         "<li class='active'>Apartment</li> " +
@@ -58,6 +58,9 @@ function listAllCategoryOptions(allInput){
 
     $('#header8').html("CITIES");
     $('#outputCat8').html(formatOneCategory(sliceArray(allInput, 28, 32)));
+
+    $('#header9').html("YOUR NUMBER");
+    $('#displayMagicNum').html(magicNumber);
 }
 
 function disableButtons() {
