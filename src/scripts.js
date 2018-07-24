@@ -22,13 +22,13 @@ function goButton() {
     return false;
 }
 
-function generateAndDisplayMagicNum(){
+function generateAndDisplayMagicNum() {
     let magicNumber = Math.floor(Math.random() * 8 + 2).toString();
     document.getElementById("generate").innerHTML = magicNumber;
     return magicNumber;
 }
 
-function listAllCategoryOptions(allInput, magicNumber){
+function listAllCategoryOptions(allInput, magicNumber) {
     $('#header0').html("HOME");
     $('#cat0').html("<li class='active'>Mansion</li>" +
         "<li class='active'>Apartment</li> " +
@@ -86,10 +86,10 @@ function sliceArray(allInput, start, end) {
     return allInput.slice(start, end);
 }
 
-function makeOverlaysVisible(){
+function makeOverlaysVisible() {
     let overlays = document.getElementsByClassName('bodyOverlay');
 
-    for(i = 0; i < overlays.length; i++){
+    for (i = 0; i < overlays.length; i++) {
         overlays[i].style.display = "grid";
     }
 }
@@ -146,7 +146,7 @@ function fillFieldsRandomly(key) {
     }
 }
 
-function randomizeAll(){
+function randomizeAll() {
     fillFieldsRandomly("colleges");
     fillFieldsRandomly("careers");
     fillFieldsRandomly("salaries");
@@ -176,23 +176,23 @@ function displayPlayerName() {
     document.getElementById('putUserNameHere').innerHTML = document.cookie;
 }
 
-function eliminateAllButOnePerCat(magicNumber){
+function eliminateAllButOnePerCat(magicNumber) {
     let categoryGroups = [];
     let optionsLeft = true;
     let activeNumber = 1;
 
-    $("ol").each(function (index, element){
+    $("ol").each(function (index, element) {
         categoryGroups.push(element);
     });
 
-    let interval = setInterval(function(){
-        $.each(categoryGroups, function (index, element){
+    let interval = setInterval(function () {
+        $.each(categoryGroups, function (index, element) {
             let activeElements = element.getElementsByClassName("active");
 
-            if(activeElements.length > 1){
+            if (activeElements.length > 1) {
 
-                $.each(activeElements, function (index, listItem){
-                    if(listItem){
+                $.each(activeElements, function (index, listItem) {
+                    if (listItem) {
 
                         //doesn't show class applications
                         // $(this).queue(function(next) {
@@ -202,7 +202,7 @@ function eliminateAllButOnePerCat(magicNumber){
                         // });
 
                         //applies class to all active elements, then removes it from all (doesn't go one by one)
-                        $(this).addClass("currentElement").delay(500).queue(function (next){
+                        $(this).addClass("currentElement").delay(500).queue(function (next) {
                             $(this).removeClass("currentElement");
                             next();
                         });
@@ -217,7 +217,7 @@ function eliminateAllButOnePerCat(magicNumber){
                         // $(this).addClass("currentElement").delay(500);
                         // $(this).removeClass("currentElement").delay(500);
 
-                        if(activeNumber % magicNumber === 0){
+                        if (activeNumber % magicNumber === 0) {
                             listItem.classList = "nthElement";
                             // activeNumber = 1;
                         }
@@ -230,7 +230,7 @@ function eliminateAllButOnePerCat(magicNumber){
         console.log("done");
         optionsLeft = checkIfOptionsLeft(categoryGroups);
 
-        if(!optionsLeft){
+        if (!optionsLeft) {
             clearInterval(interval);
             //call any later functions here!!
             getResults();
@@ -295,35 +295,35 @@ function executeAnimationArray(taskArray) {
         element = current.el;
         action = current.action;
 
-        if(action === "addCurrentClass"){
+        if (action === "addCurrentClass") {
             element.addClass("currentElement");
         }
 
-        if(action === "removeCurrentClass"){
+        if (action === "removeCurrentClass") {
             element.removeClass("currentElement");
         }
 
-        if(action === "addnthElementClass"){
+        if (action === "addnthElementClass") {
             element.addClass("nthElement");
         }
 
-        if (taskArray.length > 0){
+        if (taskArray.length > 0) {
             setTimeout(next, speed);
         }
 
-        if(taskArray.length === 0){
+        if (taskArray.length === 0) {
             getResults();
         }
     }, speed);
 }
 
-function checkIfOptionsLeft(categoryGroups){
+function checkIfOptionsLeft(categoryGroups) {
     var optionsLeft = false;
 
-    $.each(categoryGroups, function (index, element){
+    $.each(categoryGroups, function (index, element) {
         var activeEl = element.getElementsByClassName("active");
 
-        if (activeEl.length > 1){
+        if (activeEl.length > 1) {
             optionsLeft = true;
         }
     });
@@ -331,14 +331,14 @@ function checkIfOptionsLeft(categoryGroups){
     return optionsLeft;
 }
 
-function getResults(){
+function getResults() {
     $('html,body').animate({scrollTop: $(".scrollHere2").offset().top}, 'slow');
 
     playerName = $('#myform :input');
     let resultsArr = $('.active');
 
-    document.getElementById('displayPlayerName').innerHTML= playerName[32].value + "'s Future";
-    document.getElementById('displayResults').innerHTML= "In the future, you will attend " + resultsArr[1].innerHTML + " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $"  + resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " + resultsArr[6].innerHTML + " kid(s).\n" +
+    document.getElementById('displayPlayerName').innerHTML = playerName[32].value + "'s Future";
+    document.getElementById('displayResults').innerHTML = "In the future, you will attend " + resultsArr[1].innerHTML + " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $" + resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " + resultsArr[6].innerHTML + " kid(s).\n" +
         "You and " + resultsArr[5].innerHTML + " will move to " + resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML + " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around town in an awesome " + resultsArr[7].innerHTML + " and live happily ever after!";
     document.getElementById("playAgainButtonPopUp").innerHTML;
 
@@ -350,6 +350,8 @@ function getResultsPictures(activeElArr) {
         homePic.src = "Images/" + activeElArr[0].innerHTML + ".png";
     let collegePic = new Image();
         collegePic.src = "Images/COLLEGES/" + activeElArr[1].innerHTML + ".png";
+    let careerPic = new Image();
+        careerPic.src = "Images/CAREERS/" + activeElArr[2].innerHTML + ".png";
     let petPic = new Image();
         petPic.src = "Images/PETS/" + activeElArr[4].innerHTML + ".png";
     let spousePic = new Image();
@@ -367,7 +369,7 @@ function getResultsPictures(activeElArr) {
     // googleSearchAPI();
 }
 
-function googleSearchAPI(){
+function googleSearchAPI() {
 
     // GET
     // https://www.googleapis.com/customsearch/v1?
@@ -375,7 +377,8 @@ function googleSearchAPI(){
     // cx=[customsearchengineid]
     // q=[whatToSearchFor];
 }
+
 //HOMEPAGE FUNCTIONS
 function playButton() {
-    location.href='gamepage.html';
+    location.href = 'gamepage.html';
 }
