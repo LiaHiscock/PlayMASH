@@ -114,30 +114,6 @@ var dict = {
         "Los Angeles", "Houston", "Spokane", "Honolulu", "Minneapolis", "Chicago"],
 };
 
-var imageSrcArr = {
-    colleges: ["Images/COLLEGES/University of Washington.svg", "Images/COLLEGES/Washington State University.png",
-        "Images/COLLEGES/Cal Poly SLO.png", "Images/COLLEGES/Chapman.jpeg", "Images/COLLEGES/Harvard University.svg",
-        "Images/COLLEGES/University of Georgia", "Images/COLLEGES/Stanford University",
-        "Images/COLLEGES/Gonzaga University.png", "Images/COLLEGES/Johns Hopkins University.png",
-        "Images/COLLEGES/New York University.jpg", "Images/COLLEGES/Boston University.png", "Images/COLLEGES/University of Arizona.png",
-        "Images/COLLEGES/Brown University.jpg"],
-
-    pets: ["Images/PETS/Bunny.jpg", "Images/PETS/Cat.jpg", "Images/PETS/Dog.jpg", "Images/PETS/Hamster.jpg",
-        "Images/PETS/Turtle.jpeg", "Images/PETS/Mouse.jpg", "Images/PETS/Guinea Pig.jpg", "Images/PETS/Snake.jpg",
-        "Images/PETS/Lizard.jpg", "Images/PETS/Fish.jpeg", "Images/PETS/Parrot.jpeg", "Images/PETS/Horse.png",
-        "Images/PETS/Ladybug.jpg"],
-
-    spouses: ["Images/SPOUSES/Beyoncé.jpg", "Images/SPOUSES/Ellen DeGeneres.jpg", "Images/SPOUSES/Lindsay Lohan.jpg",
-        "Images/SPOUSES/Queen Elizabeth II.jpg", "Images/SPOUSES/Rob Kardashian.jpg", "Images/SPOUSES/Bill Nye The Science Guy.jpeg",
-        "Images/SPOUSES/Young Leonardo DiCaprio", "Images/SPOUSES/Dumbledore", "Images/SPOUSES/Zac Efron",
-        "Images/SPOUSES/Donald Trump.jpg", "Images/SPOUSES/Edward Cullen.jpg", "Images/SPOUSES/Drake.jpeg",
-        "Images/SPOUSES/Chris Hemsworth.jpg"],
-
-    cars: ["Images/CARS/Tesla.jpg", "Images/CARS/Ford.jpeg", "Images/CARS/Vespa Scooter.jpeg", "Images/CARS/Ferrari.jpg",
-        "Images/CARS/Honda.jpg", "Images/CARS/Bentley.jpg", "Images/CARS/Mercedes.jpeg", "Images/CARS/Golf Cart.jpeg",
-        "Images/CARS/Metro Bus.jpg", "Images/CARS/BMW.png", "Images/CARS/Limebike.jpg", "Images/CARS/Uber.jpg", "Images/CARS/Hearse.jpg"],
-};
-
 function fillFieldsRandomly(key) {
     let randomNumsArray = getIndices(4);
 
@@ -155,6 +131,7 @@ function randomizeAll() {
     fillFieldsRandomly("kids");
     fillFieldsRandomly("cars");
     fillFieldsRandomly("cities");
+    document.getElementsByClassName('randomAllButton').clicked = true;
     return false;
 }
 
@@ -335,17 +312,24 @@ function getResults() {
     $('html,body').animate({scrollTop: $(".scrollHere2").offset().top}, 'slow');
 
     playerName = $('#myform :input');
+
     let resultsArr = $('.active');
+
+    let picOnlyResultsArr = [resultsArr[1], resultsArr[2], resultsArr[4], resultsArr[5], resultsArr[7]];
 
     document.getElementById('displayPlayerName').innerHTML = playerName[32].value + "'s Future";
     document.getElementById('displayResults').innerHTML = "In the future, you will attend " + resultsArr[1].innerHTML + " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $" + resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " + resultsArr[6].innerHTML + " kid(s).\n" +
         "You and " + resultsArr[5].innerHTML + " will move to " + resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML + " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around town in an awesome " + resultsArr[7].innerHTML + " and live happily ever after!";
     document.getElementById("playAgainButtonPopUp").innerHTML;
 
-    // if( $('.randomAllButton').disabled )
-        //getResultsPictures(results);
+    if( document.getElementsByClassName("randomAllButton")[0].disabled === true){
+        getResultsPictures(resultsArr);
+    }
 
-    getImageFromGoogle(resultsArr);
+    else{
+        getImageFromGoogle(picOnlyResultsArr);
+    }
+
 }
 
 function getResultsPictures(activeElArr) {
@@ -371,17 +355,31 @@ function getResultsPictures(activeElArr) {
 }
 
 function getImageFromGoogle(activeElArr) {
-    let collegePic = new Image();
+    // let collegePic = new Image();
+    //
+    // fetch(googleSearchAPI(activeElArr[1].innerHTML))
+    //     .then(function (response) {
+    //         return response.json();
+    //     })
+    //     .then(function (myJson) {
+    //         collegePic.src = myJson.items[0].link;
+    //     });
 
-    fetch(googleSearchAPI(activeElArr[1].innerHTML))
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (myJson) {
-            collegePic.src = myJson.items[0].link;
-        });
+    //document.getElementById('resultsPicsHere').appendChild(collegePic);
 
-    document.getElementById('resultsPicsHere').appendChild(collegePic);
+    for(i = 0; i < activeElArr.length; i++){
+        let pic = new Image();
+
+        fetch(googleSearchAPI(activeElArr[i].innerHTML))
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                pic.src = myJson.items[0].link;
+            });
+
+        document.getElementById('resultsPicsHere').appendChild(pic);
+    }
 }
 //HOMEPAGE FUNCTIONS
 function playButton() {
