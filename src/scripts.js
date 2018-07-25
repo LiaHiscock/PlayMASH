@@ -371,6 +371,17 @@ function getImageFromGoogle(activeElArr) {
     for(i = 0; i < activeElArr.length; i++){
         let pic = new Image();
 
+        if(i === 0){
+            fetch(googleSearchAPICollege(activeElArr[0].innerHTML))
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    pic.src = myJson.items[0].link;
+                });
+        }
+
+        else{
         fetch(googleSearchAPI(activeElArr[i].innerHTML))
             .then(function (response) {
                 return response.json();
@@ -378,6 +389,7 @@ function getImageFromGoogle(activeElArr) {
             .then(function (myJson) {
                 pic.src = myJson.items[0].link;
             });
+        }
 
         document.getElementById('resultsPicsHere').appendChild(pic);
     }
