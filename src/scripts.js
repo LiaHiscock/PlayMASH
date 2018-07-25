@@ -372,7 +372,7 @@ function getImageFromGoogle(activeElArr) {
         let pic = new Image();
 
         if(i === 0){
-            fetch(googleSearchAPICollege(activeElArr[0].innerHTML))
+            fetch(googleSearchAPICollege(activeElArr[i].innerHTML))
                 .then(function (response) {
                     return response.json();
                 })
