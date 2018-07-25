@@ -316,19 +316,20 @@ function getResults() {
     let resultsArr = $('.active');
 
     let picOnlyResultsArr = [resultsArr[1], resultsArr[2], resultsArr[4], resultsArr[5], resultsArr[7]];
+    console.log(picOnlyResultsArr);
 
     document.getElementById('displayPlayerName').innerHTML = playerName[32].value + "'s Future";
     document.getElementById('displayResults').innerHTML = "In the future, you will attend " + resultsArr[1].innerHTML + " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $" + resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " + resultsArr[6].innerHTML + " kid(s).\n" +
         "You and " + resultsArr[5].innerHTML + " will move to " + resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML + " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around town in an awesome " + resultsArr[7].innerHTML + " and live happily ever after!";
     document.getElementById("playAgainButtonPopUp").innerHTML;
 
-    if( document.getElementsByClassName("randomAllButton")[0].disabled === true){
-        getResultsPictures(resultsArr);
-    }
+    // if( document.getElementsByClassName("randomAllButton")[0].disabled === true){
+    //     getResultsPictures(resultsArr);
+    // }
 
-    else{
+    // else{
         getImageFromGoogle(picOnlyResultsArr);
-    }
+    // }
 
 }
 
