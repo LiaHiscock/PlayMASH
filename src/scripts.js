@@ -394,6 +394,7 @@ function getImageFromGoogle(activeElArr) {
         document.getElementById('resultsPicsHere').appendChild(pic);
     }
 }
+
 //HOMEPAGE FUNCTIONS
 function playButton() {
     location.href = 'gamepage.html';

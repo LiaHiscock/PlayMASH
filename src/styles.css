@@ -288,21 +288,21 @@
     }
 
     .bubbles li:nth-child(1){   /*MASH*/
-        width:80px;
-        height: 80px;
+        width:130px;
+        height: 130px;
         left: 20%;
         border-radius: 50%;
-        line-height: 75px;
+        line-height: 130px;
     }
 
     .bubbles li:nth-child(2){   /*COLLEGES*/
-        width:90px;
-        height: 90px;
+        width:120px;
+        height: 120px;
         left: 60%;
         animation-delay: 2s;
         animation-duration: 17s;
         border-radius: 50%;
-        line-height: 80px;
+        line-height: 120px;
         font-size: smaller;
     }
 
@@ -411,8 +411,8 @@
     }
 
     ul img{     /*picture bubbles */
-        height: 30%;
-        width: 30%;
+        height: 100px;
+        width: 100px;
         border-radius: 50%;
     }
 
@@ -425,3 +425,4 @@
             transform: translateY(-1080px)rotate(630deg);
         }
     }
+
