@@ -9,7 +9,7 @@ function goButton() {
 
     let magicNumber = generateAndDisplayMagicNum();
 
-    makeOverlaysVisible();
+    makeOverlayVisible(0);
 
     $('html,body').animate({scrollTop: $(".scrollHere").offset().top}, 'slow');
 
@@ -86,12 +86,8 @@ function sliceArray(allInput, start, end) {
     return allInput.slice(start, end);
 }
 
-function makeOverlaysVisible() {
-    let overlays = document.getElementsByClassName('bodyOverlay');
-
-    for (i = 0; i < overlays.length; i++) {
-        overlays[i].style.display = "grid";
-    }
+function makeOverlayVisible(index) {
+    document.getElementsByClassName('bodyOverlay')[index].style.display = "grid";
 }
 
 var dict = {
@@ -309,6 +305,8 @@ function checkIfOptionsLeft(categoryGroups) {
 }
 
 function getResults() {
+    makeOverlayVisible(1);
+
     $('html,body').animate({scrollTop: $(".scrollHere2").offset().top}, 'slow');
 
     playerName = $('#myform :input');
@@ -324,11 +322,11 @@ function getResults() {
     document.getElementById("playAgainButtonPopUp").innerHTML;
 
     // if( document.getElementsByClassName("randomAllButton")[0].disabled === true){
-    //     getResultsPictures(resultsArr);
+    getResultsPictures(resultsArr);
     // }
-
-    // else{
-        getImageFromGoogle(picOnlyResultsArr);
+    //
+    /// else{
+    //     getImageFromGoogle(picOnlyResultsArr);
     // }
 
 }
@@ -356,18 +354,6 @@ function getResultsPictures(activeElArr) {
 }
 
 function getImageFromGoogle(activeElArr) {
-    // let collegePic = new Image();
-    //
-    // fetch(googleSearchAPI(activeElArr[1].innerHTML))
-    //     .then(function (response) {
-    //         return response.json();
-    //     })
-    //     .then(function (myJson) {
-    //         collegePic.src = myJson.items[0].link;
-    //     });
-
-    //document.getElementById('resultsPicsHere').appendChild(collegePic);
-
     for(i = 0; i < activeElArr.length; i++){
         let pic = new Image();
 

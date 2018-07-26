@@ -30,7 +30,6 @@
 
     p{
         font-size: 30px;
-        /*color: white;*/   /*changes font color for all circles*/
         font-family: 'Lato', sans-serif;
         margin-bottom: 10px;
     }
@@ -205,6 +204,15 @@
         padding-bottom: 20px;
     }
 
+    .grid-container3{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 300px);
+        /*grid-template-rows: repeat(auto-fit, 500px);*/
+        grid-template-rows: 300px 300px;
+        grid-row-gap: 50px;
+        grid-column-gap: 50px;
+    }
+
     input{
         margin: 10px;
     }
@@ -216,17 +224,6 @@
     }
 
 /*IMAGES*/
-    #gamepageBackgroundImage{
-        background-image: url("Images/Discover.jpg");
-        height: 100%;      /*changes how much of the image shows between the header and div*/
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        position: relative;
-        z-index: -1;
-        overflow: scroll;
-    }
 
     .backgroundGradient {
         background: #aa4b6b; /* fallback for old browsers */
@@ -242,8 +239,10 @@
     }
 
     #resultsPicsHere img{
-        height: 25%;
-        width: 25%;
+        height: 100%;
+        width: 100%;
+        border-radius: 20%;
+
     }
 
 /*GAME ANIMATIONS*/
