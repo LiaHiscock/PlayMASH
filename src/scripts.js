@@ -110,7 +110,7 @@ var dict = {
         "Los Angeles", "Houston", "Spokane", "Honolulu", "Minneapolis", "Chicago"],
 };
 
-function fillFieldsRandomly(key) {
+function fillOneFieldRandomly(key) {
     let randomNumsArray = getIndices(4);
 
     for (i = 0; i < 4; i++) {
@@ -118,17 +118,23 @@ function fillFieldsRandomly(key) {
     }
 }
 
-function randomizeAll() {
-    fillFieldsRandomly("colleges");
-    fillFieldsRandomly("careers");
-    fillFieldsRandomly("salaries");
-    fillFieldsRandomly("pets");
-    fillFieldsRandomly("spouses");
-    fillFieldsRandomly("kids");
-    fillFieldsRandomly("cars");
-    fillFieldsRandomly("cities");
-    document.getElementsByClassName('randomAllButton').clicked = true;
+function fillAllFieldsRandomly() {
+    fillOneFieldRandomly("colleges");
+    fillOneFieldRandomly("careers");
+    fillOneFieldRandomly("salaries");
+    fillOneFieldRandomly("pets");
+    fillOneFieldRandomly("spouses");
+    fillOneFieldRandomly("kids");
+    fillOneFieldRandomly("cars");
+    fillOneFieldRandomly("cities");
+    makeIsClickedTrue();
     return false;
+}
+
+var randomButtonWasClicked = false;
+
+function makeIsClickedTrue(){
+    randomButtonWasClicked = true;
 }
 
 function getIndices(count) {
@@ -314,24 +320,22 @@ function getResults() {
     let resultsArr = $('.active');
 
     let picOnlyResultsArr = [resultsArr[1], resultsArr[2], resultsArr[4], resultsArr[5], resultsArr[7]];
-    console.log(picOnlyResultsArr);
 
     document.getElementById('displayPlayerName').innerHTML = playerName[32].value + "'s Future";
-    document.getElementById('displayResults').innerHTML = "In the future, you will attend " + resultsArr[1].innerHTML + " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $" + resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " + resultsArr[6].innerHTML + " kid(s).\n" +
-        "You and " + resultsArr[5].innerHTML + " will move to " + resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML + " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around town in an awesome " + resultsArr[7].innerHTML + " and live happily ever after!";
-    document.getElementById("playAgainButtonPopUp").innerHTML;
+    document.getElementById('displayResults').innerHTML = "In the future, you will attend " + resultsArr[1].innerHTML +
+                            " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $" +
+                            resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " +
+                            resultsArr[6].innerHTML + " kid(s).\n" + "You and " + resultsArr[5].innerHTML + " will move to " +
+                            resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML +
+                            " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around town in an awesome "
+                            + resultsArr[7].innerHTML + " and live happily ever after!";
 
-    // if( document.getElementsByClassName("randomAllButton")[0].disabled === true){
-    getResultsPictures(resultsArr);
-    // }
-    //
-    /// else{
-    //     getImageFromGoogle(picOnlyResultsArr);
-    // }
+    if( randomButtonWasClicked ){ getImagesFromDefaults(resultsArr); }
 
+    else{ getImagesFromGoogle(picOnlyResultsArr); }
 }
 
-function getResultsPictures(activeElArr) {
+function getImagesFromDefaults(activeElArr) {
     let homePic = new Image();
         homePic.src = "Images/" + activeElArr[0].innerHTML + ".png";
     let collegePic = new Image();
@@ -348,12 +352,13 @@ function getResultsPictures(activeElArr) {
 
     document.getElementById('resultsPicsHere').appendChild(homePic);
     document.getElementById('resultsPicsHere').appendChild(collegePic);
+    document.getElementById('resultsPicsHere').appendChild(careerPic);
     document.getElementById('resultsPicsHere').appendChild(petPic);
     document.getElementById('resultsPicsHere').appendChild(spousePic);
     document.getElementById('resultsPicsHere').appendChild(carPic);
 }
 
-function getImageFromGoogle(activeElArr) {
+function getImagesFromGoogle(activeElArr) {
     for(i = 0; i < activeElArr.length; i++){
         let pic = new Image();
 
@@ -381,7 +386,7 @@ function getImageFromGoogle(activeElArr) {
     }
 }
 
-//HOMEPAGE FUNCTIONS
+//HOMEPAGE FUNCTION
 function playButton() {
     location.href = 'gamepage.html';
 }

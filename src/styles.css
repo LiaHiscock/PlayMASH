@@ -206,9 +206,9 @@
 
     .grid-container3{
         display: grid;
-        grid-template-columns: repeat(auto-fit, 300px);
-        /*grid-template-rows: repeat(auto-fit, 500px);*/
-        grid-template-rows: 300px 300px;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, 250px);
+        grid-template-rows: 250px 250px;
         grid-row-gap: 50px;
         grid-column-gap: 50px;
     }
