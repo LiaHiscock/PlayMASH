@@ -1,23 +1,25 @@
 function goButton() {
-    let allInputValues = [];
+    let inputValues = [];
 
-    let inputs = $('#myform :input');
+    let inputTags = $('#myform :input');
 
-    inputs.each(function () {
-        allInputValues.push($(this).val());
+    inputTags.each(function () {
+        inputValues.push($(this).val());
     });
 
     let magicNumber = generateAndDisplayMagicNum();
 
-    makeOverlaysVisible();
+    makeOverlayVisible(0);
 
     $('html,body').animate({scrollTop: $(".scrollHere").offset().top}, 'slow');
 
-    listAllCategoryOptions(allInputValues, magicNumber);
+    printAllCategoryOptions(inputValues, magicNumber);
 
-    disableButtons();
+    disableAllButtons();
 
-    executeAnimationArray(buildAnimationArray(magicNumber));
+    let usersSpeed = getUsersAnimationSpeed();
+
+    executeAnimationArray(buildAnimationArray(magicNumber), usersSpeed);
 
     return false;
 }
@@ -28,7 +30,7 @@ function generateAndDisplayMagicNum() {
     return magicNumber;
 }
 
-function listAllCategoryOptions(allInput, magicNumber) {
+function printAllCategoryOptions(allInput, magicNumber) {
     $('#header0').html("HOME");
     $('#cat0').html("<li class='active'>Mansion</li>" +
         "<li class='active'>Apartment</li> " +
@@ -63,10 +65,10 @@ function listAllCategoryOptions(allInput, magicNumber) {
 
 }
 
-function disableButtons() {
+function disableAllButtons() {
     document.getElementById("generate").disabled = true;
-    document.getElementsByClassName("randomAllButton")[0].disabled = true;
-    $('.randomButton').each(function () {
+    document.getElementById("randomAllButton").disabled = true;
+    $('.randomOneButton').each(function () {
         $(this).prop("onclick", null);
     });
 
@@ -86,12 +88,8 @@ function sliceArray(allInput, start, end) {
     return allInput.slice(start, end);
 }
 
-function makeOverlaysVisible() {
-    let overlays = document.getElementsByClassName('bodyOverlay');
-
-    for (i = 0; i < overlays.length; i++) {
-        overlays[i].style.display = "grid";
-    }
+function makeOverlayVisible(index) {
+    document.getElementsByClassName('bodyOverlay')[index].style.display = "grid";
 }
 
 var dict = {
@@ -114,7 +112,7 @@ var dict = {
         "Los Angeles", "Houston", "Spokane", "Honolulu", "Minneapolis", "Chicago"],
 };
 
-function fillFieldsRandomly(key) {
+function fillOneFieldRandomly(key) {
     let randomNumsArray = getIndices(4);
 
     for (i = 0; i < 4; i++) {
@@ -122,17 +120,23 @@ function fillFieldsRandomly(key) {
     }
 }
 
-function randomizeAll() {
-    fillFieldsRandomly("colleges");
-    fillFieldsRandomly("careers");
-    fillFieldsRandomly("salaries");
-    fillFieldsRandomly("pets");
-    fillFieldsRandomly("spouses");
-    fillFieldsRandomly("kids");
-    fillFieldsRandomly("cars");
-    fillFieldsRandomly("cities");
-    document.getElementsByClassName('randomAllButton').clicked = true;
+function fillAllFieldsRandomly() {
+    fillOneFieldRandomly("colleges");
+    fillOneFieldRandomly("careers");
+    fillOneFieldRandomly("salaries");
+    fillOneFieldRandomly("pets");
+    fillOneFieldRandomly("spouses");
+    fillOneFieldRandomly("kids");
+    fillOneFieldRandomly("cars");
+    fillOneFieldRandomly("cities");
+    makeIsClickedTrue();
     return false;
+}
+
+var randomButtonWasClicked = false;
+
+function makeIsClickedTrue(){
+    randomButtonWasClicked = true;
 }
 
 function getIndices(count) {
@@ -151,68 +155,6 @@ function getIndices(count) {
 
 function displayPlayerName() {
     document.getElementById('putUserNameHere').innerHTML = document.cookie;
-}
-
-function eliminateAllButOnePerCat(magicNumber) {
-    let categoryGroups = [];
-    let optionsLeft = true;
-    let activeNumber = 1;
-
-    $("ol").each(function (index, element) {
-        categoryGroups.push(element);
-    });
-
-    let interval = setInterval(function () {
-        $.each(categoryGroups, function (index, element) {
-            let activeElements = element.getElementsByClassName("active");
-
-            if (activeElements.length > 1) {
-
-                $.each(activeElements, function (index, listItem) {
-                    if (listItem) {
-
-                        //doesn't show class applications
-                        // $(this).queue(function(next) {
-                        //     $(this).addClass("currentElement").delay(200);
-                        //     $(this).removeClass("currentElement").delay(200);
-                        //     next();
-                        // });
-
-                        //applies class to all active elements, then removes it from all (doesn't go one by one)
-                        $(this).addClass("currentElement").delay(500).queue(function (next) {
-                            $(this).removeClass("currentElement");
-                            next();
-                        });
-
-                        //applies classes but never removes them
-                        // $(this).addClass("currentElement");
-                        // setTimeout(function () {
-                        //     $(this).removeClass('currentElement');
-                        // }, 500);
-
-                        //doesn't show class applications
-                        // $(this).addClass("currentElement").delay(500);
-                        // $(this).removeClass("currentElement").delay(500);
-
-                        if (activeNumber % magicNumber === 0) {
-                            listItem.classList = "nthElement";
-                            // activeNumber = 1;
-                        }
-                    }
-
-                    activeNumber++;
-                });
-            }
-        });
-        console.log("done");
-        optionsLeft = checkIfOptionsLeft(categoryGroups);
-
-        if (!optionsLeft) {
-            clearInterval(interval);
-            //call any later functions here!!
-            getResults();
-        }
-    }, 1000);
 }
 
 function buildAnimationArray(magicNumber) {
@@ -264,9 +206,19 @@ function buildAnimationArray(magicNumber) {
     return tasks;
 }
 
-const speed = 20;
+function getUsersAnimationSpeed(){
+    let usersSpeed;
+    let radioButtons = document.getElementsByClassName("animationSpeed");
 
-function executeAnimationArray(taskArray) {
+    for(i = 0; i < radioButtons.length; i++){
+        if (radioButtons[i].checked){
+            usersSpeed = radioButtons[i].value;
+        }
+    }
+    return usersSpeed;
+}
+
+function executeAnimationArray(taskArray, usersSpeed) {
     setTimeout(function next() {
         let current = taskArray.shift();
         element = current.el;
@@ -285,13 +237,13 @@ function executeAnimationArray(taskArray) {
         }
 
         if (taskArray.length > 0) {
-            setTimeout(next, speed);
+            setTimeout(next, usersSpeed);
         }
 
         if (taskArray.length === 0) {
             getResults();
         }
-    }, speed);
+    }, usersSpeed);
 }
 
 function checkIfOptionsLeft(categoryGroups) {
@@ -309,6 +261,8 @@ function checkIfOptionsLeft(categoryGroups) {
 }
 
 function getResults() {
+    makeOverlayVisible(1);
+
     $('html,body').animate({scrollTop: $(".scrollHere2").offset().top}, 'slow');
 
     playerName = $('#myform :input');
@@ -316,24 +270,22 @@ function getResults() {
     let resultsArr = $('.active');
 
     let picOnlyResultsArr = [resultsArr[0], resultsArr[1], resultsArr[2], resultsArr[4], resultsArr[5], resultsArr[7]];
-    console.log(picOnlyResultsArr);
 
     document.getElementById('displayPlayerName').innerHTML = playerName[32].value + "'s Future";
-    document.getElementById('displayResults').innerHTML = "In the future, you will attend " + resultsArr[1].innerHTML + " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $" + resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " + resultsArr[6].innerHTML + " kid(s).\n" +
-        "You and " + resultsArr[5].innerHTML + " will move to " + resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML + " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around town in an awesome " + resultsArr[7].innerHTML + " and live happily ever after!";
-    document.getElementById("playAgainButtonPopUp").innerHTML;
+    document.getElementById('displayResults').innerHTML = "In the future, you will attend " + resultsArr[1].innerHTML +
+                            " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $" +
+                            resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " +
+                            resultsArr[6].innerHTML + " kid(s).\n" + "You and " + resultsArr[5].innerHTML + " will move to " +
+                            resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML +
+                            " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around town in an awesome "
+                            + resultsArr[7].innerHTML + " and live happily ever after!";
 
-    // if( document.getElementsByClassName("randomAllButton")[0].disabled === true){
-    getResultsPictures(resultsArr);
-    // }
-    //
-    // else{
-    //     getImageFromGoogle(picOnlyResultsArr);
-    // }
+    if( randomButtonWasClicked ){ getImagesFromDefaults(resultsArr); }
 
+    else{ getImagesFromGoogle(picOnlyResultsArr); }
 }
 
-function getResultsPictures(activeElArr) {
+function getImagesFromDefaults(activeElArr) {
     let homePic = new Image();
         homePic.src = "Images/" + activeElArr[0].innerHTML + ".png";
     let collegePic = new Image();
@@ -356,18 +308,10 @@ function getResultsPictures(activeElArr) {
     document.getElementById('resultsPicsHere').appendChild(carPic);
 }
 
-function getImageFromGoogle(activeElArr) {
-    // let collegePic = new Image();
-    //
-    // fetch(googleSearchAPI(activeElArr[1].innerHTML))
-    //     .then(function (response) {
-    //         return response.json();
-    //     })
-    //     .then(function (myJson) {
-    //         collegePic.src = myJson.items[0].link;
-    //     });
-
-    //document.getElementById('resultsPicsHere').appendChild(collegePic);
+function getImagesFromGoogle(activeElArr) {
+    let homePic = new Image();
+    homePic.src = "Images/" + activeElArr[0].innerHTML + ".png";
+    document.getElementById('resultsPicsHere').appendChild(homePic);
 
     for(i = 0; i < activeElArr.length; i++){
         let pic = new Image();
@@ -396,7 +340,7 @@ function getImageFromGoogle(activeElArr) {
     }
 }
 
-//HOMEPAGE FUNCTIONS
+//HOMEPAGE FUNCTION
 function playButton() {
     location.href = 'gamepage.html';
 }
