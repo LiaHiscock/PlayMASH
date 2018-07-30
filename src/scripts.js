@@ -311,7 +311,7 @@ function getImagesFromDefaults(activeElArr) {
 function getImagesFromGoogle(activeElArr) {
     let homePic = new Image();
     homePic.src = "Images/" + activeElArr[0].innerHTML + ".png";
-    document.getElementById('resultsPicsHere').appendChild();
+    document.getElementById('resultsPicsHere').appendChild(homePic);
 
     for(i = 0; i < activeElArr.length; i++){
         let pic = new Image();
