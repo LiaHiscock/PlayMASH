@@ -54,25 +54,11 @@
         font-family: CustomFontHeroLight, sans-serif;
     }
 
-    #nameBubble{
+    .grayBubblesText{
         font-family: CustomFontHeroLight, sans-serif;
     }
 
 /*BUTTONS & CIRCLES*/
-    .playAgainButton{
-        background-color: powderblue;
-        color: #999999;
-        padding: 140px;
-        text-align: center;
-
-        font-size: 50px;
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-        position: relative;
-    }
-
     .pinkCircles{
         background: rgba(173, 20, 87, 1);
         color: white;
@@ -115,14 +101,41 @@
         border-radius: 10%;
     }
 
+    .randomOneButton{
+    padding: 5px 10px;
+    display: inline-block;
+    background: none;
+    border: 1px solid white;
+    text-align: center;
+    font-size: 13px;
+    margin: 3px 2px;
+    cursor: pointer;
+    border-radius: 10%;
+    font-family: CustomFontHeroLight, sans-serif;
+}
+
+    .randomOneButton:hover {
+    padding: 5px 10px;
+    display: inline-block;
+    background-color: lightgrey;
+    color: dimgray;
+    text-align: center;
+    font-size: 13px;
+    margin: 3px 2px;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
     .circleButton{
         background: lightgrey;
         color: white;
         border-radius: 50%;
-        padding: 110px;
         font-size: 50px;
         cursor: pointer;
         font-family: CustomFontHeroLight, sans-serif;
+        height: 300px;
+        width: 300px;
+        transition: transform .5s;
     }
 
     .circleButton:hover{
@@ -135,33 +148,29 @@
         height:300px;
     }
 
-    .randomAllButton.circleButton{
-        padding: 0;
+    #randomAllButton{
+        padding: 10%;
     }
 
-    .randomButton{
-        padding: 5px 10px;
-        display: inline-block;
-        background: none;
-        border: 1px solid white;
-        text-align: center;
-        font-size: 13px;
-        margin: 3px 2px;
-        cursor: pointer;
-        border-radius: 10%;
-        font-family: CustomFontHeroLight, sans-serif;
+    #randomAllButton:hover{
+        opacity: .7;
     }
 
-    .randomButton:hover {
-        padding: 5px 10px;
-        display: inline-block;
-        background-color: lightgrey;
-        color: dimgray;
-        text-align: center;
-        font-size: 13px;
-        margin: 3px 2px;
-        cursor: pointer;
-        border-radius: 10%;
+    .grayCircles{
+        background: lightgray;
+        color: white;
+        border-radius: 50%;
+        transition: transform .5s;
+        margin: 0 auto;
+        height: 300px;
+        width: 300px;
+    }
+
+    .grayCircles:hover{
+        color: white;
+        -ms-transform: scale(1.19);
+        -webkit-transform: scale(1.19);
+        transform: scale(1.19);
     }
 
 /*LAYOUT*/
@@ -205,12 +214,9 @@
     }
 
     .grid-container3{
-        display: grid;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        grid-template-columns: repeat(auto-fit, 250px);
-        grid-template-rows: 250px 250px;
-        grid-row-gap: 50px;
-        grid-column-gap: 50px;
     }
 
     input{
@@ -239,10 +245,12 @@
     }
 
     #resultsPicsHere img{
-        height: 100%;
-        width: 100%;
-        border-radius: 20%;
-
+        height: 200px;
+        width: 200px;
+        flex: 0 0 calc(16.66% - 20px);
+        padding: 20px;
+        margin: 10px;
+        object-fit: contain;
     }
 
 /*GAME ANIMATIONS*/

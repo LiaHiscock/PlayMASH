@@ -1,10 +1,10 @@
 function goButton() {
-    let allInputValues = [];
+    let inputValues = [];
 
-    let inputs = $('#myform :input');
+    let inputTags = $('#myform :input');
 
-    inputs.each(function () {
-        allInputValues.push($(this).val());
+    inputTags.each(function () {
+        inputValues.push($(this).val());
     });
 
     let magicNumber = generateAndDisplayMagicNum();
@@ -13,11 +13,13 @@ function goButton() {
 
     $('html,body').animate({scrollTop: $(".scrollHere").offset().top}, 'slow');
 
-    listAllCategoryOptions(allInputValues, magicNumber);
+    printAllCategoryOptions(inputValues, magicNumber);
 
-    disableButtons();
+    disableAllButtons();
 
-    executeAnimationArray(buildAnimationArray(magicNumber));
+    let usersSpeed = getUsersAnimationSpeed();
+
+    executeAnimationArray(buildAnimationArray(magicNumber), usersSpeed);
 
     return false;
 }
@@ -28,7 +30,7 @@ function generateAndDisplayMagicNum() {
     return magicNumber;
 }
 
-function listAllCategoryOptions(allInput, magicNumber) {
+function printAllCategoryOptions(allInput, magicNumber) {
     $('#header0').html("HOME");
     $('#cat0').html("<li class='active'>Mansion</li>" +
         "<li class='active'>Apartment</li> " +
@@ -63,10 +65,10 @@ function listAllCategoryOptions(allInput, magicNumber) {
 
 }
 
-function disableButtons() {
+function disableAllButtons() {
     document.getElementById("generate").disabled = true;
-    document.getElementsByClassName("randomAllButton")[0].disabled = true;
-    $('.randomButton').each(function () {
+    document.getElementById("randomAllButton").disabled = true;
+    $('.randomOneButton').each(function () {
         $(this).prop("onclick", null);
     });
 
@@ -155,68 +157,6 @@ function displayPlayerName() {
     document.getElementById('putUserNameHere').innerHTML = document.cookie;
 }
 
-function eliminateAllButOnePerCat(magicNumber) {
-    let categoryGroups = [];
-    let optionsLeft = true;
-    let activeNumber = 1;
-
-    $("ol").each(function (index, element) {
-        categoryGroups.push(element);
-    });
-
-    let interval = setInterval(function () {
-        $.each(categoryGroups, function (index, element) {
-            let activeElements = element.getElementsByClassName("active");
-
-            if (activeElements.length > 1) {
-
-                $.each(activeElements, function (index, listItem) {
-                    if (listItem) {
-
-                        //doesn't show class applications
-                        // $(this).queue(function(next) {
-                        //     $(this).addClass("currentElement").delay(200);
-                        //     $(this).removeClass("currentElement").delay(200);
-                        //     next();
-                        // });
-
-                        //applies class to all active elements, then removes it from all (doesn't go one by one)
-                        $(this).addClass("currentElement").delay(500).queue(function (next) {
-                            $(this).removeClass("currentElement");
-                            next();
-                        });
-
-                        //applies classes but never removes them
-                        // $(this).addClass("currentElement");
-                        // setTimeout(function () {
-                        //     $(this).removeClass('currentElement');
-                        // }, 500);
-
-                        //doesn't show class applications
-                        // $(this).addClass("currentElement").delay(500);
-                        // $(this).removeClass("currentElement").delay(500);
-
-                        if (activeNumber % magicNumber === 0) {
-                            listItem.classList = "nthElement";
-                            // activeNumber = 1;
-                        }
-                    }
-
-                    activeNumber++;
-                });
-            }
-        });
-        console.log("done");
-        optionsLeft = checkIfOptionsLeft(categoryGroups);
-
-        if (!optionsLeft) {
-            clearInterval(interval);
-            //call any later functions here!!
-            getResults();
-        }
-    }, 1000);
-}
-
 function buildAnimationArray(magicNumber) {
     let optionsLeft = true;
     let activeNumber = 1;
@@ -266,9 +206,19 @@ function buildAnimationArray(magicNumber) {
     return tasks;
 }
 
-const speed = 20;
+function getUsersAnimationSpeed(){
+    let usersSpeed;
+    let radioButtons = document.getElementsByClassName("animationSpeed");
 
-function executeAnimationArray(taskArray) {
+    for(i = 0; i < radioButtons.length; i++){
+        if (radioButtons[i].checked){
+            usersSpeed = radioButtons[i].value;
+        }
+    }
+    return usersSpeed;
+}
+
+function executeAnimationArray(taskArray, usersSpeed) {
     setTimeout(function next() {
         let current = taskArray.shift();
         element = current.el;
@@ -287,13 +237,13 @@ function executeAnimationArray(taskArray) {
         }
 
         if (taskArray.length > 0) {
-            setTimeout(next, speed);
+            setTimeout(next, usersSpeed);
         }
 
         if (taskArray.length === 0) {
             getResults();
         }
-    }, speed);
+    }, usersSpeed);
 }
 
 function checkIfOptionsLeft(categoryGroups) {
@@ -319,7 +269,7 @@ function getResults() {
 
     let resultsArr = $('.active');
 
-    let picOnlyResultsArr = [resultsArr[1], resultsArr[2], resultsArr[4], resultsArr[5], resultsArr[7]];
+    let picOnlyResultsArr = [resultsArr[0], resultsArr[1], resultsArr[2], resultsArr[4], resultsArr[5], resultsArr[7]];
 
     document.getElementById('displayPlayerName').innerHTML = playerName[32].value + "'s Future";
     document.getElementById('displayResults').innerHTML = "In the future, you will attend " + resultsArr[1].innerHTML +
@@ -359,10 +309,14 @@ function getImagesFromDefaults(activeElArr) {
 }
 
 function getImagesFromGoogle(activeElArr) {
+    let homePic = new Image();
+    homePic.src = "Images/" + activeElArr[0].innerHTML + ".png";
+    document.getElementById('resultsPicsHere').appendChild();
+
     for(i = 0; i < activeElArr.length; i++){
         let pic = new Image();
 
-        if(i === 0){
+        if(i === 1){
             fetch(googleSearchAPICollege(activeElArr[i].innerHTML))
                 .then(function (response) {
                     return response.json();
