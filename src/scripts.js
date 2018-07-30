@@ -277,7 +277,7 @@ function getResults() {
                             resultsArr[3].innerHTML + ". You will marry " + resultsArr[5].innerHTML + " and have " +
                             resultsArr[6].innerHTML + " kid(s).\n" + "You and " + resultsArr[5].innerHTML + " will move to " +
                             resultsArr[8].innerHTML + " where you will live in a beautiful " + resultsArr[0].innerHTML +
-                            " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around + " +
+                            " and have a pet " + resultsArr[4].innerHTML + ". You will cruise around " +
                             resultsArr[8].innerHTML + " in an awesome " + resultsArr[7].innerHTML + " and live happily ever after!";
 
     if( randomButtonWasClicked ){ getImagesFromDefaults(resultsArr); }
