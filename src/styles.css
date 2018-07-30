@@ -58,6 +58,10 @@
         font-family: CustomFontHeroLight, sans-serif;
     }
 
+    .speedOption{
+        font-family: CustomFontHeroLight, sans-serif;
+    }
+
 /*BUTTONS & CIRCLES*/
     .pinkCircles{
         background: rgba(173, 20, 87, 1);
