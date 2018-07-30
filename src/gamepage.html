@@ -5,242 +5,249 @@
     <title>MASH | Game</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="Images/spiral.png">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="styles">
+    <link rel="styles" href="https://fonts.googleapis.com/css?family=Lato:300">
 </head>
 
 <body class="backgroundGradient">
+    <div class="headerOverlay">
+        <h1>Play MASH</h1>
+        <h2>Predict your Future!</h2>
+    </div>
 
-<div class="headerOverlay">
-    <h1>Play MASH</h1>
-    <h2>Predict your Future!</h2>
-</div>
+    <form id="myform">
+        <div align="center" class="grid-container">
+            <div class="mintCircles">
+                <p class="circleHeaderText">College</p>
+                <div class="randomOneButton" onclick="fillOneFieldRandomly('colleges')" tabindex="0">RANDOM</div>
+                <br>
+                <input type="text" class="colleges" title="college" required><br>
+                <input type="text" class="colleges" title="college" required><br>
+                <input type="text" class="colleges" title="college" required><br>
+                <input type="text" class="colleges" title="college" required><br>
+            </div>
 
+            <div class="pinkCircles">
+                <p class="circleHeaderText">Career</p>
+                <div class="randomOneButton" onclick="fillOneFieldRandomly('careers')" tabindex="0">RANDOM</div>
+                <br>
+                <input type="text" class="careers" title="career" required><br>
+                <input type="text" class="careers" title="career" required><br>
+                <input type="text" class="careers" title="career" required><br>
+                <input type="text" class="careers" title="career" required><br>
+                <!--</p>-->
+            </div>
 
-<form id="myform">
-    <div align="center" class="grid-container">
-        <div class="mintCircles">
-            <p class="circleHeaderText">College</p>
-            <div class="randomButton" onclick="fillFieldsRandomly('colleges')" tabindex="0">RANDOM</div>
-            <br>
-            <input type="text" class="colleges" title="college" required><br>
-            <input type="text" class="colleges" title="college" required><br>
-            <input type="text" class="colleges" title="college" required><br>
-            <input type="text" class="colleges" title="college" required><br>
+            <div class="mintCircles">
+                <p class="circleHeaderText">Salary</p>
+                <div class="randomOneButton" onclick="fillOneFieldRandomly('salaries')" tabindex="0">RANDOM</div>
+                <br>
+                <input type="text" class="salaries" title="salary" required><br>
+                <input type="text" class="salaries" title="salary" required><br>
+                <input type="text" class="salaries" title="salary" required><br>
+                <input type="text" class="salaries" title="salary" required><br>
+            </div>
+
+            <div class="pinkCircles">
+                <p class="circleHeaderText">Pets</p>
+                <div class="randomOneButton" onclick="fillOneFieldRandomly('pets')" tabindex="0">RANDOM</div>
+                <br>
+                <input type="text" class="pets" title="pet" required><br>
+                <input type="text" class="pets" title="pet" required><br>
+                <input type="text" class="pets" title="pet" required><br>
+                <input type="text" class="pets" title="pet" required><br>
+            </div>
+
+            <div class="mintCircles">
+                <p class="circleHeaderText">Spouse</p>
+                <div class="randomOneButton" onclick="fillOneFieldRandomly('spouses')" tabindex="0">RANDOM</div>
+                <br>
+                <input type="text" class="spouses" title="spouse" required><br>
+                <input type="text" class="spouses" title="spouse" required><br>
+                <input type="text" class="spouses" title="spouse" required><br>
+                <input type="text" class="spouses" title="spouse" required><br>
+            </div>
+
+            <div class="pinkCircles">
+                <p class="circleHeaderText"># of Kids</p>
+                <div class="randomOneButton" onclick="fillOneFieldRandomly('kids')" tabindex="0">RANDOM</div>
+                <br>
+                <input type="text" class="kids" title="numKids" required><br>
+                <input type="text" class="kids" title="numKids" required><br>
+                <input type="text" class="kids" title="numKids" required><br>
+                <input type="text" class="kids" title="numKids" required><br>
+            </div>
+
+            <div class="mintCircles">
+                <p class="circleHeaderText">Car</p>
+                <div class="randomOneButton" onclick="fillOneFieldRandomly('cars')" tabindex="0">RANDOM</div>
+                <br>
+                <input type="text" class="cars" title="car" required><br>
+                <input type="text" class="cars" title="car" required><br>
+                <input type="text" class="cars" title="car" required><br>
+                <input type="text" class="cars" title="car" required><br>
+            </div>
+
+            <div class="pinkCircles">
+                <p class="circleHeaderText">City</p>
+                <div class="randomOneButton" onclick="fillOneFieldRandomly('cities')" tabindex="0">RANDOM</div>
+                <br>
+                <input type="text" class="cities" title="city" required><br>
+                <input type="text" class="cities" title="city" required><br>
+                <input type="text" class="cities" title="city" required><br>
+                <input type="text" class="cities" title="city" required><br>
+            </div>
+
+            <div class="grayCircles" id="nameField">
+                <br><br><br><br>
+                <p class="grayBubblesText">your name</p>
+                <input type="text" title="userName" required>
+            </div>
+
+            <div class="grayCircles">
+                <br><br><br>
+                <p class="grayBubblesText">Choose animation speed</p>
+                <input type="radio" name="animationSpeed" id="fast" value=20 class="animationSpeed">
+                    <label for="fast">Fast</label> <br>
+
+                <input type="radio" name="animationSpeed" id="normal" value=70 class="animationSpeed" checked>
+                    <label for="normal">Normal</label> <br>
+
+                <input type="radio" name="animationSpeed" id="slow" value=110 class="animationSpeed">
+                  <label for="slow">Slow</label>  <br>
+            </div>
+
+            <button id="randomAllButton" class="circleButton" onclick="return fillAllFieldsRandomly()">ALL RANDOM</button>
+
+            <button id="generate" class="circleButton" onclick="return goButton()">GO</button>
+        </div>
+    </form>
+
+    <div align="center" class="grid-container2 scrollHere bodyOverlay">
+        <div>
+            <h1 id="header0" class="smallH1"></h1>
+            <ol id="cat0">
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+            </ol>
         </div>
 
-        <div class="pinkCircles">
-            <p class="circleHeaderText">Career</p>
-            <div class="randomButton" onclick="fillFieldsRandomly('careers')" tabindex="0">RANDOM</div>
-            <br>
-            <input type="text" class="careers" title="career" required><br>
-            <input type="text" class="careers" title="career" required><br>
-            <input type="text" class="careers" title="career" required><br>
-            <input type="text" class="careers" title="career" required><br>
-            <!--</p>-->
+        <div class="needsPicture">
+            <h1 id="header1" class="smallH1"></h1>
+            <ol id="outputCat1">
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+            </ol>
         </div>
 
-        <div class="mintCircles">
-            <p class="circleHeaderText">Salary</p>
-            <div class="randomButton" onclick="fillFieldsRandomly('salaries')" tabindex="0">RANDOM</div>
-            <br>
-            <input type="text" class="salaries" title="salary" required><br>
-            <input type="text" class="salaries" title="salary" required><br>
-            <input type="text" class="salaries" title="salary" required><br>
-            <input type="text" class="salaries" title="salary" required><br>
+        <div>
+            <h1 id="header2" class="smallH1"></h1>
+            <ol id="outputCat2">
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+            </ol>
         </div>
 
-        <div class="pinkCircles">
-            <p class="circleHeaderText">Pets</p>
-            <div class="randomButton" onclick="fillFieldsRandomly('pets')" tabindex="0">RANDOM</div>
-            <br>
-            <input type="text" class="pets" title="pet" required><br>
-            <input type="text" class="pets" title="pet" required><br>
-            <input type="text" class="pets" title="pet" required><br>
-            <input type="text" class="pets" title="pet" required><br>
+        <div class="needsPicture">
+            <h1 id="header3" class="smallH1"></h1>
+            <ol id="outputCat3">
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+            </ol>
         </div>
 
-        <div class="mintCircles">
-            <p class="circleHeaderText">Spouse</p>
-            <div class="randomButton" onclick="fillFieldsRandomly('spouses')" tabindex="0">RANDOM</div>
-            <br>
-            <input type="text" class="spouses" title="spouse" required><br>
-            <input type="text" class="spouses" title="spouse" required><br>
-            <input type="text" class="spouses" title="spouse" required><br>
-            <input type="text" class="spouses" title="spouse" required><br>
+        <div>
+            <h1 id="header4" class="smallH1"></h1>
+            <ol id="outputCat4">
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+            </ol>
         </div>
 
-        <div class="pinkCircles">
-            <p class="circleHeaderText"># of Kids</p>
-            <div class="randomButton" onclick="fillFieldsRandomly('kids')" tabindex="0">RANDOM</div>
-            <br>
-            <input type="text" class="kids" title="numKids" required><br>
-            <input type="text" class="kids" title="numKids" required><br>
-            <input type="text" class="kids" title="numKids" required><br>
-            <input type="text" class="kids" title="numKids" required><br>
+        <div class="needsPicture">
+            <h1 id="header5" class="smallH1"></h1>
+            <ol id="outputCat5">
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+            </ol>
         </div>
 
-        <div class="mintCircles">
-            <p class="circleHeaderText">Car</p>
-            <div class="randomButton" onclick="fillFieldsRandomly('cars')" tabindex="0">RANDOM</div>
-            <br>
-            <input type="text" class="cars" title="car" required><br>
-            <input type="text" class="cars" title="car" required><br>
-            <input type="text" class="cars" title="car" required><br>
-            <input type="text" class="cars" title="car" required><br>
+        <div class="needsPicture">
+            <h1 id="header6" class="smallH1"></h1>
+            <ol id="outputCat6">
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+            </ol>
         </div>
 
-        <div class="pinkCircles">
-            <p class="circleHeaderText">City</p>
-            <div class="randomButton" onclick="fillFieldsRandomly('cities')" tabindex="0">RANDOM</div>
-            <br>
-            <input type="text" class="cities" title="city" required><br>
-            <input type="text" class="cities" title="city" required><br>
-            <input type="text" class="cities" title="city" required><br>
-            <input type="text" class="cities" title="city" required><br>
+        <div>
+            <h1 id="header7" class="smallH1"></h1>
+            <ol id="outputCat7">
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+            </ol>
         </div>
 
-        <div class="pinkCircles" id="nameField" style="background: lightgray">
-            <br><br><br><br>
-            <p id="nameBubble">Your Name</p>
-            <input type="text" title="userName" required>
+        <div class="needsPicture">
+            <h1 id="header8" class="smallH1"></h1>
+            <ol id="outputCat8">
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+                <li class = "active"></li>
+            </ol>
         </div>
 
-        <button class="circleButton randomAllButton" onclick="return randomizeAll()">ALL RANDOM</button>
-
-        <button id="generate" class="circleButton" onclick="return goButton()">GO</button>
+        <div>
+            <h1 id="headerMagicNum"></h1>
+        </div>
     </div>
 
+    <br><br><br><br><br>
 
+    <div align="center" class="bodyOverlay scrollHere2" style="display: none;">
+        <br><br>
+        <h1 id="displayPlayerName" style="align: center"></h1>
+        <h2 id="displayResults"></h2>
 
-</form>
+        <br><br>
 
-<div align="center" class="grid-container2 scrollHere bodyOverlay">
-    <div>
-        <h1 id="header0" class="smallH1"></h1>
-        <ol id="cat0">
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
+        <ol id="resultsPicsHere" class="grid-container3">
         </ol>
+
+        <br><br><br>
+
+        <button onclick="location.href='gamepage.html';" class="circleButton storyButton">PLAY AGAIN</button>
+
+        <br><br>
     </div>
 
-    <div class="needsPicture">
-        <h1 id="header1" class="smallH1"></h1>
-        <ol id="outputCat1">
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-        </ol>
-    </div>
-
-    <div>
-        <h1 id="header2" class="smallH1"></h1>
-        <ol id="outputCat2">
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-        </ol>
-    </div>
-
-    <div class="needsPicture">
-        <h1 id="header3" class="smallH1"></h1>
-        <ol id="outputCat3">
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-        </ol>
-    </div>
-
-    <div>
-        <h1 id="header4" class="smallH1"></h1>
-        <ol id="outputCat4">
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-        </ol>
-    </div>
-
-    <div class="needsPicture">
-        <h1 id="header5" class="smallH1"></h1>
-        <ol id="outputCat5">
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-        </ol>
-    </div>
-
-    <div class="needsPicture">
-        <h1 id="header6" class="smallH1"></h1>
-        <ol id="outputCat6">
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-        </ol>
-    </div>
-
-    <div>
-        <h1 id="header7" class="smallH1"></h1>
-        <ol id="outputCat7">
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-        </ol>
-    </div>
-
-    <div class="needsPicture">
-        <h1 id="header8" class="smallH1"></h1>
-        <ol id="outputCat8">
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-            <li class = "active"></li>
-        </ol>
-    </div>
-
-    <div>
-        <h1 id="headerMagicNum"></h1>
-    </div>
-</div>
-
-<br><br><br><br><br>
-
-<div align="center" class="bodyOverlay scrollHere2" style="display: none;">
-    <br><br>
-    <h1 id="displayPlayerName" style="align: center"></h1>
-    <h2 id="displayResults"></h2>
-
-    <br><br>
-    <button id="playAgainButtonPopUp" onclick="location.href='gamepage.html';" class="circleButton storyButton">PLAY AGAIN</button>
-
-    <ul id="resultsPicsHere">
-    </ul>
-
-    <br><br>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous">
-</script>
-
-
-<script>
-    $(document).ready(function(){
-        console.log("my document loaded");
-    });
-
-</script>
-
-<script src="scripts.js"></script>
-<script src="keyRing.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            console.log("my document loaded");
+        });
+    </script>
+    <script src="scripts.js"></script>
+    <script src="keyRing.js"></script>
 </body>
 </html>
 
