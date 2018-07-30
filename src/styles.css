@@ -421,6 +421,7 @@
         height: 100px;
         width: 100px;
         border-radius: 50%;
+        z-index: 10;
     }
 
     @keyframes square {
