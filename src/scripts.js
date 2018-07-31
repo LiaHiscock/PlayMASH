@@ -173,8 +173,8 @@ function buildAnimationArray(magicNumber) {
             let activeElements = element.getElementsByClassName("active");
 
             if (activeElements.length > 1) {
-
-                $.each(activeElements, function (index, listItem) {
+                
+                $(activeElements).each(function (index, listItem) {
                     if (listItem) {
                         tasks.push({
                             el: $(this),
