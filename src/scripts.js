@@ -173,28 +173,29 @@ function buildAnimationArray(magicNumber) {
             let activeElements = element.getElementsByClassName("active");
 
             if (activeElements.length > 1) {
-                
+
                 $(activeElements).each(function (index, listItem) {
                     if (listItem) {
-                        tasks.push({
-                            el: $(this),
-                            action: "addCurrentClass"
-                        });
+                        if (activeNumber % magicNumber === 0) {
+                            tasks.push({
+                                el: $(this),
+                                action: "addnthElementClass"
+                            });
+                            $(this).removeClass("active");
 
-                        tasks.push({
-                            el: $(this),
-                            action: "removeCurrentClass"
-                        });
-                    }
+                            // activeNumber = 1;
+                        }
+                        else{
+                            tasks.push({
+                                el: $(this),
+                                action: "addCurrentClass"
+                            });
 
-                    if (activeNumber % magicNumber === 0) {
-                        tasks.push({
-                            el: $(this),
-                            action: "addnthElementClass"
-                        });
-                        $(this).removeClass("active");
-
-                        // activeNumber = 1;
+                            tasks.push({
+                                el: $(this),
+                                action: "removeCurrentClass"
+                            });
+                        }
                     }
 
                     activeNumber++;
