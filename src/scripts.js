@@ -227,18 +227,14 @@ function executeAnimationArray(taskArray, usersSpeed) {
 
         if (action === "addCurrentClass") {
             element.addClass("currentElement");
-            console.log(`adding current class to: ${element[0].innerText}`)
         }
 
         if (action === "removeCurrentClass") {
             element.removeClass("currentElement");
-            console.log(`removing current class to: ${element[0].innerText}`)
         }
 
         if (action === "addnthElementClass") {
             element.addClass("nthElement");
-            console.log(`adding nth class to: ${element[0].innerText}`)
-
         }
 
         if (taskArray.length > 0) {
@@ -274,7 +270,10 @@ function getResults() {
 
     let resultsArr = $('.active');
 
-    let picOnlyResultsArr = [resultsArr[0], resultsArr[1], resultsArr[2], resultsArr[4], resultsArr[5], resultsArr[7]];
+    let picOnlyResultsArr = [resultsArr[0].innerHTML, resultsArr[1].innerHTML + " logo", resultsArr[2].innerHTML + " job",
+                            resultsArr[4].innerHTML, resultsArr[5].innerHTML, resultsArr[7].innerHTML,];
+
+    console.log(picOnlyResultsArr[1]);
 
     document.getElementById('displayPlayerName').innerHTML = playerName[32].value + "'s Future";
     document.getElementById('displayResults').innerHTML = "In the future, you will attend " + resultsArr[1].innerHTML +
@@ -317,25 +316,13 @@ function getImagesFromGoogle(activeElArr) {
     for(i = 0; i < activeElArr.length; i++){
         let pic = new Image();
 
-        if(i === 1){
-            fetch(googleSearchAPICollege(activeElArr[i].innerHTML))
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (myJson) {
-                    pic.src = myJson.items[0].link;
-                });
-        }
-
-        else{
-        fetch(googleSearchAPI(activeElArr[i].innerHTML))
+        fetch(googleSearchAPI(activeElArr[i]))
             .then(function (response) {
                 return response.json();
             })
             .then(function (myJson) {
                 pic.src = myJson.items[0].link;
             });
-        }
 
         document.getElementById('resultsPicsHere').appendChild(pic);
     }
