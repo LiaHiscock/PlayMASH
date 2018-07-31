@@ -1,1 +1,1 @@
-<?php include_once("./src/gamepage.html"); ?>
+<?php header("Location: /src/gamepage.html"); ?>
