@@ -25,7 +25,7 @@ function goButton() {
 }
 
 function generateAndDisplayMagicNum() {
-    let magicNumber = Math.floor(Math.random() * 8 + 2).toString();
+    let magicNumber = Math.floor(Math.random() * 8 + 3).toString();
     document.getElementById("generate").innerHTML = magicNumber;
     return magicNumber;
 }
@@ -61,7 +61,8 @@ function printAllCategoryOptions(allInput, magicNumber) {
     $('#header8').html("CITIES");
     $('#outputCat8').html(formatOneCategory(sliceArray(allInput, 28, 32)));
 
-    $('#headerMagicNum').html(magicNumber.toString());
+    $('#headerMagicNum').html("MAGIC NUMBER");
+    $('#bodyMagicNum').html(magicNumber.toString());
 
 }
 
@@ -202,7 +203,7 @@ function buildAnimationArray(magicNumber) {
         });
         optionsLeft = checkIfOptionsLeft(categoryGroups);
     }
-
+    window.tasks = tasks.slice();
     return tasks;
 }
 
@@ -226,14 +227,18 @@ function executeAnimationArray(taskArray, usersSpeed) {
 
         if (action === "addCurrentClass") {
             element.addClass("currentElement");
+            console.log(`adding current class to: ${element[0].innerText}`)
         }
 
         if (action === "removeCurrentClass") {
             element.removeClass("currentElement");
+            console.log(`removing current class to: ${element[0].innerText}`)
         }
 
         if (action === "addnthElementClass") {
             element.addClass("nthElement");
+            console.log(`adding nth class to: ${element[0].innerText}`)
+
         }
 
         if (taskArray.length > 0) {
@@ -309,10 +314,6 @@ function getImagesFromDefaults(activeElArr) {
 }
 
 function getImagesFromGoogle(activeElArr) {
-    let homePic = new Image();
-    homePic.src = "Images/" + activeElArr[0].innerHTML + ".png";
-    document.getElementById('resultsPicsHere').appendChild(homePic);
-
     for(i = 0; i < activeElArr.length; i++){
         let pic = new Image();
 
