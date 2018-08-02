@@ -316,7 +316,7 @@ function getImagesFromGoogle(activeElArr) {
         let pic = new Image();
 
         // fetch(googleSearchAPI(activeElArr[i]))
-            fetch("executeGoogleSearch.php", {q:activeElArr[i].split(' ').join('+')})
+            fetch("/executeGoogleSearch.php", {q:activeElArr[i].split(' ').join('+')})
             .then(function (response) {
                 return response.json();
             })
