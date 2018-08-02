@@ -274,8 +274,6 @@ function getResults() {
     let picOnlyResultsArr = [resultsArr[0].innerHTML, resultsArr[1].innerHTML + " logo", resultsArr[2].innerHTML + " job",
                             resultsArr[4].innerHTML, resultsArr[5].innerHTML, resultsArr[7].innerHTML,];
 
-    console.log(picOnlyResultsArr[1]);
-
     document.getElementById('displayPlayerName').innerHTML = playerName[32].value + "'s Future";
     document.getElementById('displayResults').innerHTML = "In the future, you will attend " + resultsArr[1].innerHTML +
                             " and later spend your days as a " + resultsArr[2].innerHTML + " with a yearly salary of $" +
@@ -317,7 +315,8 @@ function getImagesFromGoogle(activeElArr) {
     for(i = 0; i < activeElArr.length; i++){
         let pic = new Image();
 
-        fetch(googleSearchAPI(activeElArr[i]))
+        // fetch(googleSearchAPI(activeElArr[i]))
+            fetch("executeGoogleSearch.php", {q:activeElArr[i].split(' ').join('+')})
             .then(function (response) {
                 return response.json();
             })
