@@ -8,7 +8,7 @@ $url= $baseURL . "?cx=" . $cx . "&key=" . $key . "&searchType=image&q=" . $searc
 $handle = curl_init();
 curl_setopt($handle, CURLOPT_URL, $url);
 $data = curl_exec($handle);
-error_log(curl_error($handle);
+error_log(curl_error($handle));
 curl_close($handle);
 echo $data;
 ?>
