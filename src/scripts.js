@@ -315,14 +315,14 @@ function getImagesFromGoogle(activeElArr) {
     for(i = 0; i < activeElArr.length; i++){
         let pic = new Image();
 
-        // fetch(googleSearchAPI(activeElArr[i]))
-            fetch("/executeGoogleSearch.php", {
-                method: "POST",
-                body: JSON.stringify({q:activeElArr[i].split(' ').join('+')}),
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8"
-                }
-            })
+        fetch(googleSearchAPI(activeElArr[i]))
+        //     fetch("/executeGoogleSearch.php", {
+        //         method: "POST",
+        //         body: JSON.stringify({q:activeElArr[i].split(' ').join('+')}),
+        //         headers: {
+        //             "Content-Type": "application/json; charset=utf-8"
+        //         }
+        //     })
             .then(function (response) {
                 return response.json();
             })
